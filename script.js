@@ -69,8 +69,6 @@ document.addEventListener('mousemove', (e) => {
 const ghostContainer = document.getElementById('ghost-container');
 const ghostImage = document.getElementById('ghost-image');
 const messageBubble = document.getElementById('message-bubble');
-const ghosthomeSection = document.getElementById('ghosthome');
-const zzzContainer = document.querySelector('.zzz-container');
 const aboutSection = document.getElementById('about');
 const projectsSection = document.getElementById('projects');
 const homeSection = document.getElementById('home');
@@ -79,7 +77,6 @@ const contactSection = document.getElementById('contact');
 
 let currentSection = null;
 let typingTimeout;
-let isAsleep = false;
 
 function typeMessage(message) {
     clearTimeout(typingTimeout);
@@ -103,10 +100,6 @@ document.addEventListener('mousemove', (e) => {
     const y = e.clientY;
     ghostContainer.style.left = (x + 20) + 'px';
     ghostContainer.style.top = (y - 20) + 'px';
-
-    if (isAsleep) {
-        wakeUp();
-    }
 });
 
 const sectionMessages = {
@@ -114,8 +107,7 @@ const sectionMessages = {
     projects: "Check out Arul's impressive portfolio of web development projects.",
     home: "Welcome to Arul's portfolio! Explore his skills, projects, and achievements as a frontend developer and tech enthusiast. Let's dive in!",
     skills: "Arul is skilled in Python, Web Development (HTML, CSS, JavaScript), SQL, and Git/GitHub. He's adept at solving problems with his programming expertise and has a solid understanding of Cloud Computing!",
-    contact: "Want to get in touch? You can reach Arul via email at arulraman77@gmail.com or connect on LinkedIn. Looking forward to hearing from you!",
-    ghosthome: "My Home !!"
+    contact: "Want to get in touch? You can reach Arul via email at arulraman77@gmail.com or connect on LinkedIn. Looking forward to hearing from you!"
 };
 
 function handleSectionHover(section) {
@@ -133,7 +125,6 @@ projectsSection.addEventListener('mouseenter', handleSectionHover('projects'));
 homeSection.addEventListener('mouseenter', handleSectionHover('home'));
 skillsSection.addEventListener('mouseenter', handleSectionHover('skills'));
 contactSection.addEventListener('mouseenter', handleSectionHover('contact'));
-ghosthomeSection.addEventListener('mouseenter', handleSectionHover('ghosthome'));
 
 document.addEventListener('mousemove', (e) => {
     const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
@@ -142,7 +133,6 @@ document.addEventListener('mousemove', (e) => {
         !homeSection.contains(hoveredElement) && 
         !skillsSection.contains(hoveredElement) && 
         !contactSection.contains(hoveredElement) && 
-        !ghosthomeSection.contains(hoveredElement) && 
         currentSection) {
         currentSection = null;
         ghostImage.src = 'images/ghost-normal.png';
@@ -150,42 +140,3 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
-document.addEventListener('mouseleave', () => {
-    const homeRect = ghosthomeSection.getBoundingClientRect();
-    ghostContainer.style.transition = 'all .5s ease';
-    ghostContainer.style.left = `${homeRect.left + homeRect.width / 2 - ghostContainer.offsetWidth / 2}px`;
-    ghostContainer.style.top = `${homeRect.top + homeRect.height / 2 - ghostContainer.offsetHeight / 2}px`;
-    ghostContainer.style.animation = 'none';
-
-    setTimeout(() => {
-        goToSleep();
-    }, 1500);
-});
-
-function goToSleep() {
-    ghostImage.src = 'images/ghost-sleep.png';
-    isAsleep = true;
-    if (zzzContainer) {
-        zzzContainer.style.opacity = 1;
-    }
-    messageBubble.classList.remove('show');
-}
-
-function wakeUp() {
-    ghostImage.src = 'images/ghost-normal.png';
-    isAsleep = false;
-    if (zzzContainer) {
-        zzzContainer.style.opacity = 0;
-    }
-    ghostContainer.style.animation = 'float 5s infinite';
-}
-
-function updateGhostHomePosition() {
-    if (isAsleep) {
-        const homeRect = ghosthomeSection.getBoundingClientRect();
-        ghostContainer.style.left = `${homeRect.left + homeRect.width / 2 - ghostContainer.offsetWidth / 2}px`;
-        ghostContainer.style.top = `${homeRect.top + homeRect.height / 2 - ghostContainer.offsetHeight / 2}px`;
-    }
-}
-
-window.addEventListener('scroll', updateGhostHomePosition);

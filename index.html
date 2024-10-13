@@ -13,14 +13,8 @@
     <div class="ghost-container" id="ghost-container">
         <div class="message-bubble" id="message-bubble"></div>
         <img src="images/ghost-normal.png" alt="Ghost Guide" id="ghost-image">
-        <div class="zzz-container">
-            <span class="zzz">z</span>
-            <span class="zzz">z</span>
-            <span class="zzz">z</span>
-            <span class="zzz">z</span>
-        </div>
     </div>
-    <div class="container" id="home">
+    <div class="container">
         <div class="navibar">
             <div class="logo">
                 <img src="images/logo.png" width="70px"> <label for="" id="logo">A-Dev</label>
@@ -34,11 +28,13 @@
                     <li><a href="#contact" class="btn">Contact</a></li>
                 </ul>
             </nav>
-            <label class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
-            </label>
-            <img src="Images/main-menu.png" class="menuicon" onclick="menu_toggle()"/> 
+            <div>
+                <label class="dark-mode-toggle">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+                <img src="Images/main-menu.png" class="menuicon" onclick="menu_toggle()"/> 
+            </div>
         </div>
         <div class="circle-container">
     
@@ -125,13 +121,7 @@
             <div class="circle" style="top: 110px; left: 620px;"></div>
         
         </div>
-        <div id="ghosthome">
-            <!-- Ghost's Home Image -->
-            <div class="ghost-title">Tinker Home</div>
-            <img src="images/ghost-home.png" alt="Ghost Home" class="ghost-home" id="ghost-home">
-
-        </div>
-        <div class="row">
+        <div class="row"  id="home">
             <div class="col1">
                 <h2>Hello, I'm  <label for=""> Arul</label></h2>
                 <p>Frontend Developer | Python Programmer | Problem Solver</p>
