@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arul's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ghost guide element -->
+    <div class="ghost-container" id="ghost-container">
+        <div class="message-bubble" id="message-bubble"></div>
+        <img src="images/ghost-normal.png" alt="Ghost Guide" id="ghost-image">
+        <div class="zzz-container">
+            <span class="zzz">z</span>
+            <span class="zzz">z</span>
+            <span class="zzz">z</span>
+            <span class="zzz">z</span>
+        </div>
+    </div>
+    <div class="container" id="home">
+        <div class="navibar">
+            <div class="logo">
+                <img src="images/logo.png" width="70px"> <label for="" id="logo">A-Dev</label>
+            </div>
+            <nav>
+                <ul id="menuitems" >
+                    <li><a href="#home" class="btn">Home</a></li>
+                    <li><a href="#about" class="btn">About</a></li>
+                    <li><a href="#skills" class="btn">Skills</a></li>
+                    <li><a href="#projects" class="btn">Projects</a></li>
+                    <li><a href="#contact" class="btn">Contact</a></li>
+                </ul>
+            </nav>
+            <label class="dark-mode-toggle">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+            <img src="Images/main-menu.png" class="menuicon" onclick="menu_toggle()"/> 
+        </div>
+        <div class="circle-container">
+    
+            <!-- W -->
+            <div class="circle" style="top: 50px; left: 40px;"></div>
+            <div class="circle" style="top: 70px; left: 40px;"></div>
+            <div class="circle" style="top: 90px; left: 40px;"></div>
+            <div class="circle" style="top: 110px; left: 40px;"></div>
+        
+            <div class="circle" style="top: 100px; left: 60px;"></div>
+            <div class="circle" style="top: 90px; left: 80px;"></div>
+            <div class="circle" style="top: 100px; left: 100px;"></div>
+        
+            <div class="circle" style="top: 50px; left: 120px;"></div>
+            <div class="circle" style="top: 70px; left: 120px;"></div>
+            <div class="circle" style="top: 90px; left: 120px;"></div>
+            <div class="circle" style="top: 110px; left: 120px;"></div>
+        
+            <!-- E -->
+            <div class="circle" style="top: 50px; left: 160px;"></div>
+            <div class="circle" style="top: 70px; left: 160px;"></div>
+            <div class="circle" style="top: 90px; left: 160px;"></div>
+            <div class="circle" style="top: 110px; left: 160px;"></div>
+            <div class="circle" style="top: 50px; left: 180px;"></div>
+            <div class="circle" style="top: 50px; left: 200px;"></div>
+            <div class="circle" style="top: 80px; left: 180px;"></div>
+            <div class="circle" style="top: 110px; left: 180px;"></div>
+            <div class="circle" style="top: 110px; left: 200px;"></div>
+        
+            <!-- L -->
+            <div class="circle" style="top: 50px; left: 240px;"></div>
+            <div class="circle" style="top: 70px; left: 240px;"></div>
+            <div class="circle" style="top: 90px; left: 240px;"></div>
+            <div class="circle" style="top: 110px; left: 240px;"></div>
+            <div class="circle" style="top: 110px; left: 260px;"></div>
+            <div class="circle" style="top: 110px; left: 280px;"></div>
+        
+            <!-- C -->
+            <div class="circle" style="top: 55px; left: 325px;"></div>
+            <div class="circle" style="top: 70px; left: 320px;"></div>
+            <div class="circle" style="top: 90px; left: 320px;"></div>
+            <div class="circle" style="top: 105px; left: 325px;"></div>
+            <div class="circle" style="top: 50px; left: 340px;"></div>
+            <div class="circle" style="top: 50px; left: 360px;"></div>
+            <div class="circle" style="top: 110px; left: 340px;"></div>
+            <div class="circle" style="top: 110px; left: 360px;"></div>
+        
+            <!-- O -->
+            <div class="circle" style="top: 55px; left: 405px;"></div>
+            <div class="circle" style="top: 70px; left: 400px;"></div>
+            <div class="circle" style="top: 90px; left: 400px;"></div>
+            <div class="circle" style="top: 105px; left: 405px;"></div>
+            <div class="circle" style="top: 50px; left: 420px;"></div>
+            <div class="circle" style="top: 55px; left: 435px;"></div>
+            <div class="circle" style="top: 110px; left: 420px;"></div>
+            <div class="circle" style="top: 105px; left: 435px;"></div>
+            <div class="circle" style="top: 70px; left: 440px;"></div>
+            <div class="circle" style="top: 90px; left: 440px;"></div>
+        
+            <!-- M (Improved) -->
+            <div class="circle" style="top: 50px; left: 480px;"></div>
+            <div class="circle" style="top: 70px; left: 480px;"></div>
+            <div class="circle" style="top: 90px; left: 480px;"></div>
+            <div class="circle" style="top: 110px; left: 480px;"></div>
+        
+            <div class="circle" style="top: 60px; left: 495px;"></div>
+            <div class="circle" style="top: 70px; left: 510px;"></div>
+            <div class="circle" style="top: 60px; left: 525px;"></div>
+            <div class="circle" style="top: 50px; left: 540px;"></div>
+            <div class="circle" style="top: 70px; left: 540px;"></div>
+            <div class="circle" style="top: 90px; left: 540px;"></div>
+            <div class="circle" style="top: 110px; left: 540px;"></div>
+        
+            <!-- E (Improved) -->
+            <div class="circle" style="top: 50px; left: 580px;"></div>
+            <div class="circle" style="top: 70px; left: 580px;"></div>
+            <div class="circle" style="top: 90px; left: 580px;"></div>
+            <div class="circle" style="top: 110px; left: 580px;"></div>
+        
+            <div class="circle" style="top: 50px; left: 600px;"></div>
+            <div class="circle" style="top: 50px; left: 620px;"></div>
+            <div class="circle" style="top: 80px; left: 600px;"></div>
+            <div class="circle" style="top: 110px; left: 600px;"></div>
+            <div class="circle" style="top: 110px; left: 620px;"></div>
+        
+        </div>
+        <div id="ghosthome">
+            <!-- Ghost's Home Image -->
+            <div class="ghost-title">Tinker Home</div>
+            <img src="images/ghost-home.png" alt="Ghost Home" class="ghost-home" id="ghost-home">
+
+        </div>
+        <div class="row">
+            <div class="col1">
+                <h2>Hello, I'm  <label for=""> Arul</label></h2>
+                <p>Frontend Developer | Python Programmer | Problem Solver</p>
+                <button class="click" onclick="location.href='#projects'">View My Work &rarr;</button>
+            </div>
+            <div class="col1">
+                <div id="ghost"></div>
+                <img src="images/welcoming.png" alt="" width="400px">
+            </div>
+        </div>
+    </div>
+<div class="block" id="about">    
+    <div class="small-container ">
+        <div class="row1">
+            <div class="col2">
+                <h2>About Me</h2>
+                <img src="Images/profile.png" alt="" width="300px">
+                <p>I am a passionate Frontend Developer with skills in HTML, CSS, JavaScript, and Python. I have built several projects ranging from websites to games and more.</p>
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="block" id="skills">    
+    <div class="small-container">
+        <div class="row1">
+            <div class="col2" >
+                <h2>Skills</h2>
+                <img src="Images/code.png" alt="" width="300px">
+                <div class="skills-container">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">Git & GitHub</div>
+                </div> 
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="block" id="projects">    
+    <div class="small-container" >
+        <div class="row1">
+            <div class="col2">
+                <h2>Projects</h2>
+                <img src="Images/project_complete.png" alt="" width="300px">
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>Sign Language Recognition System</h3>
+                    <p>A machine learning project for recognizing sign language gestures.</p>
+                    <a href="development.html"class="btn"> View Project &rarr;</a>
+                </div>
+                <div class="project">
+                    <h3>Real-Time News Portal</h3>
+                    <p>A Python-based web scraping project fetching live news updates.</p>
+                    <a href="https://newsweb-prkuhrwxypz25uxetdk8f.streamlit.app/"class="btn"> View Project &rarr;</a>
+                </div>
+                <div class="project">
+                    <h3>AI Assistant HUB</h3>
+                    <p>A fully responsive AI Assistant HUB website using HTML and CSS.</p>
+                    <a href="https://arul28032003.github.io/Ai_service_web/"class="btn"> View Project &rarr;</a>
+                </div>
+                <div class="project">
+                    <h3>Weather App</h3>
+                    <p>A JavaScript app displaying live weather updates.</p>
+                    <a href="https://arul28032003.github.io/Simple_web/"class="btn"> View Project &rarr;</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="block"> 
+        <div class="small-container" id="contact">
+            <div class="row1">
+                <div class="col2">
+                    <h2>Contact Me</h2>
+                    <img src="Images/contact_us.png" alt="" width="300px">
+                    <p>Email: <a href="mailto:arulraman77@gmail.com" class="btn">arulraman77@gmail.com</a></p>
+                    <p>Phone: +91 9444732994</p>
+                    <p>Linkedin: <a href="https://www.linkedin.com/in/arul-r-581ba02b5/" class="btn">Arul R</a></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+        <footer>
+            <p>&copy; 2024 Arul. All rights reserved.</p>
+        </footer>
+    <script src="script.js"></script>
+</div>
+</html>
