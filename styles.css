@@ -79,7 +79,7 @@ body {
     height: 80px;
     top: 0; 
     z-index: 1000; 
-   
+    -webkit-backdrop-filter: blur(10px);
 }.logo {
   display: flex;
   align-items: center; 
@@ -115,24 +115,56 @@ a {
 
 /* Welcome Section */
 
-.row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    color: #fff;
-}.col1 {
-    flex: 1;
-    margin-left: 90px;
-}.col1 h2 {
-    font-size: 50px;
-    line-height: 60px;
-    margin: 0 0 25px;
-}.welcome_img{
-  margin-top: 200px;
-  filter: drop-shadow(0px 0px 10px #86bcf2);
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: #fff;
+  max-width: 1200px; /* Adjust this value as needed */
+  width: 100%;
+  padding: 40px; /* Adds space inside the row */
+  box-sizing: border-box;
+}
+
+.col1 {
+  flex: 1;
+  min-width: 300px; /* Adjust this value as needed */
+  padding: 20px;
+}
+
+.col1 h2 {
+  font-size: 50px;
+  line-height: 60px;
+  margin: 0 0 25px;
+}
+
+.welcome_img {
+  filter: drop-shadow(0px 0px 10px #86bcf2);
+  max-width: 100%;
+  height: auto;
+  margin-left: 50px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  
+  .col1 {
+    width: 100%;
+  }
+}
 /*About section*/
 
 .small-container{
@@ -199,6 +231,11 @@ footer {
 .btn:hover::after {
   transform: scaleX(1); 
   transform-origin: bottom left; 
+}.dbtn{
+  background: #509ff4;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 /* View my work Button */
@@ -255,11 +292,10 @@ footer {
     .logo label {
       font-size: 1em;
       margin: 0; 
-    }.col1{
-      margin-top: 100px;
-      margin-left: 70px;
     }.welcome_img{
       margin-top: 0;
+    }.dbtn{
+      font-size: 10px;
     }
   }
  @media (max-width: 950px) and (max-height: 850px) {
