@@ -35,36 +35,6 @@ const darkModeToggle = document.getElementById('darkModeToggle');
         for (let i = 0; i < allElements.length; i++) {
             allElements[i].style.transition = 'background-color .2s, color .2s, box-shadow .2s';
         }
-
-//Welcome script
-
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-
-    document.querySelectorAll('.circle').forEach(circle => {
-        const rect = circle.getBoundingClientRect();
-        const circleX = rect.left + rect.width / 2;
-        const circleY = rect.top + rect.height / 2;
-
-        const diffX = circleX - mouseX;
-        const diffY = circleY - mouseY;
-
-        const distance = Math.sqrt(diffX * diffX + diffY * diffY);
-        const magneticRadius = 50; // Magnetic field radius
-
-        if (distance < magneticRadius) {
-            const angle = Math.atan2(diffY, diffX);
-            const moveX = Math.cos(angle) * (magneticRadius - distance);
-            const moveY = Math.sin(angle) * (magneticRadius - distance);
-
-            circle.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        } else {
-            circle.style.transform = `translate(0, 0)`;
-        }
-    });
-});
-
 // Select all necessary DOM elements at the beginning
 const ghostContainer = document.getElementById('ghost-container');
 const ghostImage = document.getElementById('ghost-image');
@@ -114,7 +84,7 @@ function handleSectionHover(section) {
     return () => {
         if (currentSection !== section) {
             currentSection = section;
-            ghostImage.src = 'images/ghost-smile.png';
+            ghostImage.src = 'Images/ghost-smile.png';
             typeMessage(sectionMessages[section]);
         }
     };
@@ -135,7 +105,7 @@ document.addEventListener('mousemove', (e) => {
         !contactSection.contains(hoveredElement) && 
         currentSection) {
         currentSection = null;
-        ghostImage.src = 'images/ghost-normal.png';
+        ghostImage.src = 'Images/ghost-normal.png';
         messageBubble.classList.remove('show');
     }
 });
