@@ -300,6 +300,7 @@ footer {
       margin: 0; 
     }.welcome_img{
       padding-top: 100px;
+      padding-left: 0;
     }.dbtn{
       font-size: 10px;
     }
