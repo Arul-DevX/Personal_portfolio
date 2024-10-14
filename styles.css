@@ -79,8 +79,14 @@ body {
     height: 80px;
     top: 0; 
     z-index: 1000; 
+}@supports (-webkit-backdrop-filter: none)
+{
+  .navibar{
     -webkit-backdrop-filter: blur(10px);
-}.logo {
+  }
+}
+
+.logo {
   display: flex;
   align-items: center; 
   gap: 10px; 
