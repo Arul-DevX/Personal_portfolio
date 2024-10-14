@@ -10,31 +10,6 @@
       }
   }
 
-// Dark mode button
-const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        }
-
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', null);
-            }
-        });
-
-        // Smooth color transition for all elements
-        const allElements = document.getElementsByTagName('*');
-        for (let i = 0; i < allElements.length; i++) {
-            allElements[i].style.transition = 'background-color .2s, color .2s, box-shadow .2s';
-        }
 // Select all necessary DOM elements at the beginning
 const ghostContainer = document.getElementById('ghost-container');
 const ghostImage = document.getElementById('ghost-image');
