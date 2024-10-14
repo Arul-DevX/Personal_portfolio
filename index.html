@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arul's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="Images/logo1.png">
+    <link rel="icon" href="Images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +17,7 @@
     <div class="container">
         <div class="navibar">
             <div class="logo">
-                <img src="Images/logo.png" width="70px"> <label for="" id="logo">A-Dev</label>
+                <img src="Images/logo.png" width="150px"> 
             </div>
             <nav>
                 <ul id="menuitems" >
@@ -28,6 +28,9 @@
                     <li><a href="#contact" class="btn">Contact</a></li>
                 </ul>
             </nav>
+            <div>
+                <img src="Images/main-menu.png" class="menuicon" onclick="menu_toggle()"/> 
+            </div>
         </div>
         <div class="row"  id="home">
             <div class="col1">
@@ -36,7 +39,7 @@
                 <button class="click" onclick="location.href='#projects'">View My Work &rarr;</button>
             </div>
             <div class="col1">
-                <img src="Images/welcoming.png" alt="" width="400px">
+                <img class="welcome_img" src="Images/welcoming.png" alt="" width="400px">
             </div>
         </div>
     </div>

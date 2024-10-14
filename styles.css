@@ -76,9 +76,10 @@ body {
     position: -webkit-sticky; 
     position: fixed;
     width: 100%;
+    height: 80px;
     top: 0; 
     z-index: 1000; 
-    background-image: linear-gradient(to right, #252525 0%, black 100%);
+   
 }.logo {
   display: flex;
   align-items: center; 
@@ -122,14 +123,14 @@ a {
     color: #fff;
 }.col1 {
     flex: 1;
-    padding: 20px;
     margin-left: 90px;
 }.col1 h2 {
     font-size: 50px;
     line-height: 60px;
     margin: 0 0 25px;
-}.col1 img {
+}.welcome_img{
   margin-top: 200px;
+  filter: drop-shadow(0px 0px 10px #86bcf2);
 }
 
 /*About section*/
@@ -146,10 +147,9 @@ a {
 }.col2 {
   flex: 1;
   padding: 20px;
-
   background-image: linear-gradient(to right, #282828 0%, black 100%);
   color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   text-align: center;
 }.col2 h2{
@@ -250,80 +250,22 @@ footer {
       width:300px;
     }
     .logo img{
-      width:90px;
+      width:75px;
     }
-    .col1 {
-      margin: 0;
-    }
-  }
-  @media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-        margin: 50px 0; /* Adjust margin for better spacing on mobile */
-    }
-    .col1 {
-        margin: 0 20px; /* Reduce side margins on mobile */
-        padding: 10px;
-    }
-    nav ul {
-        max-height: none; /* Allow menu to expand fully on mobile */
-    }
-    .navibar {
-        padding: 10px 20px; /* Reduce padding for better fit */
-        backdrop-filter: none; /* Disable blur on mobile */
-    }
-    .logo img {
-        width: 80px; /* Reduce logo size */
-    }
-    .col2 {
-        margin: 20px; /* Add margin to col2 on mobile for better spacing */
-        padding: 15px;
-    }
-    footer {
-        padding: 10px 0; /* Reduce footer padding */
+    .logo label {
+      font-size: 1em;
+      margin: 0; 
+    }.col1{
+      margin-top: 100px;
+      margin-left: 70px;
+    }.welcome_img{
+      margin-top: 0;
     }
   }
-  
-  @media only screen and (max-width: 1050px) {
-      nav ul {
-        position: absolute;
-        top: 70px;
-        right: 0px; 
-        background: #ffffff;
-        width: 150px;
-        max-height: 0px; 
-        transition: max-height 0.5s ease-out;
-        border-radius: 5px;
-      }
-      nav ul li {
-        display: block;
-        text-align: center;
-        
-      }
-      nav ul li a {
-        color: #555;
-      }
-      .menuicon {
-        cursor: pointer;
-        display: block;
-      }
-      img {
-        width: 90%; /* Adjust image size for better fit */
-        max-width: 300px; /* Max width for larger screens */
-        margin: 0 auto; /* Center images */
-      }
-      .logo img {
-        width: 70px; /* Adjust logo size on smaller devices */
-      }
-      .col1, .col2 {
-        margin: 10px auto; /* Center columns */
-      }
-      .navibar {
-        padding: 10px 20px;
-      }
-  }@media (max-width: 950px) and (max-height: 850px) {
+ @media (max-width: 950px) and (max-height: 850px) {
     .message-bubble {
       width: 250px;
     }
 }
 
+/*  */
