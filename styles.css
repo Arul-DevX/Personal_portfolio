@@ -79,13 +79,8 @@ body {
     height: 80px;
     top: 0; 
     z-index: 1000; 
-}@supports (-webkit-backdrop-filter: none)
-{
-  .navibar{
-    -webkit-backdrop-filter: blur(10px);
-  }
+   
 }
-
 .logo {
   display: flex;
   align-items: center; 
@@ -102,18 +97,15 @@ nav {
     text-align: right;
     padding-bottom: 20px;
 }
-
 nav ul {
     display: inline-block;
     list-style-type: none;
 }
-
 nav ul li {
     display: inline-block;
   margin: 20px;
   transition: 0.5s;
 }
-
 a {
     text-decoration: none;
     color: #509ff4; 
@@ -138,8 +130,9 @@ a {
   color: #fff;
   max-width: 1200px; /* Adjust this value as needed */
   width: 100%;
-  padding: 40px; /* Adds space inside the row */
+  padding: 0px; /* Adds space inside the row */
   box-sizing: border-box;
+  text-align: center;
 }
 
 .col1 {
@@ -153,12 +146,11 @@ a {
   line-height: 60px;
   margin: 0 0 25px;
 }
-
-.welcome_img {
+.all_img {
   filter: drop-shadow(0px 0px 10px #86bcf2);
   max-width: 100%;
   height: auto;
-  padding-left: 100px;
+  padding-left: 0px;
 }
 
 /* Responsive design */
@@ -170,38 +162,6 @@ a {
   .col1 {
     width: 100%;
   }
-}
-/*About section*/
-
-.small-container{
-  max-width: 1080px;
-  margin: auto;
-  padding: 20px;
-}.row1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 50px 0;
-}.col2 {
-  flex: 1;
-  padding: 20px;
-  background-image: linear-gradient(to right, #282828 0%, black 100%);
-  color: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  text-align: center;
-}.col2 h2{
-  font-size: 24px;
-  margin-bottom: 30px;
-}.col2 p {
-  font-size: 16px;
-}
-.col2 ul li{
-  margin: 20px;
-}.skill{
-  margin: 20px;
-}.project{
-  margin: 20px;
 }
 
 /*footer*/
@@ -231,17 +191,25 @@ footer {
   height: 3px; 
   background-color: #509ff4; 
   transform: scaleX(0);
-  transform-origin: bottom right; 
+  transform-origin: center; 
   transition: transform 0.3s ease; 
 }
 .btn:hover::after {
   transform: scaleX(1); 
-  transform-origin: bottom left; 
-}.dbtn{
+  transform-origin: center; 
+}#dbtn{
   background: #509ff4;
   color: #333;
   border-radius: 5px;
   padding: 10px;
+}#dbtn:hover{
+  background:#ffffff;
+}
+.active {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px); 
+  border-radius: 5px; 
+  transition: all .5s ease-in-out;
 }
 
 /* View my work Button */
@@ -301,7 +269,7 @@ footer {
     }.welcome_img{
       padding-top: 100px;
       padding-left: 0;
-    }.dbtn{
+    }#dbtn{
       font-size: 10px;
     }
   }

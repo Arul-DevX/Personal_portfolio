@@ -9,7 +9,21 @@
           menuitems.style.maxHeight = "0px";
       }
   }
+  document.getElementById("dbtn").addEventListener("click", function() {
+    // Show the pop-up message
+    alert("Your download is starting!");
+});
 
+window.addEventListener("scroll", () => {
+    const sections = ["home", "about", "skills", "projects", "contact"];
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      const link = document.querySelector(`a[href="#${id}"]`);
+      const inView = window.scrollY >= section.offsetTop - 100 && window.scrollY < section.offsetTop + section.offsetHeight;
+      link.classList.toggle("active", inView);
+    });
+  });
+  
 // Select all necessary DOM elements at the beginning
 const ghostContainer = document.getElementById('ghost-container');
 const ghostImage = document.getElementById('ghost-image');

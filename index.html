@@ -14,67 +14,68 @@
         <div class="message-bubble" id="message-bubble"></div>
         <img src="Images/ghost-normal.png" alt="Ghost Guide" id="ghost-image">
     </div>
-    <div class="container">
+    <div class="container" id="home">
         <div class="navibar">
             <div class="logo">
                 <img src="Images/logo.png" width="150px"> 
             </div>
             <nav>
-                <ul id="menuitems" >
+                <ul id="menuitems">
                     <li><a href="#home" class="btn">Home</a></li>
                     <li><a href="#about" class="btn">About</a></li>
                     <li><a href="#skills" class="btn">Skills</a></li>
                     <li><a href="#projects" class="btn">Projects</a></li>
                     <li><a href="#contact" class="btn">Contact</a></li>
-                    <li><a href="Arul's CV.pdf" download class="dbtn">Download CV</a></li>
+                    <li><a href="Arul's Resume.pdf" download id="dbtn">Download CV</a></li>
                 </ul>
             </nav>
             <div>
-                <img src="Images/main-menu.png" class="menuicon" onclick="menu_toggle()"/> 
+                <img src="Images/main-menu.png" alt="menu icon" class="menuicon" onclick="menu_toggle()"/> 
             </div>
         </div>
-        <div class="row"  id="home">
+        <div class="row">
             <div class="col1">
                 <h2>Hello, I'm  <label for=""> Arul</label></h2>
                 <p>Frontend Developer | Python Programmer | Problem Solver</p>
                 <button class="click" onclick="location.href='#projects'">View My Work &rarr;</button>
             </div>
             <div class="col1">
-                <img class="welcome_img" src="Images/profile-pic.png" alt="" width="400px">
+                <img class="all_img" src="Images/profile-pic.png" alt="profile picture" width="400px">
             </div>
         </div>
     </div>  
-    <div class="small-container "id="about">
-        <div class="row1">
-            <div class="col2">
-                <h2>About Me</h2>
-                <img src="Images/profile.png" alt="" width="300px">
+    <div class="container "id="about">
+        <div class="row">
+            <div class="col1">
+                <img src="Images/profile.png" class="all_img"  alt="profile image" width="500px">
+            </div>
+            <div class="col1">
+                <h2>About <label for="">Me</label></h2>
                 <p>I am a passionate Frontend Developer with skills in HTML, CSS, JavaScript, and Python. I have built several projects ranging from websites to games and more.</p>
             </div>
         </div>
     </div>   
-    <div class="small-container" id="skills">
-        <div class="row1">
-            <div class="col2" >
+    <div class="container" id="skills">
+        <div class="row">
+            <div class="col1" >
                 <h2>Skills</h2>
-                <img src="Images/code.png" alt="" width="300px">
                 <div class="skills-container">
-                    <div class="skill">HTML</div>
-                    <div class="skill">CSS</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">Python</div>
-                    <div class="skill">SQL</div>
-                    <div class="skill">Git & GitHub</div>
+                    <p>HTML,CSS,JavaScript,Python Basics,SQL Basics</p>
                 </div> 
+            </div>
+            <div class="col1">
+                <img src="Images/code.png" class="all_img" alt="skill image" width="500px">
             </div>
         </div>
     </div>
    
-    <div class="small-container" id="projects">
-        <div class="row1">
-            <div class="col2">
+    <div class="container" id="projects">
+        <div class="row">
+            <div class="col1">
+                <img src="Images/project_complete.png" class="all_img"  alt="project image" width="500px">
+            </div>
+            <div class="col1">
                 <h2>Projects</h2>
-                <img src="Images/project_complete.png" alt="" width="300px">
             <div class="projects-grid">
                 <div class="project">
                     <h3>Sign Language Recognition System</h3>
@@ -100,14 +101,16 @@
             </div>
         </div>
     </div> 
-        <div class="small-container" id="contact">
-            <div class="row1">
-                <div class="col2">
+        <div class="container" id="contact">
+            <div class="row">
+                <div class="col1">
                     <h2>Contact Me</h2>
-                    <img src="Images/contact_us.png" alt="" width="300px">
                     <p>Email: <a href="mailto:arulraman77@gmail.com" class="btn">arulraman77@gmail.com</a></p>
                     <p>Phone: +91 9444732994</p>
                     <p>Linkedin: <a href="https://www.linkedin.com/in/arul-r-581ba02b5/" class="btn">Arul R</a></p>
+                </div>
+                <div class="col1">
+                    <img src="Images/contact_us.png" class="all_img" alt="contact image" width="500px">
                 </div>
             </div>
         </div>
