@@ -14,6 +14,7 @@
     alert("Your download is starting!");
 });
 
+//menu blur script
 window.addEventListener("scroll", () => {
     const sections = ["home", "about", "skills", "projects", "contact"];
     sections.forEach(id => {
@@ -23,6 +24,45 @@ window.addEventListener("scroll", () => {
       link.classList.toggle("active", inView);
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const text = "I'm Arul";
+    let index = 0;
+    let isErasing = false;
+    const typingSpeed = 150;  // Speed for typing
+    const erasingSpeed = 100; // Speed for erasing
+    const delay = 2000;       // Delay after typing before erasing
+  
+    function type() {
+      const typedTextElement = document.getElementById("typed-text");
+  
+      if (!isErasing && index < text.length) {
+        // Typing phase
+        typedTextElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, typingSpeed);
+      } else if (isErasing && index > 0) {
+        // Erasing phase
+        typedTextElement.textContent = text.substring(0, index - 1);
+        index--;
+        setTimeout(type, erasingSpeed);
+      } else if (!isErasing && index === text.length) {
+        // After typing is complete, start erasing after a delay
+        setTimeout(() => {
+          isErasing = true;
+          type();
+        }, delay);
+      } else if (isErasing && index === 0) {
+        // After erasing is complete, start typing again after a delay
+        isErasing = false;
+        setTimeout(type, delay);
+      }
+    }
+  
+    // Start the typing effect
+    type();
+  });
+  
   
 // Select all necessary DOM elements at the beginning
 const ghostContainer = document.getElementById('ghost-container');

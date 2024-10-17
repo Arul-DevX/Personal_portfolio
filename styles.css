@@ -163,7 +163,19 @@ a {
     width: 100%;
   }
 }
-
+.cursor {
+  font-size: 55px;
+  color: #509ff4;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
 /*footer*/
 
 footer {
