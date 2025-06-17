@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Language Recognition System</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,32 +11,47 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-           
-            
+            background-image: linear-gradient(to left, #282828 0%, black 100%);
+            color: white;
         }
         .container {
             text-align: center;
             padding: 20px;
             border-radius: 8px;
-        }.container img{
+        }
+        .container img{
             filter: drop-shadow(10px 10px 20px #131314);
         }
         h1 {
             font-size: 24px;
-            color: #333;
+            color: #509ff4;
         }
         p {
             font-size: 18px;
-            color: #666;
-        }                 
+            color: #ccc;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #509ff4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ffffff;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="Images/development.png" alt="" width="375px">
+        <img src="/Images/development.png" alt="" width="375px">
         <h1>Sign Language Recognition System</h1>
         <p>This project is under development.</p>
-        <a href="index.html" class="btn"> Back to Home &rarr;</a>
+        <a href="/" class="btn"> Back to Home &rarr;</a>
     </div>
 </body>
 </html>
