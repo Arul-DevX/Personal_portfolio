@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="container" id="contact">
       <div className="row">
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-left">
           <img 
             src="/Images/contact_us.png" 
             className="all_img" 
@@ -12,7 +12,7 @@ const Contact = () => {
             width="500px"
           />
         </div>
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-right">
           <h2>Contact <label>Me</label></h2>
           <p>
             Email: <a href="mailto:arulraman77@gmail.com" className="btn">

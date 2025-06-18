@@ -31,7 +31,7 @@ const Projects = () => {
   return (
     <div className="container" id="projects">
       <div className="row">
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-left">
           <img 
             src="/Images/project_complete.png" 
             className="all_img"  
@@ -39,11 +39,11 @@ const Projects = () => {
             width="500px"
           />
         </div>
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-right">
           <h2>Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project">
+              <div key={index} className="project animate-on-scroll fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <a 

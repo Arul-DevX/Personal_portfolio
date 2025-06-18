@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="container" id="about">
       <div className="row">
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-left">
           <img 
             src="/Images/profile.png" 
             className="all_img"  
@@ -12,7 +12,7 @@ const About = () => {
             width="500px"
           />
         </div>
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-right">
           <h2>About <label>Me</label></h2>
           <p>
             I am a passionate Frontend Developer with skills in HTML, CSS, JavaScript, and Python. 

@@ -7,6 +7,7 @@ const GhostGuide = () => {
   const [ghostPosition, setGhostPosition] = useState({ x: 0, y: 0 })
   const [ghostImage, setGhostImage] = useState('/Images/ghost-normal.png')
   const typingTimeoutRef = useRef(null)
+  const currentMessageRef = useRef('')
 
   const sectionMessages = {
     about: "Here's where you can learn about Arul's skills and passion for web development.",
@@ -17,19 +18,28 @@ const GhostGuide = () => {
   }
 
   const typeMessage = (newMessage) => {
+    // Clear any existing timeout
     if (typingTimeoutRef.current) {
       clearTimeout(typingTimeoutRef.current)
     }
+    
+    // Store the message we're trying to type
+    currentMessageRef.current = newMessage
     
     setMessage('')
     setIsTyping(true)
     let i = 0
 
     const typeChar = () => {
+      // Check if we're still typing the same message
+      if (currentMessageRef.current !== newMessage) {
+        return // Stop typing if message changed
+      }
+      
       if (i < newMessage.length) {
-        setMessage(prev => prev + newMessage.charAt(i))
+        setMessage(newMessage.substring(0, i + 1))
         i++
-        typingTimeoutRef.current = setTimeout(typeChar, 30)
+        typingTimeoutRef.current = setTimeout(typeChar, 50)
       } else {
         setIsTyping(false)
       }
@@ -57,13 +67,17 @@ const GhostGuide = () => {
       
       if (newSection !== currentSection) {
         setCurrentSection(newSection)
-        if (newSection) {
+        if (newSection && sectionMessages[newSection]) {
           setGhostImage('/Images/ghost-smile.png')
           typeMessage(sectionMessages[newSection])
         } else {
           setGhostImage('/Images/ghost-normal.png')
+          currentMessageRef.current = ''
           setMessage('')
           setIsTyping(false)
+          if (typingTimeoutRef.current) {
+            clearTimeout(typingTimeoutRef.current)
+          }
         }
       }
     }
@@ -88,6 +102,7 @@ const GhostGuide = () => {
     >
       <div className={`message-bubble ${message ? 'show' : ''}`}>
         {message}
+        {isTyping && <span className="typing-cursor">|</span>}
       </div>
       <img 
         src={ghostImage} 
