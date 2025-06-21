@@ -19,6 +19,8 @@ const GhostGuide = () => {
   }
 
   const typeMessage = (newMessage) => {
+    console.log('Starting to type message:', newMessage) // Debug log
+    
     // Clear any existing interval
     if (typingIntervalRef.current) {
       clearInterval(typingIntervalRef.current)
@@ -43,10 +45,13 @@ const GhostGuide = () => {
       }
       
       if (currentIndex < newMessage.length) {
-        setMessage(newMessage.slice(0, currentIndex + 1))
+        const newText = newMessage.slice(0, currentIndex + 1)
+        console.log('Typing:', newText) // Debug log
+        setMessage(newText)
         currentIndex++
       } else {
         // Finished typing
+        console.log('Finished typing message') // Debug log
         setIsTyping(false)
         clearInterval(typingIntervalRef.current)
       }
@@ -54,6 +59,7 @@ const GhostGuide = () => {
   }
 
   const clearMessage = () => {
+    console.log('Clearing message') // Debug log
     if (typingIntervalRef.current) {
       clearInterval(typingIntervalRef.current)
     }
@@ -68,34 +74,49 @@ const GhostGuide = () => {
       // Update ghost position
       setGhostPosition({ x: e.clientX + 20, y: e.clientY - 20 })
       
-      // Get all section elements
+      // Get the element directly under the mouse cursor
+      const elementUnderMouse = document.elementFromPoint(e.clientX, e.clientY)
+      
+      if (!elementUnderMouse) return
+      
+      // Find which section this element belongs to
       const sections = ['home', 'about', 'skills', 'projects', 'contact']
       let newSection = null
       
-      // Check which section the mouse is currently over
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId)
-        if (section) {
-          const rect = section.getBoundingClientRect()
-          // Check if mouse is within the section bounds with some padding
-          if (e.clientX >= rect.left - 10 && 
-              e.clientX <= rect.right + 10 && 
-              e.clientY >= rect.top - 10 && 
-              e.clientY <= rect.bottom + 10) {
+      // Check if the element or any of its parents is a section
+      let currentElement = elementUnderMouse
+      while (currentElement && currentElement !== document.body) {
+        // Check if this element has an id that matches our sections
+        if (currentElement.id && sections.includes(currentElement.id)) {
+          newSection = currentElement.id
+          break
+        }
+        
+        // Check if this element is inside a section
+        for (const sectionId of sections) {
+          const section = document.getElementById(sectionId)
+          if (section && section.contains(currentElement)) {
             newSection = sectionId
             break
           }
         }
+        
+        if (newSection) break
+        currentElement = currentElement.parentElement
       }
+      
+      console.log('Current section:', newSection) // Debug log
       
       // Update section and message if changed
       if (newSection !== currentSection) {
         setCurrentSection(newSection)
         
         if (newSection && sectionMessages[newSection]) {
+          console.log('Switching to section:', newSection) // Debug log
           setGhostImage('/Images/ghost-smile.png')
           typeMessage(sectionMessages[newSection])
         } else {
+          console.log('No section detected, clearing message') // Debug log
           setGhostImage('/Images/ghost-normal.png')
           clearMessage()
         }
@@ -123,8 +144,9 @@ const GhostGuide = () => {
       }}
     >
       <div className={`message-bubble ${showBubble ? 'show' : ''}`}>
-        <span>{message}</span>
+        {message && <span>{message}</span>}
         {isTyping && <span className="typing-cursor">|</span>}
+        {!message && !isTyping && showBubble && <span>Loading...</span>}
       </div>
       <img 
         src={ghostImage} 
