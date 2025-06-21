@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 const GhostGuide = () => {
   const [currentSection, setCurrentSection] = useState(null)
   const [message, setMessage] = useState('')
+  const [showBubble, setShowBubble] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
   const [ghostPosition, setGhostPosition] = useState({ x: 0, y: 0 })
   const [ghostImage, setGhostImage] = useState('/Images/ghost-normal.png')
@@ -26,7 +27,8 @@ const GhostGuide = () => {
     // Store the message we're trying to type
     currentMessageRef.current = newMessage
     
-    // Reset message and start typing
+    // Show bubble and reset message
+    setShowBubble(true)
     setMessage('')
     setIsTyping(true)
     
@@ -49,6 +51,16 @@ const GhostGuide = () => {
         clearInterval(typingIntervalRef.current)
       }
     }, 50) // 50ms delay between each character
+  }
+
+  const clearMessage = () => {
+    if (typingIntervalRef.current) {
+      clearInterval(typingIntervalRef.current)
+    }
+    currentMessageRef.current = ''
+    setMessage('')
+    setIsTyping(false)
+    setShowBubble(false)
   }
 
   useEffect(() => {
@@ -85,13 +97,7 @@ const GhostGuide = () => {
           typeMessage(sectionMessages[newSection])
         } else {
           setGhostImage('/Images/ghost-normal.png')
-          // Clear current typing
-          if (typingIntervalRef.current) {
-            clearInterval(typingIntervalRef.current)
-          }
-          currentMessageRef.current = ''
-          setMessage('')
-          setIsTyping(false)
+          clearMessage()
         }
       }
     }
@@ -116,7 +122,7 @@ const GhostGuide = () => {
         top: `${ghostPosition.y}px` 
       }}
     >
-      <div className={`message-bubble ${message ? 'show' : ''}`}>
+      <div className={`message-bubble ${showBubble ? 'show' : ''}`}>
         <span>{message}</span>
         {isTyping && <span className="typing-cursor">|</span>}
       </div>

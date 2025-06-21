@@ -112,9 +112,6 @@ body {
   padding: 15px 20px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
   white-space: normal;
   max-width: 400px;
   width: 400px;
@@ -126,6 +123,12 @@ body {
   backdrop-filter: blur(10px);
   word-wrap: break-word;
   overflow-wrap: break-word;
+  
+  /* Always visible, controlled by display instead */
+  opacity: 1;
+  visibility: visible;
+  display: none;
+  transition: all 0.3s ease;
 }
 
 .message-bubble::before {
@@ -139,9 +142,19 @@ body {
 }
 
 .message-bubble.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-5px);
+  display: block;
+  animation: bubbleAppear 0.3s ease-out forwards;
+}
+
+@keyframes bubbleAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px) scale(1);
+  }
 }
 
 .typing-cursor {
@@ -277,17 +290,6 @@ a {
   
   .col1 {
     width: 100%;
-  }
-  
-  .message-bubble {
-    width: 280px;
-    max-width: 280px;
-    font-size: 12px;
-    padding: 12px 15px;
-  }
-  
-  #ghost-image {
-    width: 40px;
   }
 }
 
@@ -433,7 +435,14 @@ footer {
 
 @media (max-width: 950px) and (max-height: 850px) {
     .message-bubble {
-      width: 250px;
+      width: 280px;
+      max-width: 280px;
+      font-size: 12px;
+      padding: 12px 15px;
+    }
+    
+    #ghost-image {
+      width: 40px;
     }
 }
 
