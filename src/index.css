@@ -79,20 +79,27 @@ body {
 .ghost-container {
   position: fixed;
   pointer-events: none;
-  animation: float 5s infinite;
+  animation: float 3s ease-in-out infinite;
   z-index: 9999;
-  transition: all .5s ease !important;
+  transition: all 0.2s ease;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(-2deg); }
 }
 
 #ghost-image {
-  width: 40px;
+  width: 50px;
   height: auto;
-  transition: all 0.1s ease ;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(80, 159, 244, 0.3));
+}
+
+#ghost-image:hover {
+  transform: scale(1.1);
 }
 
 .message-bubble {
@@ -100,32 +107,46 @@ body {
   bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   color: #333;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   white-space: normal;
-  max-width: 500px;
-  width: 500px;
-  min-height: 40px;
+  max-width: 400px;
+  width: 400px;
+  min-height: 50px;
   text-align: left;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.5;
+  border: 2px solid rgba(80, 159, 244, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.message-bubble::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: #ffffff;
 }
 
 .message-bubble.show {
   opacity: 1;
   visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
 }
 
 .typing-cursor {
   color: #509ff4;
   animation: blink 1s steps(1) infinite;
   font-weight: bold;
+  font-size: 16px;
 }
 
 @keyframes blink {
@@ -253,6 +274,17 @@ a {
   
   .col1 {
     width: 100%;
+  }
+  
+  .message-bubble {
+    width: 280px;
+    max-width: 280px;
+    font-size: 12px;
+    padding: 12px 15px;
+  }
+  
+  #ghost-image {
+    width: 40px;
   }
 }
 

@@ -10,11 +10,11 @@ const GhostGuide = () => {
   const currentMessageRef = useRef('')
 
   const sectionMessages = {
-    about: "Here's where you can learn about Arul's skills and passion for web development.",
-    projects: "Check out Arul's impressive portfolio of web development projects.",
-    home: "Welcome to Arul's portfolio! Explore his skills, projects, and achievements as a frontend developer and tech enthusiast. Let's dive in!",
-    skills: "Arul is skilled in Python, Web Development (HTML, CSS, JavaScript), SQL, and Git/GitHub. He's adept at solving problems with his programming expertise and has a solid understanding of Cloud Computing!",
-    contact: "Want to get in touch? You can reach Arul via email at arulraman77@gmail.com or connect on LinkedIn. Looking forward to hearing from you!"
+    home: "Welcome to Arul's portfolio! This is where his journey begins. Explore his skills, projects, and achievements as a frontend developer and tech enthusiast. Ready to dive in?",
+    about: "Here's where you can learn about Arul's background, passion for web development, and his journey as a frontend developer. Get to know the person behind the code!",
+    skills: "Discover Arul's technical expertise! He's skilled in Python, Web Development (HTML, CSS, JavaScript), SQL, and Git/GitHub. His programming skills help him solve complex problems with ease!",
+    projects: "Check out Arul's impressive portfolio of projects! From sign language recognition systems to AI assistants and weather apps - see his creativity and technical skills in action!",
+    contact: "Ready to connect? This is where you can reach out to Arul! Find his email, phone number, and LinkedIn profile. He's always excited to discuss new opportunities and collaborations!"
   }
 
   const typeMessage = (newMessage) => {
@@ -39,7 +39,7 @@ const GhostGuide = () => {
       if (i < newMessage.length) {
         setMessage(newMessage.substring(0, i + 1))
         i++
-        typingTimeoutRef.current = setTimeout(typeChar, 50)
+        typingTimeoutRef.current = setTimeout(typeChar, 40)
       } else {
         setIsTyping(false)
       }
@@ -52,19 +52,27 @@ const GhostGuide = () => {
     const handleMouseMove = (e) => {
       setGhostPosition({ x: e.clientX + 20, y: e.clientY - 20 })
       
-      const hoveredElement = document.elementFromPoint(e.clientX, e.clientY)
+      // Get all section elements
+      const sections = ['home', 'about', 'skills', 'projects', 'contact']
       let newSection = null
       
-      // Check which section the mouse is over
-      const sections = ['home', 'about', 'skills', 'projects', 'contact']
+      // Check which section the mouse is currently over
       for (const sectionId of sections) {
         const section = document.getElementById(sectionId)
-        if (section && section.contains(hoveredElement)) {
-          newSection = sectionId
-          break
+        if (section) {
+          const rect = section.getBoundingClientRect()
+          // Check if mouse is within the section bounds
+          if (e.clientX >= rect.left && 
+              e.clientX <= rect.right && 
+              e.clientY >= rect.top && 
+              e.clientY <= rect.bottom) {
+            newSection = sectionId
+            break
+          }
         }
       }
       
+      // Update section and message if changed
       if (newSection !== currentSection) {
         setCurrentSection(newSection)
         if (newSection && sectionMessages[newSection]) {
@@ -82,8 +90,10 @@ const GhostGuide = () => {
       }
     }
 
+    // Add event listener
     document.addEventListener('mousemove', handleMouseMove)
     
+    // Cleanup
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
       if (typingTimeoutRef.current) {
