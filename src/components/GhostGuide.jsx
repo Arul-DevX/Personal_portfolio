@@ -6,7 +6,7 @@ const GhostGuide = () => {
   const [isTyping, setIsTyping] = useState(false)
   const [ghostPosition, setGhostPosition] = useState({ x: 0, y: 0 })
   const [ghostImage, setGhostImage] = useState('/Images/ghost-normal.png')
-  const typingTimeoutRef = useRef(null)
+  const typingIntervalRef = useRef(null)
   const currentMessageRef = useRef('')
 
   const sectionMessages = {
@@ -18,38 +18,42 @@ const GhostGuide = () => {
   }
 
   const typeMessage = (newMessage) => {
-    // Clear any existing timeout
-    if (typingTimeoutRef.current) {
-      clearTimeout(typingTimeoutRef.current)
+    // Clear any existing interval
+    if (typingIntervalRef.current) {
+      clearInterval(typingIntervalRef.current)
     }
     
     // Store the message we're trying to type
     currentMessageRef.current = newMessage
     
+    // Reset message and start typing
     setMessage('')
     setIsTyping(true)
-    let i = 0
-
-    const typeChar = () => {
+    
+    let currentIndex = 0
+    
+    // Use setInterval for more reliable typing
+    typingIntervalRef.current = setInterval(() => {
       // Check if we're still typing the same message
       if (currentMessageRef.current !== newMessage) {
-        return // Stop typing if message changed
+        clearInterval(typingIntervalRef.current)
+        return
       }
       
-      if (i < newMessage.length) {
-        setMessage(newMessage.substring(0, i + 1))
-        i++
-        typingTimeoutRef.current = setTimeout(typeChar, 40)
+      if (currentIndex < newMessage.length) {
+        setMessage(newMessage.slice(0, currentIndex + 1))
+        currentIndex++
       } else {
+        // Finished typing
         setIsTyping(false)
+        clearInterval(typingIntervalRef.current)
       }
-    }
-
-    typeChar()
+    }, 50) // 50ms delay between each character
   }
 
   useEffect(() => {
     const handleMouseMove = (e) => {
+      // Update ghost position
       setGhostPosition({ x: e.clientX + 20, y: e.clientY - 20 })
       
       // Get all section elements
@@ -61,11 +65,11 @@ const GhostGuide = () => {
         const section = document.getElementById(sectionId)
         if (section) {
           const rect = section.getBoundingClientRect()
-          // Check if mouse is within the section bounds
-          if (e.clientX >= rect.left && 
-              e.clientX <= rect.right && 
-              e.clientY >= rect.top && 
-              e.clientY <= rect.bottom) {
+          // Check if mouse is within the section bounds with some padding
+          if (e.clientX >= rect.left - 10 && 
+              e.clientX <= rect.right + 10 && 
+              e.clientY >= rect.top - 10 && 
+              e.clientY <= rect.bottom + 10) {
             newSection = sectionId
             break
           }
@@ -75,17 +79,19 @@ const GhostGuide = () => {
       // Update section and message if changed
       if (newSection !== currentSection) {
         setCurrentSection(newSection)
+        
         if (newSection && sectionMessages[newSection]) {
           setGhostImage('/Images/ghost-smile.png')
           typeMessage(sectionMessages[newSection])
         } else {
           setGhostImage('/Images/ghost-normal.png')
+          // Clear current typing
+          if (typingIntervalRef.current) {
+            clearInterval(typingIntervalRef.current)
+          }
           currentMessageRef.current = ''
           setMessage('')
           setIsTyping(false)
-          if (typingTimeoutRef.current) {
-            clearTimeout(typingTimeoutRef.current)
-          }
         }
       }
     }
@@ -93,11 +99,11 @@ const GhostGuide = () => {
     // Add event listener
     document.addEventListener('mousemove', handleMouseMove)
     
-    // Cleanup
+    // Cleanup function
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
-      if (typingTimeoutRef.current) {
-        clearTimeout(typingTimeoutRef.current)
+      if (typingIntervalRef.current) {
+        clearInterval(typingIntervalRef.current)
       }
     }
   }, [currentSection])
@@ -111,7 +117,7 @@ const GhostGuide = () => {
       }}
     >
       <div className={`message-bubble ${message ? 'show' : ''}`}>
-        {message}
+        <span>{message}</span>
         {isTyping && <span className="typing-cursor">|</span>}
       </div>
       <img 

@@ -124,6 +124,8 @@ body {
   line-height: 1.5;
   border: 2px solid rgba(80, 159, 244, 0.2);
   backdrop-filter: blur(10px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .message-bubble::before {
@@ -147,6 +149,7 @@ body {
   animation: blink 1s steps(1) infinite;
   font-weight: bold;
   font-size: 16px;
+  margin-left: 2px;
 }
 
 @keyframes blink {
