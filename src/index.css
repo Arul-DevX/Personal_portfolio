@@ -124,10 +124,10 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   
-  /* Always visible, controlled by display instead */
-  opacity: 1;
-  visibility: visible;
-  display: none;
+  /* Make sure it's always visible when shown */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
   transition: all 0.3s ease;
 }
 
@@ -142,7 +142,6 @@ body {
 }
 
 .message-bubble.show {
-  display: block;
   animation: bubbleAppear 0.3s ease-out forwards;
 }
 
@@ -154,23 +153,6 @@ body {
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(-5px) scale(1);
-  }
-}
-
-.typing-cursor {
-  color: #509ff4;
-  animation: blink 1s steps(1) infinite;
-  font-weight: bold;
-  font-size: 16px;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
   }
 }
 
@@ -297,6 +279,15 @@ a {
   font-size: 55px;
   color: #509ff4;
   animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /*footer*/
