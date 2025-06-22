@@ -18,7 +18,7 @@ body {
     background-image: linear-gradient(to left, #282828 0%, black 100%);
 }
 
-/* Scroll animations */
+/* Enhanced Scroll animations that trigger every time */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -54,10 +54,21 @@ body {
 
 .animate-on-scroll {
   opacity: 0;
+  transform: translateY(50px); /* Default transform for fade-in-up */
   transition: all 0.6s ease-out;
 }
 
+.animate-on-scroll.fade-in-left {
+  transform: translateX(-50px);
+}
+
+.animate-on-scroll.fade-in-right {
+  transform: translateX(50px);
+}
+
 .animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
   animation-duration: 0.8s;
   animation-fill-mode: both;
 }
@@ -124,10 +135,10 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   
-  /* Make sure it's always visible when shown */
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
+  /* Bubble visibility */
+  opacity: 1;
+  visibility: visible;
+  display: block;
   transition: all 0.3s ease;
 }
 
@@ -153,6 +164,23 @@ body {
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(-5px) scale(1);
+  }
+}
+
+.typing-cursor {
+  color: #509ff4;
+  animation: blink 1s steps(1) infinite;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }
 
@@ -279,15 +307,6 @@ a {
   font-size: 55px;
   color: #509ff4;
   animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
 }
 
 /*footer*/

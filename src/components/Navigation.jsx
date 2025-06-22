@@ -31,14 +31,22 @@ const Navigation = () => {
         }
       })
 
-      // Animate elements on scroll
+      // Enhanced scroll animations - trigger every time elements come into view
       const animateElements = document.querySelectorAll('.animate-on-scroll')
       animateElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top
+        const elementBottom = element.getBoundingClientRect().bottom
         const elementVisible = 150
         
-        if (elementTop < window.innerHeight - elementVisible) {
+        // Check if element is in viewport
+        const isInViewport = elementTop < window.innerHeight - elementVisible && elementBottom > elementVisible
+        
+        if (isInViewport) {
+          // Add animation class
           element.classList.add('animate')
+        } else {
+          // Remove animation class when out of view so it can animate again
+          element.classList.remove('animate')
         }
       })
     }
