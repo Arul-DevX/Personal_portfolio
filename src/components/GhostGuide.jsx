@@ -12,11 +12,11 @@ const GhostGuide = () => {
   const typingTimeoutRef = useRef(null)
 
   const sectionMessages = {
-    home: "Welcome to Arul's portfolio! This is where his journey begins. Explore his skills, projects, and achievements as a frontend developer and tech enthusiast. Ready to dive in?",
-    about: "Here's where you can learn about Arul's background, passion for web development, and his journey as a frontend developer. Get to know the person behind the code!",
-    skills: "Discover Arul's technical expertise! He's skilled in Python, Web Development (HTML, CSS, JavaScript), SQL, and Git/GitHub. His programming skills help him solve complex problems with ease!",
-    projects: "Check out Arul's impressive portfolio of projects! From sign language recognition systems to AI assistants and weather apps - see his creativity and technical skills in action!",
-    contact: "Ready to connect? This is where you can reach out to Arul! Find his email, phone number, and LinkedIn profile. He's always excited to discuss new opportunities and collaborations!"
+    home: "🚀 Explore Arul's portfolio to discover his journey, skills, and projects as a frontend developer and tech enthusiast! 💻✨",
+    about: "👨‍💻 Discover Arul's background, passion for web development, and journey as a frontend developer — get to know the person behind the code! 💡💻",
+    skills: "🛠️ Discover Arul's technical expertise in Python, Web Development (HTML, CSS, JavaScript), SQL, and Git/GitHub — solving complex problems with ease! 💡👨‍💻",
+    projects: "🚀 Check out Arul's impressive projects — from sign language recognition systems to AI assistants and weather apps, showcasing his creativity and technical skills! 💡🧠💻",
+    contact: "📬 Ready to connect? Reach out to Arul via email, phone, or LinkedIn — he's excited to explore new opportunities and collaborations! 🤝💼"
   }
 
   // Typing effect - exactly like the Home section
