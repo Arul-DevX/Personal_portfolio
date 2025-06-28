@@ -165,6 +165,48 @@ a {
     color: #509ff4; 
 }
 
+/* Menu Icon Container and Bubble */
+.menu-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bubble {
+  position: absolute;
+  bottom: -45px;
+  right: 0;
+  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.3);
+  animation: bubbleAppear 0.3s ease-out forwards;
+  z-index: 1001;
+}
+
+.menu-bubble::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 15px;
+  border: 6px solid transparent;
+  border-bottom-color: #509ff4;
+}
+
+@keyframes bubbleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Welcome Section */
 
 .container {
@@ -329,9 +371,19 @@ footer {
 .menuicon {
     width: 25px;
     display: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menuicon:hover {
+    transform: scale(1.1);
 }
 
 @media only screen and (max-width: 1050px) {
+    .menuicon {
+      display: block;
+    }
+    
     nav ul {
       position: absolute;
       top: 70px;
@@ -352,10 +404,6 @@ footer {
       padding: 10px 0; /* Adjust vertical padding for spacing */
       text-decoration: none; /* Remove underline if desired */
     }
-    .menuicon {
-      cursor: pointer;
-      display: block;
-    }
     img{
       width:300px;
     }
@@ -372,6 +420,14 @@ footer {
     }
     #dbtn{
       font-size: 10px;
+    }
+    
+    /* Adjust bubble position for mobile */
+    .menu-bubble {
+      bottom: -40px;
+      right: -10px;
+      font-size: 11px;
+      padding: 6px 10px;
     }
 }
 
