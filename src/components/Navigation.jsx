@@ -201,7 +201,7 @@ const Navigation = () => {
         <img 
           src="/Images/main-menu.png" 
           alt="menu icon" 
-          className="menuicon" 
+          className={`menuicon ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
         /> 
       </div>
