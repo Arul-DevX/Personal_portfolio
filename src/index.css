@@ -323,11 +323,24 @@ a {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  /* Fix home section to prevent text hiding behind navbar */
+  /* Fix home section to prevent text hiding behind navbar - INCREASED PADDING */
   .container#home,
   .container:first-of-type {
-    padding-top: 100px; /* Add padding to push content below navbar */
-    height: calc(100vh - 20px); /* Adjust height to account for padding */
+    padding-top: 140px !important; /* Increased from 100px to 140px */
+    height: calc(100vh - 40px) !important; /* Adjusted height accordingly */
+    min-height: calc(100vh - 40px) !important; /* Ensure minimum height */
+  }
+  
+  /* Additional specific targeting for home container */
+  #home {
+    padding-top: 140px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Ensure home row has proper spacing */
+  #home .row {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
   }
   
   .row {
