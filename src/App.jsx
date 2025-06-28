@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigation from './components/Navigation'
+import FloatingBalls from './components/FloatingBalls'
 import Home from './components/Home'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -10,6 +11,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App">
+      <FloatingBalls />
       <Navigation />
       <Home />
       <About />

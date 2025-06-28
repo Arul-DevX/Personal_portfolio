@@ -16,6 +16,7 @@ body {
     font-weight: 400;
     font-style: normal;
     background-image: linear-gradient(to left, #282828 0%, black 100%);
+    overflow-x: hidden; /* Prevent horizontal scroll from floating balls */
 }
 
 /* Enhanced Scroll animations that trigger every time */
@@ -83,6 +84,15 @@ body {
 
 .animate-on-scroll.fade-in-right.animate {
   animation-name: fadeInRight;
+}
+
+/* Floating Balls */
+.floating-ball {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 /* Navigation Bar */
@@ -154,6 +164,7 @@ a {
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  margin: 0; /* Remove any margin */
 }
 
 .row {
@@ -210,6 +221,15 @@ a {
   animation: blink 1s steps(1) infinite;
 }
 
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
 /*footer*/
 
 footer {
@@ -217,6 +237,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px 0;
+  margin: 0; /* Remove any margin */
 }
 
 /* Button underline hover Effect */
