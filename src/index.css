@@ -438,6 +438,35 @@ footer p {
   border-color: rgba(80, 159, 244, 0.3);
 }
 
+/* CONTACT ME SECTION - CLEAN LINKS WITHOUT BOX BORDERS */
+#contact .btn {
+  background: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #509ff4 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(80, 159, 244, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+#contact .btn::after {
+  display: none !important;
+}
+
+#contact .btn:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: #86bcf2 !important;
+  text-decoration-color: #86bcf2 !important;
+  text-shadow: 0 0 8px rgba(134, 188, 242, 0.4) !important;
+}
+
 #dbtn{
   background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
   color: #fff;
