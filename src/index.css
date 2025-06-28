@@ -12,6 +12,117 @@ html{
   overflow-x: hidden;
 }
 
+/* ===== CUSTOM CURSOR DESIGN ===== */
+* {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #509ff4 0%, #86bcf2 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 
+    0 0 10px rgba(80, 159, 244, 0.6),
+    0 0 20px rgba(80, 159, 244, 0.4),
+    0 0 30px rgba(80, 159, 244, 0.2);
+  opacity: 0.8;
+}
+
+/* Cursor Trail */
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: rgba(80, 159, 244, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 8px rgba(80, 159, 244, 0.4);
+  opacity: 0.6;
+}
+
+/* Hover Effects for Interactive Elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor,
+.click:hover ~ .custom-cursor,
+.project-link:hover ~ .custom-cursor,
+.menuicon:hover ~ .custom-cursor {
+  transform: scale(1.5);
+  background: radial-gradient(circle, #86bcf2 0%, #509ff4 50%, rgba(80, 159, 244, 0.3) 70%);
+  box-shadow: 
+    0 0 15px rgba(134, 188, 242, 0.8),
+    0 0 25px rgba(134, 188, 242, 0.6),
+    0 0 35px rgba(134, 188, 242, 0.4);
+  opacity: 1;
+}
+
+/* Text Selection Cursor */
+p:hover ~ .custom-cursor,
+h1:hover ~ .custom-cursor,
+h2:hover ~ .custom-cursor,
+h3:hover ~ .custom-cursor {
+  transform: scale(0.8);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(80, 159, 244, 0.4) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.6;
+}
+
+/* Loading/Waiting Cursor */
+.loading-cursor {
+  animation: pulse-cursor 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-cursor {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Cursor for form inputs */
+input:hover ~ .custom-cursor,
+textarea:hover ~ .custom-cursor {
+  transform: scale(0.6);
+  background: linear-gradient(45deg, #509ff4, #86bcf2);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .cursor-trail {
+    display: none !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* ===== END CUSTOM CURSOR ===== */
+
 body {
     font-family: 'Poppins', sans-serif;
     font-optical-sizing: auto;
@@ -253,6 +364,35 @@ a {
     text-shadow: 0 0 3px rgba(80, 159, 244, 0.2);
 }
 
+/* CONTACT ME SECTION - CLEAN LINKS WITHOUT BOX BORDERS */
+#contact .btn {
+  background: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #509ff4 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(80, 159, 244, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+#contact .btn::after {
+  display: none !important;
+}
+
+#contact .btn:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: #86bcf2 !important;
+  text-decoration-color: #86bcf2 !important;
+  text-shadow: 0 0 8px rgba(134, 188, 242, 0.4) !important;
+}
+
 /* Container - Responsive Layout */
 .container {
   display: flex;
@@ -436,35 +576,6 @@ footer p {
   background: linear-gradient(135deg, rgba(80, 159, 244, 0.08) 0%, rgba(80, 159, 244, 0.15) 100%);
   box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
   border-color: rgba(80, 159, 244, 0.3);
-}
-
-/* CONTACT ME SECTION - CLEAN LINKS WITHOUT BOX BORDERS */
-#contact .btn {
-  background: none !important;
-  border: none !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  color: #509ff4 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px !important;
-  text-decoration-color: rgba(80, 159, 244, 0.5) !important;
-  transition: all 0.3s ease !important;
-}
-
-#contact .btn::after {
-  display: none !important;
-}
-
-#contact .btn:hover {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-  color: #86bcf2 !important;
-  text-decoration-color: #86bcf2 !important;
-  text-shadow: 0 0 8px rgba(134, 188, 242, 0.4) !important;
 }
 
 #dbtn{
@@ -1180,5 +1291,10 @@ section {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+  
+  .custom-cursor,
+  .cursor-trail {
+    display: none !important;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Navigation from './components/Navigation'
 import FloatingBalls from './components/FloatingBalls'
 import ParallaxBackground from './components/ParallaxBackground'
+import CursorManager from './components/CursorManager'
 import Home from './components/Home'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -13,6 +14,7 @@ import './components/ParallaxBackground.css'
 function App() {
   return (
     <div className="App">
+      <CursorManager />
       <ParallaxBackground />
       <FloatingBalls />
       <Navigation />
