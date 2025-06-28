@@ -165,16 +165,16 @@ a {
     color: #509ff4; 
 }
 
-/* Welcome Section */
+/* Sections - Remove all spacing */
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  height: 100vh; /* Fixed height instead of min-height */
+  padding: 0; /* Remove all padding */
+  margin: 0; /* Remove all margin */
   box-sizing: border-box;
-  margin: 0; /* Remove any margin */
 }
 
 .row {
@@ -183,9 +183,10 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   color: #fff;
-  max-width: 1200px; /* Adjust this value as needed */
+  max-width: 1200px;
   width: 100%;
-  padding: 0px; /* Adds space inside the row */
+  padding: 0; /* Remove all padding */
+  margin: 0; /* Remove all margin */
   box-sizing: border-box;
   text-align: center;
 }
@@ -193,7 +194,8 @@ a {
 .col1 {
   flex: 1;
   min-width: 300px; 
-  padding: 20px;
+  padding: 10px; /* Minimal padding only for content spacing */
+  margin: 0; /* Remove all margin */
 }
 
 .col1 h2 {
