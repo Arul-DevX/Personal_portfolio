@@ -507,46 +507,7 @@ footer p {
   box-shadow: 0 6px 20px rgba(80, 159, 244, 0.3);
 }
 
-/* Menu Icon Container - Fixed to prevent underline inheritance */
-.menu-icon-container {
-  position: relative;
-  display: inline-block;
-  padding: 8px;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.05) 100%);
-  border: 1px solid rgba(80, 159, 244, 0.1);
-  backdrop-filter: blur(8px);
-}
-
-/* Menu Icon Container Hover Effect - Same as full-screen menu buttons */
-.menu-icon-container::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  border-radius: 8px;
-  height: 2px; 
-  background: linear-gradient(90deg, #509ff4, #86bcf2);
-  transform: scaleX(0);
-  transform-origin: center; 
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
-}
-
-.menu-icon-container:hover::after {
-  transform: scaleX(1);
-  transform-origin: center; 
-}
-
-.menu-icon-container:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(80, 159, 244, 0.08) 0%, rgba(80, 159, 244, 0.15) 100%);
-  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
-  border-color: rgba(80, 159, 244, 0.3);
-}
-
+/* Clean Menu Icon - NO underlines or lines */
 .menuicon {
     width: 25px;
     display: none;
@@ -555,18 +516,48 @@ footer p {
     filter: drop-shadow(0 1px 2px rgba(80, 159, 244, 0.2));
     position: relative;
     z-index: 1001;
+    /* Ensure no text decoration or underlines */
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    background: none !important;
 }
 
-/* Enhanced menu icon hover effect - no underline, just icon effects */
+/* Clean hover effect - NO underlines */
 .menuicon:hover {
     transform: scale(1.05);
     filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.4)) brightness(1.1);
+    /* Explicitly prevent any underlines */
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* Active state when menu is open */
+/* Active state when menu is open - NO underlines */
 .menuicon.active {
     transform: scale(1.02) rotate(90deg);
     filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.5)) brightness(1.2);
+    /* Explicitly prevent any underlines */
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Ensure the parent div also has no underlines */
+.navibar > div:last-child {
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    background: none !important;
+}
+
+/* Remove any pseudo-elements that might create lines */
+.menuicon::before,
+.menuicon::after {
+    display: none !important;
+}
+
+.navibar > div:last-child::before,
+.navibar > div:last-child::after {
+    display: none !important;
 }
 
 @media only screen and (max-width: 1050px) {

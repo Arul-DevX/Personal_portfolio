@@ -197,7 +197,7 @@ const Navigation = () => {
           </li>
         </ul>
       </nav>
-      <div className="menu-icon-container">
+      <div>
         <img 
           src="/Images/main-menu.png" 
           alt="menu icon" 
