@@ -20,16 +20,35 @@ const Navigation = () => {
       // Check if page is scrolled for navbar background
       setIsScrolled(window.scrollY > 50)
       
+      // Get current scroll position
+      const scrollPosition = window.scrollY + 150 // Offset for navbar height
+      
+      // Find which section we're currently in
+      let currentSection = 'home' // Default to home
+      
       sections.forEach(id => {
         const section = document.getElementById(id)
         if (section) {
-          const inView = window.scrollY >= section.offsetTop - 100 && 
-                        window.scrollY < section.offsetTop + section.offsetHeight
-          if (inView) {
-            setActiveSection(id)
+          const sectionTop = section.offsetTop
+          const sectionBottom = sectionTop + section.offsetHeight
+          
+          // Check if scroll position is within this section
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = id
           }
         }
       })
+      
+      // Special handling for the last section (contact)
+      const contactSection = document.getElementById('contact')
+      if (contactSection) {
+        const contactTop = contactSection.offsetTop
+        if (scrollPosition >= contactTop) {
+          currentSection = 'contact'
+        }
+      }
+      
+      setActiveSection(currentSection)
 
       // Enhanced scroll animations - trigger every time elements come into view
       const animateElements = document.querySelectorAll('.animate-on-scroll')
