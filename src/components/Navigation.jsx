@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeSections, setActiveSections] = useState(['home']) // Changed to array
+  const [activeSections, setActiveSections] = useState(['home'])
   const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleMenu = () => {
@@ -76,22 +76,31 @@ const Navigation = () => {
       
       setActiveSections(visibleSections)
 
-      // Enhanced scroll animations - trigger every time elements come into view
+      // Enhanced scroll animations with smooth hide/show
       const animateElements = document.querySelectorAll('.animate-on-scroll')
       animateElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top
         const elementBottom = element.getBoundingClientRect().bottom
-        const elementVisible = 150
+        const elementVisible = 100
         
-        // Check if element is in viewport
+        // Check if element is in viewport with more generous bounds
         const isInViewport = elementTop < window.innerHeight - elementVisible && elementBottom > elementVisible
         
         if (isInViewport) {
-          // Add animation class
+          // Add animation class and remove hide class
           element.classList.add('animate')
+          element.classList.remove('hide')
         } else {
-          // Remove animation class when out of view so it can animate again
+          // Add hide class and remove animate class when out of view
           element.classList.remove('animate')
+          element.classList.add('hide')
+          
+          // Reset to initial state after hide animation
+          setTimeout(() => {
+            if (!element.classList.contains('animate')) {
+              element.classList.remove('hide')
+            }
+          }, 800) // Match hide animation duration
         }
       })
     }
