@@ -4,16 +4,9 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [showBubble, setShowBubble] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
-    // Show bubble when menu is opened
-    if (!isMenuOpen) {
-      setShowBubble(true)
-    } else {
-      setShowBubble(false)
-    }
   }
 
   const handleDownload = () => {
@@ -115,7 +108,7 @@ const Navigation = () => {
               Contact
             </a>
           </li>
-          <li className="download-cv-container">
+          <li>
             <a 
               href="/Arul's Resume.pdf" 
               download 
@@ -124,15 +117,10 @@ const Navigation = () => {
             >
               Download CV
             </a>
-            {showBubble && isMenuOpen && (
-              <div className="cv-bubble">
-                Click to download your CV!
-              </div>
-            )}
           </li>
         </ul>
       </nav>
-      <div className="menu-icon-container">
+      <div>
         <img 
           src="/Images/main-menu.png" 
           alt="menu icon" 
