@@ -172,7 +172,7 @@ body {
 .project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
 .project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.45s; }
 
-/* Updated Navigation Bar with reduced light effects */
+/* Navigation Bar - Same color always */
 .navibar {
     display: flex;
     align-items: center;
@@ -190,11 +190,12 @@ body {
     box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
 }
 
+/* No change when scrolled - same background color */
 .navibar.scrolled {
-    background: linear-gradient(135deg, rgba(80, 159, 244, 0.8) 0%, rgba(134, 188, 242, 0.7) 100%);
-    backdrop-filter: blur(15px) saturate(180%);
-    border-bottom-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 30px rgba(80, 159, 244, 0.15);
+    background: linear-gradient(135deg, rgba(80, 159, 244, 0.05) 0%, rgba(134, 188, 242, 0.03) 100%);
+    backdrop-filter: blur(10px) saturate(150%);
+    border-bottom: 1px solid rgba(80, 159, 244, 0.1);
+    box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
 }
 
 .logo {
@@ -370,15 +371,15 @@ a {
   }
 }
 
-/* Updated Footer with reduced light effects */
+/* Footer with darker colors */
 footer {
-  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 50%, #134e7f 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #fff;
   text-align: center;
   padding: 30px 0;
   margin: 0;
-  box-shadow: 0 -4px 20px rgba(80, 159, 244, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -390,7 +391,7 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
   opacity: 0.3;
   z-index: 1;
 }
