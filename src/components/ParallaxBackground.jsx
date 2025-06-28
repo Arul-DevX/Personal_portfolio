@@ -61,3 +61,5 @@ const ParallaxBackground = () => {
     </div>
   )
 }
+
+export default ParallaxBackground

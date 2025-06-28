@@ -7,3 +7,5 @@ const ThreeDCard = ({ children, className = '' }) => {
     </div>
   )
 }
+
+export default ThreeDCard
