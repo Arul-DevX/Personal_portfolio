@@ -165,17 +165,23 @@ a {
     color: #509ff4; 
 }
 
-/* Menu Icon Container and Bubble */
+/* Menu Icon Container */
 .menu-icon-container {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.menu-bubble {
+/* Download CV Container and Bubble */
+.download-cv-container {
+  position: relative;
+}
+
+.cv-bubble {
   position: absolute;
-  bottom: -45px;
-  right: 0;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
   color: white;
   padding: 8px 12px;
@@ -183,31 +189,39 @@ a {
   font-size: 12px;
   white-space: nowrap;
   box-shadow: 0 4px 15px rgba(80, 159, 244, 0.3);
-  z-index: 1001;
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  z-index: 1002;
+  margin-top: 5px;
+  animation: bubbleAppear 0.3s ease-out forwards, bubblePulse 2s ease-in-out infinite 0.3s;
 }
 
-.menu-bubble.permanent {
-  animation: bubblePulse 2s ease-in-out infinite;
-}
-
-.menu-bubble::before {
+.cv-bubble::before {
   content: '';
   position: absolute;
   top: -6px;
-  right: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   border: 6px solid transparent;
   border-bottom-color: #509ff4;
 }
 
+@keyframes bubbleAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
 @keyframes bubblePulse {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
     box-shadow: 0 4px 15px rgba(80, 159, 244, 0.3);
   }
   50% {
-    transform: translateY(-3px) scale(1.05);
+    transform: translateX(-50%) translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(80, 159, 244, 0.5);
   }
 }
@@ -427,12 +441,10 @@ footer {
       font-size: 10px;
     }
     
-    /* Adjust bubble position for mobile */
-    .menu-bubble {
-      bottom: -40px;
-      right: -10px;
-      font-size: 11px;
-      padding: 6px 10px;
+    /* Adjust bubble for mobile */
+    .cv-bubble {
+      font-size: 10px;
+      padding: 6px 8px;
     }
 }
 
