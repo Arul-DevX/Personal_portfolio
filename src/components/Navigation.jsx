@@ -4,7 +4,6 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [showMenuBubble, setShowMenuBubble] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -12,14 +11,6 @@ const Navigation = () => {
 
   const handleDownload = () => {
     alert("Your download is starting!")
-  }
-
-  const handleMenuIconHover = () => {
-    setShowMenuBubble(true)
-  }
-
-  const handleMenuIconLeave = () => {
-    setShowMenuBubble(false)
   }
 
   useEffect(() => {
@@ -130,18 +121,14 @@ const Navigation = () => {
         </ul>
       </nav>
       <div className="menu-icon-container">
-        {showMenuBubble && (
-          <div className="menu-bubble">
-            Download CV
-          </div>
-        )}
+        <div className="menu-bubble permanent">
+          Download CV
+        </div>
         <img 
           src="/Images/main-menu.png" 
           alt="menu icon" 
           className="menuicon" 
           onClick={toggleMenu}
-          onMouseEnter={handleMenuIconHover}
-          onMouseLeave={handleMenuIconLeave}
         /> 
       </div>
     </div>
