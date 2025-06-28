@@ -878,7 +878,7 @@ section {
   }
 }
 
-/* Mobile Menu Responsive Design */
+/* Mobile Menu Responsive Design - FIXED DROPDOWN LINE ISSUE */
 @media only screen and (max-width: 1050px) {
     .menuicon {
       display: block;
@@ -898,6 +898,31 @@ section {
       border: 1px solid rgba(255, 255, 255, 0.25);
       box-shadow: 0 8px 32px rgba(80, 159, 244, 0.15);
       box-sizing: border-box;
+      /* CRITICAL: Remove all borders and lines */
+      border-top: none !important;
+      border-bottom: none !important;
+      outline: none !important;
+    }
+    
+    /* CRITICAL: Remove any pseudo-elements that create lines */
+    nav ul::before,
+    nav ul::after {
+      display: none !important;
+      content: none !important;
+    }
+    
+    /* CRITICAL: Ensure nav container has no lines */
+    nav {
+      border: none !important;
+      outline: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
+    }
+    
+    nav::before,
+    nav::after {
+      display: none !important;
+      content: none !important;
     }
     
     nav ul li {
@@ -908,6 +933,18 @@ section {
       margin: 8px 12px;
       border-radius: 12px;
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      /* CRITICAL: Remove all borders and lines from list items */
+      border: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
+      outline: none !important;
+    }
+    
+    /* CRITICAL: Remove any pseudo-elements from list items */
+    nav ul li::before,
+    nav ul li::after {
+      display: none !important;
+      content: none !important;
     }
     
     /* Apply EXACT same hover effect as full-screen menu buttons */
@@ -929,6 +966,16 @@ section {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      /* CRITICAL: Remove all top/bottom borders and lines */
+      border-top: 1px solid rgba(80, 159, 244, 0.15) !important;
+      border-bottom: 1px solid rgba(80, 159, 244, 0.15) !important;
+      outline: none !important;
+    }
+    
+    /* CRITICAL: Remove any pseudo-elements from anchor tags */
+    nav ul li a::before {
+      display: none !important;
+      content: none !important;
     }
     
     /* EXACT same underline effect as full-screen menu */
@@ -960,6 +1007,9 @@ section {
       border-color: rgba(80, 159, 244, 0.3);
       color: #fff;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.3);
+      /* CRITICAL: Maintain border styling on hover */
+      border-top: 1px solid rgba(80, 159, 244, 0.3) !important;
+      border-bottom: 1px solid rgba(80, 159, 244, 0.3) !important;
     }
     
     /* Active menu item in mobile with same styling as desktop */
@@ -970,6 +1020,9 @@ section {
       box-shadow: 0 2px 10px rgba(80, 159, 244, 0.1);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      /* CRITICAL: Maintain border styling for active state */
+      border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
     
     /* Special styling for Download CV button - same as desktop */
@@ -978,8 +1031,11 @@ section {
       color: #fff;
       border-radius: 8px;
       padding: 12px 16px;
-      border: none;
+      border: none !important;
       box-shadow: 0 3px 10px rgba(80, 159, 244, 0.2);
+      /* CRITICAL: No borders for download button */
+      border-top: none !important;
+      border-bottom: none !important;
     }
     
     nav ul li #dbtn:hover {
@@ -987,6 +1043,9 @@ section {
       color: #333;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(80, 159, 244, 0.25);
+      /* CRITICAL: No borders on hover for download button */
+      border-top: none !important;
+      border-bottom: none !important;
     }
     
     /* Remove the old hover effects that were different */
@@ -994,13 +1053,9 @@ section {
       background: none;
       transform: none;
       box-shadow: none;
-      border: none;
-    }
-    
-    /* Remove old pseudo-elements */
-    nav ul li::before,
-    nav ul li::after {
-      display: none;
+      border: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
     }
 }
 
