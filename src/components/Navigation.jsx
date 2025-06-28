@@ -35,15 +35,15 @@ const Navigation = () => {
           const sectionTop = section.offsetTop
           const sectionBottom = sectionTop + section.offsetHeight
           
-          // Check if section is at least 40% visible in viewport (increased threshold)
+          // Check if section is at least 30% visible in viewport
           const visibleTop = Math.max(viewportTop, sectionTop)
           const visibleBottom = Math.min(viewportBottom, sectionBottom)
           const visibleHeight = Math.max(0, visibleBottom - visibleTop)
           const sectionHeight = sectionBottom - sectionTop
           const visibilityPercentage = visibleHeight / sectionHeight
           
-          // If section is at least 40% visible, consider it active
-          if (visibilityPercentage >= 0.4) {
+          // If section is at least 30% visible, consider it active
+          if (visibilityPercentage >= 0.3) {
             visibleSections.push(id)
           }
         }
@@ -76,58 +76,40 @@ const Navigation = () => {
       
       setActiveSections(visibleSections)
 
-      // Optimized scroll animations with better performance
+      // Enhanced scroll animations with smooth hide/show
       const animateElements = document.querySelectorAll('.animate-on-scroll')
       animateElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top
         const elementBottom = element.getBoundingClientRect().bottom
-        const elementVisible = 120 // Increased threshold for better visibility
+        const elementVisible = 100
         
-        // More generous viewport bounds to reduce flickering
+        // Check if element is in viewport with more generous bounds
         const isInViewport = elementTop < window.innerHeight - elementVisible && elementBottom > elementVisible
         
         if (isInViewport) {
           // Add animation class and remove hide class
-          if (!element.classList.contains('animate')) {
-            element.classList.add('animate')
-            element.classList.remove('hide')
-          }
+          element.classList.add('animate')
+          element.classList.remove('hide')
         } else {
-          // Only hide if element is significantly out of view to prevent flickering
-          const isSignificantlyOutOfView = elementTop > window.innerHeight + 100 || elementBottom < -100
+          // Add hide class and remove animate class when out of view
+          element.classList.remove('animate')
+          element.classList.add('hide')
           
-          if (isSignificantlyOutOfView && element.classList.contains('animate')) {
-            element.classList.remove('animate')
-            element.classList.add('hide')
-            
-            // Reset to initial state after hide animation
-            setTimeout(() => {
-              if (!element.classList.contains('animate')) {
-                element.classList.remove('hide')
-              }
-            }, 500) // Reduced timeout to match shorter hide animation
-          }
+          // Reset to initial state after hide animation
+          setTimeout(() => {
+            if (!element.classList.contains('animate')) {
+              element.classList.remove('hide')
+            }
+          }, 800) // Match hide animation duration
         }
       })
     }
 
-    // Throttle scroll events for better performance
-    let ticking = false
-    const throttledScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll()
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-
-    window.addEventListener('scroll', throttledScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll)
     // Initial check
     handleScroll()
     
-    return () => window.removeEventListener('scroll', throttledScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   // Helper function to check if a section is active
@@ -201,7 +183,7 @@ const Navigation = () => {
         <img 
           src="/Images/main-menu.png" 
           alt="menu icon" 
-          className={`menuicon ${isMenuOpen ? 'active' : ''}`}
+          className="menuicon" 
           onClick={toggleMenu}
         /> 
       </div>

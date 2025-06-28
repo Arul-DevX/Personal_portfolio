@@ -17,10 +17,10 @@ const FloatingBalls = () => {
         id: i,
         x: Math.random() * (window.innerWidth - 30),
         y: Math.random() * (window.innerHeight - 30),
-        vx: (Math.random() - 0.5) * 1.2, // Increased speed from 0.6 to 1.2
-        vy: (Math.random() - 0.5) * 1.2,
-        baseVx: (Math.random() - 0.5) * 1.2,
-        baseVy: (Math.random() - 0.5) * 1.2,
+        vx: (Math.random() - 0.5) * 0.6, // Reduced speed
+        vy: (Math.random() - 0.5) * 0.6,
+        baseVx: (Math.random() - 0.5) * 0.6,
+        baseVy: (Math.random() - 0.5) * 0.6,
         size: Math.random() * 6 + 4, // Smaller size
         opacity: Math.random() * 0.3 + 0.2, // Reduced opacity
         bounceIntensity: Math.random() * 0.15 + 0.4
@@ -40,7 +40,7 @@ const FloatingBalls = () => {
       // Adjust speed multiplier based on scroll velocity
       const maxScrollSpeed = 15
       const speedMultiplier = Math.min(scrollVelocity.current / maxScrollSpeed, 1)
-      scrollSpeedRef.current = 1 + speedMultiplier * 2 // Increased base speed from 0.4 to 1
+      scrollSpeedRef.current = 0.4 + speedMultiplier * 1.5 // Reduced speed range
       
       lastScrollY.current = currentScrollY
     }
@@ -50,7 +50,7 @@ const FloatingBalls = () => {
       scrollVelocity.current *= 0.94
       if (scrollVelocity.current < 0.08) {
         scrollVelocity.current = 0
-        scrollSpeedRef.current = 1 // Increased from 0.25 to 1
+        scrollSpeedRef.current = 0.25
       }
     }
 
@@ -90,8 +90,8 @@ const FloatingBalls = () => {
             newVy += (Math.random() - 0.5) * 0.03
           }
 
-          // Limit velocity - increased max velocity
-          const maxVelocity = 2.0 // Increased from 1.2 to 2.0
+          // Limit velocity
+          const maxVelocity = 1.2
           newVx = Math.max(-maxVelocity, Math.min(maxVelocity, newVx))
           newVy = Math.max(-maxVelocity, Math.min(maxVelocity, newVy))
 
