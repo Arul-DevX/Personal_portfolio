@@ -30,7 +30,7 @@ const Projects = () => {
   ]
 
   return (
-    <div className="container" id="projects">
+    <div className="container projects-section" id="projects">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>

@@ -166,6 +166,13 @@ a {
   padding: 40px 0;
 }
 
+/* Projects section with additional spacing */
+.projects-section {
+  height: 100vh;
+  padding: 80px 0;
+  margin: 60px 0;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -212,6 +219,12 @@ a {
   
   .about-section {
     height: 90vh;
+  }
+  
+  .projects-section {
+    height: auto;
+    padding: 60px 0;
+    margin: 40px 0;
   }
 }
 
