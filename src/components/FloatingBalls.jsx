@@ -166,10 +166,10 @@ const FloatingBalls = () => {
             borderRadius: '50%',
             pointerEvents: 'none',
             zIndex: 1,
-            boxShadow: `0 0 ${ball.size * 1.5}px rgba(80, 159, 244, 0.6)`,
+            boxShadow: `0 0 ${ball.size * 1.2}px rgba(80, 159, 244, 0.4)`,
             opacity: ball.opacity,
             transition: 'opacity 0.3s ease',
-            filter: 'blur(0.5px)'
+            filter: 'blur(0.2px)' // Reduced blur from 0.5px to 0.2px
           }}
         />
       ))}
