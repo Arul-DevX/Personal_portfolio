@@ -172,6 +172,7 @@ body {
 .project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
 .project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.45s; }
 
+/* Updated Navigation Bar with new colors */
 .navibar {
     display: flex;
     align-items: center;
@@ -182,14 +183,18 @@ body {
     height: 80px;
     top: 0; 
     z-index: 1000; 
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    backdrop-filter: blur(15px) saturate(180%);
+    background: linear-gradient(135deg, rgba(80, 159, 244, 0.1) 0%, rgba(134, 188, 242, 0.05) 100%);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-bottom: 1px solid rgba(80, 159, 244, 0.2);
+    box-shadow: 0 8px 32px rgba(80, 159, 244, 0.1);
 }
 
 .navibar.scrolled {
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, rgba(80, 159, 244, 0.9) 0%, rgba(134, 188, 242, 0.8) 100%);
+    backdrop-filter: blur(25px) saturate(200%);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(80, 159, 244, 0.3);
 }
 
 .logo {
@@ -200,6 +205,7 @@ body {
 
 label{
   color: #509ff4;
+  text-shadow: 0 0 10px rgba(80, 159, 244, 0.5);
 }
 
 .logo label {
@@ -232,6 +238,7 @@ a {
     text-decoration: none;
     color: #509ff4;
     transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
 }
 
 .container {
@@ -282,19 +289,22 @@ a {
   line-height: 60px;
   margin: 0 0 25px;
   color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(80, 159, 244, 0.2);
 }
 
 .col1 p {
   color: #fff;
   line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .all_img {
-  filter: drop-shadow(10px 10px 20px #131314);
+  filter: drop-shadow(0px 8px 16px rgba(134, 188, 242, 0.3));
   max-width: 100%;
   height: auto;
   padding-left: 0px;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 10px;
 }
 
 /* Enhanced image animations */
@@ -348,6 +358,7 @@ a {
   font-size: 55px;
   color: #509ff4;
   animation: blink 1s steps(1) infinite;
+  text-shadow: 0 0 15px rgba(80, 159, 244, 0.6);
 }
 
 @keyframes blink {
@@ -359,11 +370,36 @@ a {
   }
 }
 
+/* Updated Footer with new colors */
 footer {
-  background: #333;
+  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 50%, #134e7f 100%);
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
+  margin: 0;
+  box-shadow: 0 -8px 32px rgba(80, 159, 244, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+footer p {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
 
@@ -373,6 +409,10 @@ footer {
   padding: 10px 20px; 
   display: inline-block;
   transition: all 0.3s ease;
+  border-radius: 8px;
+  background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.1) 100%);
+  border: 1px solid rgba(80, 159, 244, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .btn::after {
@@ -387,6 +427,7 @@ footer {
   transform: scaleX(0);
   transform-origin: center; 
   transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(80, 159, 244, 0.5);
 }
 
 .btn:hover::after {
@@ -396,6 +437,9 @@ footer {
 
 .btn:hover {
   transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(80, 159, 244, 0.1) 0%, rgba(80, 159, 244, 0.2) 100%);
+  box-shadow: 0 8px 25px rgba(80, 159, 244, 0.3);
+  border-color: rgba(80, 159, 244, 0.4);
 }
 
 #dbtn{
@@ -404,18 +448,22 @@ footer {
   border-radius: 8px;
   padding: 12px 24px;
   border: none;
+  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.3);
 }
 
 #dbtn:hover{
   background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
   color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(80, 159, 244, 0.4);
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(80, 159, 244, 0.2) 100%);
+  backdrop-filter: blur(15px);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(80, 159, 244, 0.2);
 }
 
 .click{
@@ -432,12 +480,30 @@ footer {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  box-shadow: 0 6px 20px rgba(80, 159, 244, 0.3);
+  overflow: hidden;
+}
+
+.click::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.click:hover::before {
+  left: 100%;
 }
 
 .click:hover {
   transform: translateY(-3px);
   background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
   color: #333;
+  box-shadow: 0 10px 30px rgba(80, 159, 244, 0.5);
 }
 
 .menuicon {
@@ -445,10 +511,12 @@ footer {
     display: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(80, 159, 244, 0.3));
 }
 
 .menuicon:hover {
     transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(80, 159, 244, 0.5));
 }
 
 @media only screen and (max-width: 1050px) {
@@ -460,7 +528,7 @@ footer {
       position: absolute;
       top: 70px;
       right: 0px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(80, 159, 244, 0.95) 0%, rgba(134, 188, 242, 0.9) 100%);
       width: 180px;
       overflow: hidden;
       max-height: 0px;
@@ -468,7 +536,7 @@ footer {
       border-radius: 12px;
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(80, 159, 244, 0.2);
     }
     
     nav ul li {
@@ -476,11 +544,17 @@ footer {
       text-align: center;
     }
     
+    nav ul li:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
     nav ul li a {
-      color: #555;
+      color: #fff;
       padding: 15px 0;
       text-decoration: none;
       display: block;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     img{
