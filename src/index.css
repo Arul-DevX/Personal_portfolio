@@ -85,105 +85,6 @@ body {
   animation-name: fadeInRight;
 }
 
-/* Ghost-container */
-
-.ghost-container {
-  position: fixed;
-  pointer-events: none;
-  animation: float 3s ease-in-out infinite;
-  z-index: 9999;
-  transition: all 0.2s ease;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(2deg); }
-  50% { transform: translateY(-15px) rotate(0deg); }
-  75% { transform: translateY(-5px) rotate(-2deg); }
-}
-
-#ghost-image {
-  width: 50px;
-  height: auto;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(80, 159, 244, 0.3));
-}
-
-#ghost-image:hover {
-  transform: scale(1.1);
-}
-
-.message-bubble {
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  color: #333;
-  padding: 15px 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  white-space: normal;
-  max-width: 400px;
-  width: 400px;
-  min-height: 50px;
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.5;
-  border: 2px solid rgba(80, 159, 244, 0.2);
-  backdrop-filter: blur(10px);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  
-  /* Bubble visibility */
-  opacity: 1;
-  visibility: visible;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.message-bubble::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 10px solid transparent;
-  border-top-color: #ffffff;
-}
-
-.message-bubble.show {
-  animation: bubbleAppear 0.3s ease-out forwards;
-}
-
-@keyframes bubbleAppear {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(10px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-5px) scale(1);
-  }
-}
-
-.typing-cursor {
-  color: #509ff4;
-  animation: blink 1s steps(1) infinite;
-  font-weight: bold;
-  font-size: 16px;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
-}
-
 /* Navigation Bar */
 
 .navibar {
@@ -440,19 +341,6 @@ footer {
     }
     #dbtn{
       font-size: 10px;
-    }
-}
-
-@media (max-width: 950px) and (max-height: 850px) {
-    .message-bubble {
-      width: 280px;
-      max-width: 280px;
-      font-size: 12px;
-      padding: 12px 15px;
-    }
-    
-    #ghost-image {
-      width: 40px;
     }
 }
 
