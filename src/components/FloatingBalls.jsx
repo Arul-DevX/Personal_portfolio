@@ -8,7 +8,7 @@ const FloatingBalls = () => {
   const scrollVelocity = useRef(0)
 
   useEffect(() => {
-    const numBalls = 12
+    const numBalls = 8 // Reduced from 12
     const initialBalls = []
 
     // Create balls with random properties
@@ -17,13 +17,13 @@ const FloatingBalls = () => {
         id: i,
         x: Math.random() * (window.innerWidth - 30),
         y: Math.random() * (window.innerHeight - 30),
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        baseVx: (Math.random() - 0.5) * 0.8,
-        baseVy: (Math.random() - 0.5) * 0.8,
-        size: Math.random() * 8 + 6,
-        opacity: Math.random() * 0.4 + 0.3,
-        bounceIntensity: Math.random() * 0.2 + 0.5
+        vx: (Math.random() - 0.5) * 0.6, // Reduced speed
+        vy: (Math.random() - 0.5) * 0.6,
+        baseVx: (Math.random() - 0.5) * 0.6,
+        baseVy: (Math.random() - 0.5) * 0.6,
+        size: Math.random() * 6 + 4, // Smaller size
+        opacity: Math.random() * 0.3 + 0.2, // Reduced opacity
+        bounceIntensity: Math.random() * 0.15 + 0.4
       })
     }
 
@@ -35,22 +35,22 @@ const FloatingBalls = () => {
       const deltaY = currentScrollY - lastScrollY.current
       
       // Calculate scroll velocity
-      scrollVelocity.current = scrollVelocity.current * 0.8 + Math.abs(deltaY) * 0.2
+      scrollVelocity.current = scrollVelocity.current * 0.8 + Math.abs(deltaY) * 0.15
       
       // Adjust speed multiplier based on scroll velocity
-      const maxScrollSpeed = 20
+      const maxScrollSpeed = 15
       const speedMultiplier = Math.min(scrollVelocity.current / maxScrollSpeed, 1)
-      scrollSpeedRef.current = 0.5 + speedMultiplier * 2 // Speed from 0.5x to 2.5x
+      scrollSpeedRef.current = 0.4 + speedMultiplier * 1.5 // Reduced speed range
       
       lastScrollY.current = currentScrollY
     }
 
     // Decay scroll velocity when not scrolling
     const decayScrollVelocity = () => {
-      scrollVelocity.current *= 0.92
-      if (scrollVelocity.current < 0.1) {
+      scrollVelocity.current *= 0.94
+      if (scrollVelocity.current < 0.08) {
         scrollVelocity.current = 0
-        scrollSpeedRef.current = 0.3
+        scrollSpeedRef.current = 0.25
       }
     }
 
@@ -85,13 +85,13 @@ const FloatingBalls = () => {
           }
 
           // Add some randomness
-          if (Math.random() < 0.0005) {
-            newVx += (Math.random() - 0.5) * 0.05
-            newVy += (Math.random() - 0.5) * 0.05
+          if (Math.random() < 0.0003) {
+            newVx += (Math.random() - 0.5) * 0.03
+            newVy += (Math.random() - 0.5) * 0.03
           }
 
           // Limit velocity
-          const maxVelocity = 1.5
+          const maxVelocity = 1.2
           newVx = Math.max(-maxVelocity, Math.min(maxVelocity, newVx))
           newVy = Math.max(-maxVelocity, Math.min(maxVelocity, newVy))
 
@@ -153,10 +153,10 @@ const FloatingBalls = () => {
             borderRadius: '50%',
             pointerEvents: 'none',
             zIndex: 1,
-            boxShadow: `0 0 ${ball.size * 1.2}px rgba(80, 159, 244, 0.4)`,
+            boxShadow: `0 0 ${ball.size * 0.8}px rgba(80, 159, 244, 0.2)`, // Reduced glow
             opacity: ball.opacity,
             transition: 'opacity 0.3s ease',
-            filter: 'blur(0.2px)'
+            filter: 'blur(0.1px)'
           }}
         />
       ))}
