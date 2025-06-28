@@ -21,12 +21,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Enhanced Scroll animations with smooth hide/show */
+/* Optimized scroll animations - reduced glitch effects */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(100px) scale(0.9);
-    filter: blur(5px);
+    transform: translateY(50px) scale(0.95);
+    filter: blur(2px);
   }
   to {
     opacity: 1;
@@ -38,12 +38,12 @@ body {
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-100px) scale(0.9) rotateY(-15deg);
-    filter: blur(5px);
+    transform: translateX(-50px) scale(0.95);
+    filter: blur(2px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1) rotateY(0deg);
+    transform: translateX(0) scale(1);
     filter: blur(0px);
   }
 }
@@ -51,12 +51,12 @@ body {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(100px) scale(0.9) rotateY(15deg);
-    filter: blur(5px);
+    transform: translateX(50px) scale(0.95);
+    filter: blur(2px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1) rotateY(0deg);
+    transform: translateX(0) scale(1);
     filter: blur(0px);
   }
 }
@@ -69,62 +69,62 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    filter: blur(3px);
+    transform: translateY(30px) scale(0.98);
+    filter: blur(1px);
   }
 }
 
 @keyframes fadeOutLeft {
   from {
     opacity: 1;
-    transform: translateX(0) scale(1) rotateY(0deg);
+    transform: translateX(0) scale(1);
     filter: blur(0px);
   }
   to {
     opacity: 0;
-    transform: translateX(-50px) scale(0.95) rotateY(-10deg);
-    filter: blur(3px);
+    transform: translateX(-30px) scale(0.98);
+    filter: blur(1px);
   }
 }
 
 @keyframes fadeOutRight {
   from {
     opacity: 1;
-    transform: translateX(0) scale(1) rotateY(0deg);
+    transform: translateX(0) scale(1);
     filter: blur(0px);
   }
   to {
     opacity: 0;
-    transform: translateX(50px) scale(0.95) rotateY(10deg);
-    filter: blur(3px);
+    transform: translateX(30px) scale(0.98);
+    filter: blur(1px);
   }
 }
 
-/* Base state for animated elements */
+/* Optimized base state for animated elements */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(100px) scale(0.9);
-  filter: blur(5px);
-  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity, filter;
+  transform: translateY(50px) scale(0.95);
+  filter: blur(2px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity;
 }
 
 .animate-on-scroll.fade-in-left {
-  transform: translateX(-100px) scale(0.9) rotateY(-15deg);
+  transform: translateX(-50px) scale(0.95);
 }
 
 .animate-on-scroll.fade-in-right {
-  transform: translateX(100px) scale(0.9) rotateY(15deg);
+  transform: translateX(50px) scale(0.95);
 }
 
-/* Animated state when element enters viewport */
+/* Smoother animated state when element enters viewport */
 .animate-on-scroll.animate {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1) rotateY(0deg);
+  transform: translateY(0) translateX(0) scale(1);
   filter: blur(0px);
-  animation-duration: 1.2s;
+  animation-duration: 0.8s;
   animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .animate-on-scroll.fade-in-up.animate {
@@ -139,12 +139,12 @@ body {
   animation-name: fadeInRight;
 }
 
-/* Hide animations when elements leave viewport */
+/* Smoother hide animations when elements leave viewport */
 .animate-on-scroll.hide {
   opacity: 0;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .animate-on-scroll.fade-in-up.hide {
@@ -159,18 +159,18 @@ body {
   animation-name: fadeOutRight;
 }
 
-/* Staggered animation delays for multiple elements */
+/* Reduced staggered animation delays */
 .animate-on-scroll:nth-child(1) { animation-delay: 0s; }
-.animate-on-scroll:nth-child(2) { animation-delay: 0.1s; }
-.animate-on-scroll:nth-child(3) { animation-delay: 0.2s; }
-.animate-on-scroll:nth-child(4) { animation-delay: 0.3s; }
-.animate-on-scroll:nth-child(5) { animation-delay: 0.4s; }
+.animate-on-scroll:nth-child(2) { animation-delay: 0.05s; }
+.animate-on-scroll:nth-child(3) { animation-delay: 0.1s; }
+.animate-on-scroll:nth-child(4) { animation-delay: 0.15s; }
+.animate-on-scroll:nth-child(5) { animation-delay: 0.2s; }
 
 /* Project items staggered animation */
 .project-item.animate-on-scroll:nth-child(1) { animation-delay: 0s; }
-.project-item.animate-on-scroll:nth-child(2) { animation-delay: 0.15s; }
-.project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
-.project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.45s; }
+.project-item.animate-on-scroll:nth-child(2) { animation-delay: 0.08s; }
+.project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.16s; }
+.project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.24s; }
 
 /* Navigation Bar - Same color always */
 .navibar {
@@ -308,17 +308,17 @@ a {
   border-radius: 10px;
 }
 
-/* Enhanced image animations */
+/* Optimized image animations */
 .all_img {
-  transform: scale(0.9);
-  opacity: 0.8;
+  transform: scale(0.95);
+  opacity: 0.9;
 }
 
 .animate.fade-in-left .all_img,
 .animate.fade-in-right .all_img {
   transform: scale(1);
   opacity: 1;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 /* Responsive design */
@@ -341,17 +341,17 @@ a {
     margin: 40px 0;
   }
   
-  /* Reduced animation intensity on mobile */
+  /* Further reduced animation intensity on mobile */
   .animate-on-scroll {
-    transform: translateY(50px) scale(0.95);
+    transform: translateY(30px) scale(0.97);
   }
   
   .animate-on-scroll.fade-in-left {
-    transform: translateX(-50px) scale(0.95);
+    transform: translateX(-30px) scale(0.97);
   }
   
   .animate-on-scroll.fade-in-right {
-    transform: translateX(50px) scale(0.95);
+    transform: translateX(30px) scale(0.97);
   }
 }
 
@@ -588,8 +588,8 @@ footer p {
 
 .project-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .project-item.animate {

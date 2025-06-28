@@ -35,15 +35,15 @@ const Navigation = () => {
           const sectionTop = section.offsetTop
           const sectionBottom = sectionTop + section.offsetHeight
           
-          // Check if section is at least 30% visible in viewport
+          // Check if section is at least 40% visible in viewport (increased threshold)
           const visibleTop = Math.max(viewportTop, sectionTop)
           const visibleBottom = Math.min(viewportBottom, sectionBottom)
           const visibleHeight = Math.max(0, visibleBottom - visibleTop)
           const sectionHeight = sectionBottom - sectionTop
           const visibilityPercentage = visibleHeight / sectionHeight
           
-          // If section is at least 30% visible, consider it active
-          if (visibilityPercentage >= 0.3) {
+          // If section is at least 40% visible, consider it active
+          if (visibilityPercentage >= 0.4) {
             visibleSections.push(id)
           }
         }
@@ -76,40 +76,58 @@ const Navigation = () => {
       
       setActiveSections(visibleSections)
 
-      // Enhanced scroll animations with smooth hide/show
+      // Optimized scroll animations with better performance
       const animateElements = document.querySelectorAll('.animate-on-scroll')
       animateElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top
         const elementBottom = element.getBoundingClientRect().bottom
-        const elementVisible = 100
+        const elementVisible = 120 // Increased threshold for better visibility
         
-        // Check if element is in viewport with more generous bounds
+        // More generous viewport bounds to reduce flickering
         const isInViewport = elementTop < window.innerHeight - elementVisible && elementBottom > elementVisible
         
         if (isInViewport) {
           // Add animation class and remove hide class
-          element.classList.add('animate')
-          element.classList.remove('hide')
+          if (!element.classList.contains('animate')) {
+            element.classList.add('animate')
+            element.classList.remove('hide')
+          }
         } else {
-          // Add hide class and remove animate class when out of view
-          element.classList.remove('animate')
-          element.classList.add('hide')
+          // Only hide if element is significantly out of view to prevent flickering
+          const isSignificantlyOutOfView = elementTop > window.innerHeight + 100 || elementBottom < -100
           
-          // Reset to initial state after hide animation
-          setTimeout(() => {
-            if (!element.classList.contains('animate')) {
-              element.classList.remove('hide')
-            }
-          }, 800) // Match hide animation duration
+          if (isSignificantlyOutOfView && element.classList.contains('animate')) {
+            element.classList.remove('animate')
+            element.classList.add('hide')
+            
+            // Reset to initial state after hide animation
+            setTimeout(() => {
+              if (!element.classList.contains('animate')) {
+                element.classList.remove('hide')
+              }
+            }, 500) // Reduced timeout to match shorter hide animation
+          }
         }
       })
     }
 
-    window.addEventListener('scroll', handleScroll)
+    // Throttle scroll events for better performance
+    let ticking = false
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
     // Initial check
     handleScroll()
     
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', throttledScroll)
   }, [])
 
   // Helper function to check if a section is active
