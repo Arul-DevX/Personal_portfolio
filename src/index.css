@@ -21,12 +21,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Optimized scroll animations - reduced glitch effects */
+/* Enhanced Scroll animations with smooth hide/show */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    filter: blur(2px);
+    transform: translateY(100px) scale(0.9);
+    filter: blur(5px);
   }
   to {
     opacity: 1;
@@ -38,12 +38,12 @@ body {
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px) scale(0.95);
-    filter: blur(2px);
+    transform: translateX(-100px) scale(0.9) rotateY(-15deg);
+    filter: blur(5px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1) rotateY(0deg);
     filter: blur(0px);
   }
 }
@@ -51,12 +51,12 @@ body {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(50px) scale(0.95);
-    filter: blur(2px);
+    transform: translateX(100px) scale(0.9) rotateY(15deg);
+    filter: blur(5px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1) rotateY(0deg);
     filter: blur(0px);
   }
 }
@@ -69,62 +69,62 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateY(30px) scale(0.98);
-    filter: blur(1px);
+    transform: translateY(50px) scale(0.95);
+    filter: blur(3px);
   }
 }
 
 @keyframes fadeOutLeft {
   from {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1) rotateY(0deg);
     filter: blur(0px);
   }
   to {
     opacity: 0;
-    transform: translateX(-30px) scale(0.98);
-    filter: blur(1px);
+    transform: translateX(-50px) scale(0.95) rotateY(-10deg);
+    filter: blur(3px);
   }
 }
 
 @keyframes fadeOutRight {
   from {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1) rotateY(0deg);
     filter: blur(0px);
   }
   to {
     opacity: 0;
-    transform: translateX(30px) scale(0.98);
-    filter: blur(1px);
+    transform: translateX(50px) scale(0.95) rotateY(10deg);
+    filter: blur(3px);
   }
 }
 
-/* Optimized base state for animated elements */
+/* Base state for animated elements */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(50px) scale(0.95);
-  filter: blur(2px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform, opacity;
+  transform: translateY(100px) scale(0.9);
+  filter: blur(5px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity, filter;
 }
 
 .animate-on-scroll.fade-in-left {
-  transform: translateX(-50px) scale(0.95);
+  transform: translateX(-100px) scale(0.9) rotateY(-15deg);
 }
 
 .animate-on-scroll.fade-in-right {
-  transform: translateX(50px) scale(0.95);
+  transform: translateX(100px) scale(0.9) rotateY(15deg);
 }
 
-/* Smoother animated state when element enters viewport */
+/* Animated state when element enters viewport */
 .animate-on-scroll.animate {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+  transform: translateY(0) translateX(0) scale(1) rotateY(0deg);
   filter: blur(0px);
-  animation-duration: 0.8s;
+  animation-duration: 1.2s;
   animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .animate-on-scroll.fade-in-up.animate {
@@ -139,12 +139,12 @@ body {
   animation-name: fadeInRight;
 }
 
-/* Smoother hide animations when elements leave viewport */
+/* Hide animations when elements leave viewport */
 .animate-on-scroll.hide {
   opacity: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
   animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .animate-on-scroll.fade-in-up.hide {
@@ -159,20 +159,20 @@ body {
   animation-name: fadeOutRight;
 }
 
-/* Reduced staggered animation delays */
+/* Staggered animation delays for multiple elements */
 .animate-on-scroll:nth-child(1) { animation-delay: 0s; }
-.animate-on-scroll:nth-child(2) { animation-delay: 0.05s; }
-.animate-on-scroll:nth-child(3) { animation-delay: 0.1s; }
-.animate-on-scroll:nth-child(4) { animation-delay: 0.15s; }
-.animate-on-scroll:nth-child(5) { animation-delay: 0.2s; }
+.animate-on-scroll:nth-child(2) { animation-delay: 0.1s; }
+.animate-on-scroll:nth-child(3) { animation-delay: 0.2s; }
+.animate-on-scroll:nth-child(4) { animation-delay: 0.3s; }
+.animate-on-scroll:nth-child(5) { animation-delay: 0.4s; }
 
 /* Project items staggered animation */
 .project-item.animate-on-scroll:nth-child(1) { animation-delay: 0s; }
-.project-item.animate-on-scroll:nth-child(2) { animation-delay: 0.08s; }
-.project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.16s; }
-.project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.24s; }
+.project-item.animate-on-scroll:nth-child(2) { animation-delay: 0.15s; }
+.project-item.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
+.project-item.animate-on-scroll:nth-child(4) { animation-delay: 0.45s; }
 
-/* Navigation Bar - Same color always */
+/* Updated Navigation Bar with reduced light effects */
 .navibar {
     display: flex;
     align-items: center;
@@ -190,12 +190,11 @@ body {
     box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
 }
 
-/* No change when scrolled - same background color */
 .navibar.scrolled {
-    background: linear-gradient(135deg, rgba(80, 159, 244, 0.05) 0%, rgba(134, 188, 242, 0.03) 100%);
-    backdrop-filter: blur(10px) saturate(150%);
-    border-bottom: 1px solid rgba(80, 159, 244, 0.1);
-    box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
+    background: linear-gradient(135deg, rgba(80, 159, 244, 0.8) 0%, rgba(134, 188, 242, 0.7) 100%);
+    backdrop-filter: blur(15px) saturate(180%);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(80, 159, 244, 0.15);
 }
 
 .logo {
@@ -308,74 +307,31 @@ a {
   border-radius: 10px;
 }
 
-/* Optimized image animations */
+/* Enhanced image animations */
 .all_img {
-  transform: scale(0.95);
-  opacity: 0.9;
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
 .animate.fade-in-left .all_img,
 .animate.fade-in-right .all_img {
   transform: scale(1);
   opacity: 1;
-  transition-delay: 0.2s;
+  transition-delay: 0.3s;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  /* Fix home section to prevent text hiding behind navbar - INCREASED PADDING */
-  .container#home,
-  .container:first-of-type {
-    padding-top: 140px !important; /* Increased from 100px to 140px */
-    height: calc(100vh - 40px) !important; /* Adjusted height accordingly */
-    min-height: calc(100vh - 40px) !important; /* Ensure minimum height */
-  }
-  
-  /* Additional specific targeting for home container */
-  #home {
-    padding-top: 140px !important;
-    margin-top: 0 !important;
-  }
-  
-  /* Ensure home row has proper spacing */
-  #home .row {
-    padding-top: 20px !important;
-    margin-top: 0 !important;
-  }
-  
   .row {
     flex-direction: column;
-    padding: 20px; /* Add horizontal padding for mobile */
   }
   
   .col1 {
     width: 100%;
-    padding: 15px; /* Increase padding for better spacing */
-  }
-  
-  /* Reduce heading size on mobile */
-  .col1 h2 {
-    font-size: 36px; /* Reduced from 50px */
-    line-height: 44px; /* Reduced from 60px */
-    margin: 0 0 20px; /* Reduced margin */
-  }
-  
-  /* Reduce image sizes significantly on mobile */
-  .all_img {
-    max-width: 280px; /* Significantly reduced from 100% */
-    width: 280px; /* Fixed width for consistency */
-    height: auto;
-  }
-  
-  /* Specific size for home screen image */
-  #home .all_img {
-    max-width: 250px; /* Even smaller for home screen */
-    width: 250px;
   }
   
   .about-section {
     height: 90vh;
-    padding: 60px 0; /* Increased padding */
   }
   
   .projects-section {
@@ -384,17 +340,17 @@ a {
     margin: 40px 0;
   }
   
-  /* Further reduced animation intensity on mobile */
+  /* Reduced animation intensity on mobile */
   .animate-on-scroll {
-    transform: translateY(30px) scale(0.97);
+    transform: translateY(50px) scale(0.95);
   }
   
   .animate-on-scroll.fade-in-left {
-    transform: translateX(-30px) scale(0.97);
+    transform: translateX(-50px) scale(0.95);
   }
   
   .animate-on-scroll.fade-in-right {
-    transform: translateX(30px) scale(0.97);
+    transform: translateX(50px) scale(0.95);
   }
 }
 
@@ -414,15 +370,15 @@ a {
   }
 }
 
-/* Footer with darker colors */
+/* Updated Footer with reduced light effects */
 footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 50%, #134e7f 100%);
   color: #fff;
   text-align: center;
   padding: 30px 0;
   margin: 0;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -4px 20px rgba(80, 159, 244, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -434,7 +390,7 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
   opacity: 0.3;
   z-index: 1;
 }
@@ -550,57 +506,17 @@ footer p {
   box-shadow: 0 6px 20px rgba(80, 159, 244, 0.3);
 }
 
-/* Clean Menu Icon - NO underlines or lines */
 .menuicon {
     width: 25px;
     display: none;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     filter: drop-shadow(0 1px 2px rgba(80, 159, 244, 0.2));
-    position: relative;
-    z-index: 1001;
-    /* Ensure no text decoration or underlines */
-    text-decoration: none !important;
-    border: none !important;
-    outline: none !important;
-    background: none !important;
 }
 
-/* Clean hover effect - NO underlines */
 .menuicon:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.4)) brightness(1.1);
-    /* Explicitly prevent any underlines */
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* Active state when menu is open - NO underlines */
-.menuicon.active {
-    transform: scale(1.02) rotate(90deg);
-    filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.5)) brightness(1.2);
-    /* Explicitly prevent any underlines */
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* Ensure the parent div also has no underlines */
-.navibar > div:last-child {
-    text-decoration: none !important;
-    border: none !important;
-    outline: none !important;
-    background: none !important;
-}
-
-/* Remove any pseudo-elements that might create lines */
-.menuicon::before,
-.menuicon::after {
-    display: none !important;
-}
-
-.navibar > div:last-child::before,
-.navibar > div:last-child::after {
-    display: none !important;
+    filter: drop-shadow(0 2px 4px rgba(80, 159, 244, 0.3));
 }
 
 @media only screen and (max-width: 1050px) {
@@ -612,142 +528,51 @@ footer p {
       position: absolute;
       top: 70px;
       right: 0px;
-      background: linear-gradient(135deg, rgba(80, 159, 244, 0.95) 0%, rgba(134, 188, 242, 0.9) 100%);
-      width: 200px;
+      background: linear-gradient(135deg, rgba(80, 159, 244, 0.9) 0%, rgba(134, 188, 242, 0.85) 100%);
+      width: 180px;
       overflow: hidden;
       max-height: 0px;
-      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border-radius: 16px;
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px rgba(80, 159, 244, 0.15);
+      transition: all 0.5s ease;
+      border-radius: 12px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(80, 159, 244, 0.1);
     }
     
     nav ul li {
       display: block;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      margin: 8px 12px;
-      border-radius: 12px;
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     
-    /* Apply EXACT same hover effect as full-screen menu buttons */
+    nav ul li:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
     nav ul li a {
       color: #fff;
-      padding: 12px 16px;
+      padding: 15px 0;
       text-decoration: none;
       display: block;
       font-weight: 500;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2;
-      border-radius: 8px;
-      background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.08) 100%);
-      border: 1px solid rgba(80, 159, 244, 0.15);
-      backdrop-filter: blur(8px);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
     
-    /* EXACT same underline effect as full-screen menu */
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      border-radius: 8px;
-      height: 3px; 
-      background: linear-gradient(90deg, #509ff4, #86bcf2);
-      transform: scaleX(0);
-      transform-origin: center; 
-      transition: transform 0.3s ease;
-      box-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+    img{
+      width:300px;
     }
-    
-    nav ul li a:hover::after {
-      transform: scaleX(1);
-      transform-origin: center; 
+    .logo img{
+      width:75px;
     }
-    
-    /* EXACT same hover state as full-screen menu */
-    nav ul li a:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, rgba(80, 159, 244, 0.08) 0%, rgba(80, 159, 244, 0.15) 100%);
-      box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
-      border-color: rgba(80, 159, 244, 0.3);
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Active menu item in mobile with same styling as desktop */
-    nav ul li a.active {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(80, 159, 244, 0.15) 100%);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 2px 10px rgba(80, 159, 244, 0.1);
-      font-weight: 600;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-    }
-    
-    /* Special styling for Download CV button - same as desktop */
-    nav ul li #dbtn {
-      background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
-      color: #fff;
-      border-radius: 8px;
-      padding: 12px 16px;
-      border: none;
-      box-shadow: 0 3px 10px rgba(80, 159, 244, 0.2);
-    }
-    
-    nav ul li #dbtn:hover {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-      color: #333;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(80, 159, 244, 0.25);
-    }
-    
-    /* Remove the old hover effects that were different */
-    nav ul li:hover {
-      background: none;
-      transform: none;
-      box-shadow: none;
-      border: none;
-    }
-    
-    /* Remove old pseudo-elements */
-    nav ul li::before,
-    nav ul li::after {
-      display: none;
-    }
-    
-    /* Mobile image sizes - significantly reduced */
-    img {
-      width: 280px; /* Reduced from 300px */
-    }
-    
-    .logo img {
-      width: 75px;
-    }
-    
     .logo label {
       font-size: 1em;
       margin: 0; 
     }
-    
-    .welcome_img {
+    .welcome_img{
       padding-top: 100px;
       padding-left: 0;
     }
-    
-    #dbtn {
+    #dbtn{
       font-size: 10px;
-    }
-    
-    /* Mobile cursor size adjustment */
-    .cursor {
-      font-size: 40px; /* Reduced from 55px for mobile */
     }
 }
 
@@ -762,8 +587,8 @@ footer p {
 
 .project-item {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-item.animate {
