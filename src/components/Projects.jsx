@@ -33,7 +33,7 @@ const Projects = () => {
     <div className="container" id="projects">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <ThreeDCard intensity={0.8}>
+          <ThreeDCard>
             <img 
               src="/Images/project_complete.png" 
               className="all_img"  
@@ -50,7 +50,6 @@ const Projects = () => {
                 key={index} 
                 className="project animate-on-scroll fade-in-up" 
                 style={{animationDelay: `${index * 0.1}s`}}
-                intensity={0.6}
               >
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>

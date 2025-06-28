@@ -51,7 +51,7 @@ const Home = () => {
           </button>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
-          <ThreeDCard intensity={1}>
+          <ThreeDCard>
             <img 
               className="all_img" 
               src="/Images/Arul.png" 

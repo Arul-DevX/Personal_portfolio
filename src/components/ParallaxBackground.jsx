@@ -12,13 +12,13 @@ const ParallaxBackground = () => {
       const parallax3 = scrolled * 0.1
 
       if (layersRef.current[0]) {
-        layersRef.current[0].style.transform = `translateY(${parallax}px) translateZ(-100px)`
+        layersRef.current[0].style.transform = `translateY(${parallax}px)`
       }
       if (layersRef.current[1]) {
-        layersRef.current[1].style.transform = `translateY(${parallax2}px) translateZ(-50px) rotateX(${scrolled * 0.01}deg)`
+        layersRef.current[1].style.transform = `translateY(${parallax2}px)`
       }
       if (layersRef.current[2]) {
-        layersRef.current[2].style.transform = `translateY(${parallax3}px) translateZ(-25px) rotateY(${scrolled * 0.005}deg)`
+        layersRef.current[2].style.transform = `translateY(${parallax3}px)`
       }
     }
 
@@ -61,5 +61,3 @@ const ParallaxBackground = () => {
     </div>
   )
 }
-
-export default ParallaxBackground

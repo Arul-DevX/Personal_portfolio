@@ -6,7 +6,7 @@ const Skills = () => {
     <div className="container" id="skills">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <ThreeDCard intensity={0.8}>
+          <ThreeDCard>
             <img 
               src="/Images/code.png" 
               className="all_img" 

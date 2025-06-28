@@ -6,7 +6,7 @@ const Contact = () => {
     <div className="container" id="contact">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <ThreeDCard intensity={0.8}>
+          <ThreeDCard>
             <img 
               src="/Images/contact_us.png" 
               className="all_img" 

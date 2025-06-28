@@ -6,7 +6,7 @@ const About = () => {
     <div className="container about-section" id="about">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <ThreeDCard intensity={0.8}>
+          <ThreeDCard>
             <img 
               src="/Images/profile.png" 
               className="all_img"  
