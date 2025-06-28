@@ -1,16 +1,19 @@
 import React from 'react'
+import ThreeDCard from './ThreeDCard'
 
 const About = () => {
   return (
     <div className="container about-section" id="about">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <img 
-            src="/Images/profile.png" 
-            className="all_img"  
-            alt="profile image" 
-            width="500px"
-          />
+          <ThreeDCard intensity={0.8}>
+            <img 
+              src="/Images/profile.png" 
+              className="all_img"  
+              alt="profile image" 
+              width="500px"
+            />
+          </ThreeDCard>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>About <label>Me</label></h2>

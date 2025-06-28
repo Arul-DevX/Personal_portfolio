@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ThreeDCard from './ThreeDCard'
 
 const Home = () => {
   const [typedText, setTypedText] = useState('')
@@ -50,12 +51,14 @@ const Home = () => {
           </button>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
-          <img 
-            className="all_img" 
-            src="/Images/Arul.png" 
-            alt="profile picture" 
-            width="400px"
-          />
+          <ThreeDCard intensity={1}>
+            <img 
+              className="all_img" 
+              src="/Images/Arul.png" 
+              alt="profile picture" 
+              width="400px"
+            />
+          </ThreeDCard>
         </div>
       </div>
     </div>

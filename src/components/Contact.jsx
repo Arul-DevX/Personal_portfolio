@@ -1,16 +1,19 @@
 import React from 'react'
+import ThreeDCard from './ThreeDCard'
 
 const Contact = () => {
   return (
     <div className="container" id="contact">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
-          <img 
-            src="/Images/contact_us.png" 
-            className="all_img" 
-            alt="contact image" 
-            width="500px"
-          />
+          <ThreeDCard intensity={0.8}>
+            <img 
+              src="/Images/contact_us.png" 
+              className="all_img" 
+              alt="contact image" 
+              width="500px"
+            />
+          </ThreeDCard>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>Contact <label>Me</label></h2>
