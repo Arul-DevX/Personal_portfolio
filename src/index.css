@@ -323,16 +323,46 @@ a {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  /* Fix home section to prevent text hiding behind navbar */
+  .container#home,
+  .container:first-of-type {
+    padding-top: 100px; /* Add padding to push content below navbar */
+    height: calc(100vh - 20px); /* Adjust height to account for padding */
+  }
+  
   .row {
     flex-direction: column;
+    padding: 20px; /* Add horizontal padding for mobile */
   }
   
   .col1 {
     width: 100%;
+    padding: 15px; /* Increase padding for better spacing */
+  }
+  
+  /* Reduce heading size on mobile */
+  .col1 h2 {
+    font-size: 36px; /* Reduced from 50px */
+    line-height: 44px; /* Reduced from 60px */
+    margin: 0 0 20px; /* Reduced margin */
+  }
+  
+  /* Reduce image sizes significantly on mobile */
+  .all_img {
+    max-width: 280px; /* Significantly reduced from 100% */
+    width: 280px; /* Fixed width for consistency */
+    height: auto;
+  }
+  
+  /* Specific size for home screen image */
+  #home .all_img {
+    max-width: 250px; /* Even smaller for home screen */
+    width: 250px;
   }
   
   .about-section {
     height: 90vh;
+    padding: 60px 0; /* Increased padding */
   }
   
   .projects-section {
@@ -679,22 +709,32 @@ footer p {
       display: none;
     }
     
-    img{
-      width:300px;
+    /* Mobile image sizes - significantly reduced */
+    img {
+      width: 280px; /* Reduced from 300px */
     }
-    .logo img{
-      width:75px;
+    
+    .logo img {
+      width: 75px;
     }
+    
     .logo label {
       font-size: 1em;
       margin: 0; 
     }
-    .welcome_img{
+    
+    .welcome_img {
       padding-top: 100px;
       padding-left: 0;
     }
-    #dbtn{
+    
+    #dbtn {
       font-size: 10px;
+    }
+    
+    /* Mobile cursor size adjustment */
+    .cursor {
+      font-size: 40px; /* Reduced from 55px for mobile */
     }
 }
 
