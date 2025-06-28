@@ -28,7 +28,7 @@ const ParallaxBackground = () => {
 
   return (
     <div className="parallax-container" ref={containerRef}>
-      {/* Layer 1 - Deepest */}
+      {/* Layer 1 - Deepest - Enhanced with more shapes */}
       <div 
         className="parallax-layer layer-1"
         ref={el => layersRef.current[0] = el}
@@ -36,9 +36,11 @@ const ParallaxBackground = () => {
         <div className="geometric-shape shape-1"></div>
         <div className="geometric-shape shape-2"></div>
         <div className="geometric-shape shape-3"></div>
+        <div className="geometric-shape shape-4"></div>
+        <div className="geometric-shape shape-5"></div>
       </div>
 
-      {/* Layer 2 - Middle */}
+      {/* Layer 2 - Middle - Enhanced with more floating elements */}
       <div 
         className="parallax-layer layer-2"
         ref={el => layersRef.current[1] = el}
@@ -47,9 +49,12 @@ const ParallaxBackground = () => {
         <div className="floating-element element-2"></div>
         <div className="floating-element element-3"></div>
         <div className="floating-element element-4"></div>
+        <div className="floating-element element-5"></div>
+        <div className="floating-element element-6"></div>
+        <div className="floating-element element-7"></div>
       </div>
 
-      {/* Layer 3 - Closest */}
+      {/* Layer 3 - Closest - Enhanced with more light rays */}
       <div 
         className="parallax-layer layer-3"
         ref={el => layersRef.current[2] = el}
@@ -57,6 +62,9 @@ const ParallaxBackground = () => {
         <div className="light-ray ray-1"></div>
         <div className="light-ray ray-2"></div>
         <div className="light-ray ray-3"></div>
+        <div className="light-ray ray-4"></div>
+        <div className="light-ray ray-5"></div>
+        <div className="light-ray ray-6"></div>
       </div>
     </div>
   )
