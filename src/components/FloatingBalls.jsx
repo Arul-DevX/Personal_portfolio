@@ -11,19 +11,19 @@ const FloatingBalls = () => {
     const numBalls = 12
     const initialBalls = []
 
-    // Create balls with more dynamic properties
+    // Create balls with slower base velocities
     for (let i = 0; i < numBalls; i++) {
       const ball = {
         id: i,
         x: Math.random() * (window.innerWidth - 30),
         y: Math.random() * (window.innerHeight - 30),
-        vx: (Math.random() - 0.5) * 2, // Base velocity
-        vy: (Math.random() - 0.5) * 2,
-        baseVx: (Math.random() - 0.5) * 2, // Store original velocity
-        baseVy: (Math.random() - 0.5) * 2,
+        vx: (Math.random() - 0.5) * 0.8, // Reduced base velocity
+        vy: (Math.random() - 0.5) * 0.8,
+        baseVx: (Math.random() - 0.5) * 0.8,
+        baseVy: (Math.random() - 0.5) * 0.8,
         size: Math.random() * 10 + 8,
         opacity: Math.random() * 0.5 + 0.4,
-        bounceIntensity: Math.random() * 0.3 + 0.7 // How much energy is retained after bounce
+        bounceIntensity: Math.random() * 0.2 + 0.5 // Reduced bounce intensity
       }
       initialBalls.push(ball)
     }
@@ -39,19 +39,19 @@ const FloatingBalls = () => {
       scrollVelocity.current = scrollVelocity.current * 0.8 + Math.abs(deltaY) * 0.2
       
       // Update speed multiplier based on scroll velocity
-      const maxScrollSpeed = 20 // Maximum scroll speed to consider
+      const maxScrollSpeed = 20
       const speedMultiplier = Math.min(scrollVelocity.current / maxScrollSpeed, 1)
-      scrollSpeedRef.current = 1 + speedMultiplier * 4 // Speed from 1x to 5x
+      scrollSpeedRef.current = 0.5 + speedMultiplier * 2 // Speed from 0.5x to 2.5x (reduced)
       
       lastScrollY.current = currentScrollY
     }
 
-    // Decay scroll velocity when not scrolling
+    // Enhanced decay for slower return to normal speed
     const decayScrollVelocity = () => {
-      scrollVelocity.current *= 0.95 // Gradual decay
-      if (scrollVelocity.current < 0.1) {
+      scrollVelocity.current *= 0.92 // Slower decay
+      if (scrollVelocity.current < 0.05) {
         scrollVelocity.current = 0
-        scrollSpeedRef.current = 1 // Return to normal speed
+        scrollSpeedRef.current = 0.3 // Very slow when not scrolling
       }
     }
 
@@ -69,7 +69,7 @@ const FloatingBalls = () => {
           let newVx = ball.vx
           let newVy = ball.vy
 
-          // Enhanced bouncing with energy retention
+          // Enhanced bouncing with reduced energy retention
           if (newX <= 0) {
             newX = 0
             newVx = Math.abs(ball.vx) * ball.bounceIntensity
@@ -86,14 +86,14 @@ const FloatingBalls = () => {
             newVy = -Math.abs(ball.vy) * ball.bounceIntensity
           }
 
-          // Add slight randomness to prevent balls from getting stuck in patterns
-          if (Math.random() < 0.001) {
-            newVx += (Math.random() - 0.5) * 0.1
-            newVy += (Math.random() - 0.5) * 0.1
+          // Add slight randomness less frequently
+          if (Math.random() < 0.0005) {
+            newVx += (Math.random() - 0.5) * 0.05
+            newVy += (Math.random() - 0.5) * 0.05
           }
 
           // Limit velocity to prevent balls from moving too fast
-          const maxVelocity = 3
+          const maxVelocity = 1.5 // Reduced max velocity
           newVx = Math.max(-maxVelocity, Math.min(maxVelocity, newVx))
           newVy = Math.max(-maxVelocity, Math.min(maxVelocity, newVy))
 
@@ -120,8 +120,8 @@ const FloatingBalls = () => {
       clearTimeout(scrollTimeout)
       scrollTimeout = setTimeout(() => {
         // Additional decay when scroll stops
-        scrollVelocity.current *= 0.5
-      }, 100)
+        scrollVelocity.current *= 0.3
+      }, 150)
     }
 
     window.addEventListener('scroll', throttledScroll, { passive: true })
@@ -169,7 +169,7 @@ const FloatingBalls = () => {
             boxShadow: `0 0 ${ball.size * 1.5}px rgba(80, 159, 244, 0.6)`,
             opacity: ball.opacity,
             transition: 'opacity 0.3s ease',
-            filter: 'blur(0.5px)' // Slight blur for smoother appearance
+            filter: 'blur(0.5px)'
           }}
         />
       ))}

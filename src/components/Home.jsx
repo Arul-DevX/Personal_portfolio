@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="container" id="home">
       <div className="row">
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-left">
           <h2><label>Hello, </label></h2>
           <h2>{typedText} <span className="cursor">|</span></h2>
           <p>Frontend Developer | Python Programmer | Problem Solver</p>
@@ -49,7 +49,7 @@ const Home = () => {
             View My Work &rarr;
           </button>
         </div>
-        <div className="col1">
+        <div className="col1 animate-on-scroll fade-in-right">
           <img 
             className="all_img" 
             src="/Images/Arul.png" 

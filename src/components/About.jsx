@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className="container" id="about">
+    <div className="container about-section" id="about">
       <div className="row">
         <div className="col1 animate-on-scroll fade-in-left">
           <img 

@@ -177,6 +177,12 @@ a {
   box-sizing: border-box;
 }
 
+/* Special styling for About section to reduce vertical space */
+.about-section {
+  height: 80vh; /* Reduced height for About section */
+  padding: 40px 0; /* Add some padding to prevent cramping */
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -224,6 +230,10 @@ a {
   
   .col1 {
     width: 100%;
+  }
+  
+  .about-section {
+    height: 90vh; /* Slightly more height on mobile */
   }
 }
 
