@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const [activeSections, setActiveSections] = useState(['home']) // Changed to array
   const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleMenu = () => {
@@ -21,10 +21,13 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50)
       
       // Get current scroll position
-      const scrollPosition = window.scrollY + 150 // Offset for navbar height
+      const scrollPosition = window.scrollY
+      const viewportHeight = window.innerHeight
+      const viewportTop = scrollPosition
+      const viewportBottom = scrollPosition + viewportHeight
       
-      // Find which section we're currently in
-      let currentSection = 'home' // Default to home
+      // Find all sections that are currently visible
+      const visibleSections = []
       
       sections.forEach(id => {
         const section = document.getElementById(id)
@@ -32,23 +35,46 @@ const Navigation = () => {
           const sectionTop = section.offsetTop
           const sectionBottom = sectionTop + section.offsetHeight
           
-          // Check if scroll position is within this section
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            currentSection = id
+          // Check if section is at least 30% visible in viewport
+          const visibleTop = Math.max(viewportTop, sectionTop)
+          const visibleBottom = Math.min(viewportBottom, sectionBottom)
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+          const sectionHeight = sectionBottom - sectionTop
+          const visibilityPercentage = visibleHeight / sectionHeight
+          
+          // If section is at least 30% visible, consider it active
+          if (visibilityPercentage >= 0.3) {
+            visibleSections.push(id)
           }
         }
       })
       
-      // Special handling for the last section (contact)
-      const contactSection = document.getElementById('contact')
-      if (contactSection) {
-        const contactTop = contactSection.offsetTop
-        if (scrollPosition >= contactTop) {
-          currentSection = 'contact'
-        }
+      // If no sections are sufficiently visible, default to the most visible one
+      if (visibleSections.length === 0) {
+        let mostVisibleSection = 'home'
+        let maxVisibility = 0
+        
+        sections.forEach(id => {
+          const section = document.getElementById(id)
+          if (section) {
+            const sectionTop = section.offsetTop
+            const sectionBottom = sectionTop + section.offsetHeight
+            
+            const visibleTop = Math.max(viewportTop, sectionTop)
+            const visibleBottom = Math.min(viewportBottom, sectionBottom)
+            const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+            
+            if (visibleHeight > maxVisibility) {
+              maxVisibility = visibleHeight
+              mostVisibleSection = id
+            }
+          }
+        })
+        
+        visibleSections.push(mostVisibleSection)
       }
       
-      setActiveSection(currentSection)
+      setActiveSections(visibleSections)
 
       // Enhanced scroll animations - trigger every time elements come into view
       const animateElements = document.querySelectorAll('.animate-on-scroll')
@@ -77,6 +103,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Helper function to check if a section is active
+  const isSectionActive = (sectionId) => {
+    return activeSections.includes(sectionId)
+  }
+
   return (
     <div className={`navibar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
@@ -90,7 +121,7 @@ const Navigation = () => {
           <li>
             <a 
               href="#home" 
-              className={`btn ${activeSection === 'home' ? 'active' : ''}`}
+              className={`btn ${isSectionActive('home') ? 'active' : ''}`}
             >
               Home
             </a>
@@ -98,7 +129,7 @@ const Navigation = () => {
           <li>
             <a 
               href="#about" 
-              className={`btn ${activeSection === 'about' ? 'active' : ''}`}
+              className={`btn ${isSectionActive('about') ? 'active' : ''}`}
             >
               About
             </a>
@@ -106,7 +137,7 @@ const Navigation = () => {
           <li>
             <a 
               href="#skills" 
-              className={`btn ${activeSection === 'skills' ? 'active' : ''}`}
+              className={`btn ${isSectionActive('skills') ? 'active' : ''}`}
             >
               Skills
             </a>
@@ -114,7 +145,7 @@ const Navigation = () => {
           <li>
             <a 
               href="#projects" 
-              className={`btn ${activeSection === 'projects' ? 'active' : ''}`}
+              className={`btn ${isSectionActive('projects') ? 'active' : ''}`}
             >
               Projects
             </a>
@@ -122,7 +153,7 @@ const Navigation = () => {
           <li>
             <a 
               href="#contact" 
-              className={`btn ${activeSection === 'contact' ? 'active' : ''}`}
+              className={`btn ${isSectionActive('contact') ? 'active' : ''}`}
             >
               Contact
             </a>
