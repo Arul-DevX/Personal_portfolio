@@ -4,53 +4,98 @@ const FloatingBalls = () => {
   const [balls, setBalls] = useState([])
   const animationRef = useRef()
   const scrollSpeedRef = useRef(1)
+  const lastScrollY = useRef(0)
+  const scrollVelocity = useRef(0)
 
   useEffect(() => {
-    const numBalls = 8
+    const numBalls = 12
     const initialBalls = []
 
-    // Create balls data
+    // Create balls with more dynamic properties
     for (let i = 0; i < numBalls; i++) {
       const ball = {
         id: i,
-        x: Math.random() * (window.innerWidth - 20),
-        y: Math.random() * (window.innerHeight - 20),
-        vx: (Math.random() - 0.5) * 1,
-        vy: (Math.random() - 0.5) * 1,
-        size: Math.random() * 8 + 6,
-        opacity: Math.random() * 0.4 + 0.3
+        x: Math.random() * (window.innerWidth - 30),
+        y: Math.random() * (window.innerHeight - 30),
+        vx: (Math.random() - 0.5) * 2, // Base velocity
+        vy: (Math.random() - 0.5) * 2,
+        baseVx: (Math.random() - 0.5) * 2, // Store original velocity
+        baseVy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 10 + 8,
+        opacity: Math.random() * 0.5 + 0.4,
+        bounceIntensity: Math.random() * 0.3 + 0.7 // How much energy is retained after bounce
       }
       initialBalls.push(ball)
     }
 
     setBalls(initialBalls)
 
-    // Handle scroll speed
+    // Handle scroll detection and speed calculation
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
-      const scrollProgress = Math.min(scrollY / (maxScroll || 1), 1)
-      scrollSpeedRef.current = 1 + scrollProgress * 4 // Speed multiplier from 1x to 5x
+      const currentScrollY = window.scrollY
+      const deltaY = currentScrollY - lastScrollY.current
+      
+      // Calculate scroll velocity (smoothed)
+      scrollVelocity.current = scrollVelocity.current * 0.8 + Math.abs(deltaY) * 0.2
+      
+      // Update speed multiplier based on scroll velocity
+      const maxScrollSpeed = 20 // Maximum scroll speed to consider
+      const speedMultiplier = Math.min(scrollVelocity.current / maxScrollSpeed, 1)
+      scrollSpeedRef.current = 1 + speedMultiplier * 4 // Speed from 1x to 5x
+      
+      lastScrollY.current = currentScrollY
     }
 
-    // Animation loop
+    // Decay scroll velocity when not scrolling
+    const decayScrollVelocity = () => {
+      scrollVelocity.current *= 0.95 // Gradual decay
+      if (scrollVelocity.current < 0.1) {
+        scrollVelocity.current = 0
+        scrollSpeedRef.current = 1 // Return to normal speed
+      }
+    }
+
+    // Animation loop with enhanced bouncing physics
     const animate = () => {
+      decayScrollVelocity()
+      
       setBalls(prevBalls => 
         prevBalls.map(ball => {
-          let newX = ball.x + ball.vx * scrollSpeedRef.current
-          let newY = ball.y + ball.vy * scrollSpeedRef.current
+          const speedMultiplier = scrollSpeedRef.current
+          
+          // Apply speed multiplier to movement
+          let newX = ball.x + ball.vx * speedMultiplier
+          let newY = ball.y + ball.vy * speedMultiplier
           let newVx = ball.vx
           let newVy = ball.vy
 
-          // Bounce off edges
-          if (newX <= 0 || newX >= window.innerWidth - ball.size) {
-            newVx *= -1
-            newX = Math.max(0, Math.min(window.innerWidth - ball.size, newX))
+          // Enhanced bouncing with energy retention
+          if (newX <= 0) {
+            newX = 0
+            newVx = Math.abs(ball.vx) * ball.bounceIntensity
+          } else if (newX >= window.innerWidth - ball.size) {
+            newX = window.innerWidth - ball.size
+            newVx = -Math.abs(ball.vx) * ball.bounceIntensity
           }
-          if (newY <= 0 || newY >= window.innerHeight - ball.size) {
-            newVy *= -1
-            newY = Math.max(0, Math.min(window.innerHeight - ball.size, newY))
+
+          if (newY <= 0) {
+            newY = 0
+            newVy = Math.abs(ball.vy) * ball.bounceIntensity
+          } else if (newY >= window.innerHeight - ball.size) {
+            newY = window.innerHeight - ball.size
+            newVy = -Math.abs(ball.vy) * ball.bounceIntensity
           }
+
+          // Add slight randomness to prevent balls from getting stuck in patterns
+          if (Math.random() < 0.001) {
+            newVx += (Math.random() - 0.5) * 0.1
+            newVy += (Math.random() - 0.5) * 0.1
+          }
+
+          // Limit velocity to prevent balls from moving too fast
+          const maxVelocity = 3
+          newVx = Math.max(-maxVelocity, Math.min(maxVelocity, newVx))
+          newVy = Math.max(-maxVelocity, Math.min(maxVelocity, newVy))
 
           return {
             ...ball,
@@ -68,8 +113,18 @@ const FloatingBalls = () => {
     // Start animation
     animationRef.current = requestAnimationFrame(animate)
 
-    // Add scroll listener
-    window.addEventListener('scroll', handleScroll)
+    // Add scroll listener with throttling
+    let scrollTimeout
+    const throttledScroll = () => {
+      handleScroll()
+      clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        // Additional decay when scroll stops
+        scrollVelocity.current *= 0.5
+      }, 100)
+    }
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
 
     // Handle window resize
     const handleResize = () => {
@@ -86,8 +141,9 @@ const FloatingBalls = () => {
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', throttledScroll)
       window.removeEventListener('resize', handleResize)
+      clearTimeout(scrollTimeout)
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
       }
@@ -110,9 +166,10 @@ const FloatingBalls = () => {
             borderRadius: '50%',
             pointerEvents: 'none',
             zIndex: 1,
-            boxShadow: `0 0 ${ball.size * 2}px rgba(80, 159, 244, 0.4)`,
+            boxShadow: `0 0 ${ball.size * 1.5}px rgba(80, 159, 244, 0.6)`,
             opacity: ball.opacity,
-            transition: 'opacity 0.3s ease'
+            transition: 'opacity 0.3s ease',
+            filter: 'blur(0.5px)' // Slight blur for smoother appearance
           }}
         />
       ))}
