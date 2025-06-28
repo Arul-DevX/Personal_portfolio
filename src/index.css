@@ -538,15 +538,15 @@ footer p {
       position: absolute;
       top: 70px;
       right: 0px;
-      background: linear-gradient(135deg, rgba(80, 159, 244, 0.9) 0%, rgba(134, 188, 242, 0.85) 100%);
-      width: 180px;
+      background: linear-gradient(135deg, rgba(80, 159, 244, 0.95) 0%, rgba(134, 188, 242, 0.9) 100%);
+      width: 200px;
       overflow: hidden;
       max-height: 0px;
       transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border-radius: 12px;
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 20px rgba(80, 159, 244, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px rgba(80, 159, 244, 0.15);
     }
     
     nav ul li {
@@ -554,15 +554,20 @@ footer p {
       text-align: center;
       position: relative;
       overflow: hidden;
+      margin: 8px 12px;
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     
-    /* Enhanced mobile menu item hover effect */
+    /* Premium mobile menu item hover effect */
     nav ul li:hover {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(80, 159, 244, 0.2) 100%);
-      transform: translateX(5px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(80, 159, 244, 0.3) 100%);
+      transform: translateX(8px) scale(1.02);
+      box-shadow: 0 4px 16px rgba(80, 159, 244, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
     
-    /* Add subtle slide-in effect for menu items */
+    /* Elegant slide-in shimmer effect */
     nav ul li::before {
       content: '';
       position: absolute;
@@ -570,39 +575,86 @@ footer p {
       top: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transition: left 0.4s ease;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.15) 30%, 
+        rgba(255, 255, 255, 0.25) 50%, 
+        rgba(255, 255, 255, 0.15) 70%, 
+        transparent 100%);
+      transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border-radius: 12px;
     }
     
     nav ul li:hover::before {
       left: 100%;
     }
     
+    /* Subtle pulse animation on hover */
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      pointer-events: none;
+    }
+    
+    nav ul li:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+    
     nav ul li a {
       color: #fff;
-      padding: 15px 20px;
+      padding: 16px 20px;
       text-decoration: none;
       display: block;
       font-weight: 500;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      border-radius: 12px;
     }
     
-    /* Enhanced link hover effect */
+    /* Enhanced link hover effect with glow */
     nav ul li:hover a {
       color: #ffffff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-      transform: translateX(3px);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.3);
+      transform: translateX(4px);
+      font-weight: 600;
     }
     
-    /* Active menu item in mobile */
+    /* Active menu item in mobile with premium styling */
     nav ul li a.active {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(80, 159, 244, 0.3) 100%);
-      border-radius: 8px;
-      margin: 5px 10px;
-      box-shadow: 0 2px 8px rgba(80, 159, 244, 0.2);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(80, 159, 244, 0.4) 100%);
+      border-radius: 10px;
+      margin: 2px;
+      box-shadow: 0 4px 12px rgba(80, 159, 244, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+    
+    /* Special styling for Download CV button in mobile */
+    nav ul li #dbtn {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+      color: #333;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(80, 159, 244, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    nav ul li:hover #dbtn {
+      background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
+      color: #fff;
+      transform: translateX(4px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(80, 159, 244, 0.4);
     }
     
     img{
