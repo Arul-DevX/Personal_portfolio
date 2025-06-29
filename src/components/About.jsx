@@ -8,7 +8,7 @@ const About = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="src/images/profile.png" 
+              src="/src/images/profile.png" 
               className="all_img"  
               alt="profile image" 
               width="500px"
