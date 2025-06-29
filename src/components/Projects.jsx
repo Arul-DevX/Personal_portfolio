@@ -4,7 +4,7 @@ import ThreeDCard from './ThreeDCard'
 const Projects = () => {
   const projects = [
     {
-      title: "Sign Language Recognition System",
+      title: "Sign Language Recognition System(College Final Year Project)",
       link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
       isExternal: true
     },
