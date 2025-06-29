@@ -1,6 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
-import profileImage from '..src/images/profile.png'; // ✅ Import here
+import profileImage from '/src/images/profile.png'; // ✅ Import here
 
 const About = () => {
   return (
