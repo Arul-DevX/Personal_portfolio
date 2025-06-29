@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import mainMenu from '/src/images/main-menu.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -199,7 +200,7 @@ const Navigation = () => {
       </nav>
       <div>
         <img 
-          src="/images/main-menu.png" 
+          src={mainMenu} 
           alt="menu icon" 
           className={`menuicon ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
