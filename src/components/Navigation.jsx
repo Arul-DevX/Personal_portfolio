@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import mainMenu from '/src/images/main-menu.png';
+import logo from '/src/images/logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -139,7 +140,7 @@ const Navigation = () => {
   return (
     <div className={`navibar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <img src="/images/logo.png" width="150px" alt="Logo" /> 
+        <img src={logo} width="150px" alt="Logo" /> 
       </div>
       <nav>
         <ul 
