@@ -8,7 +8,7 @@ const Skills = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="/Images/code.png" 
+              src="/images/code.png" 
               className="all_img" 
               alt="skill image" 
               width="500px"
