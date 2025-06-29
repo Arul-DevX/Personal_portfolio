@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       title: "AI Assistant HUB",
-      link: "https://arul28032003.github.io/Ai_service_web/",
+      link: "https://arul-devx.github.io/Ai_service_web/",
       isExternal: true
     },
     {
