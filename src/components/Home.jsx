@@ -54,7 +54,7 @@ const Home = () => {
           <ThreeDCard>
             <img 
               className="all_img" 
-              src="/Images/Arul.png" 
+              src="/images/Arul.png" 
               alt="profile picture" 
               width="400px"
             />
