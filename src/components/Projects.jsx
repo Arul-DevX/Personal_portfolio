@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "Sign Language Recognition System",
       link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
-      isExternal: false
+      isExternal: true
     },
     {
       title: "Real-Time News Portal",
