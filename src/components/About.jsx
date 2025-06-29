@@ -1,5 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
+import profileImage from 'src/images/profile.png'; // ✅ Import here
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="/src/images/profile.png" 
+              src={profileImage} // ✅ Use here 
               className="all_img"  
               alt="profile image" 
               width="500px"
