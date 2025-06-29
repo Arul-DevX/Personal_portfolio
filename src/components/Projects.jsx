@@ -31,7 +31,7 @@ const Projects = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="/Images/project_complete.png" 
+              src="/images/project_complete.png" 
               className="all_img"  
               alt="project image" 
               width="500px"
