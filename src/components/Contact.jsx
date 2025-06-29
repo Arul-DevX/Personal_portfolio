@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="/Images/contact_us.png" 
+              src="/images/contact_us.png" 
               className="all_img" 
               alt="contact image" 
               width="500px"
