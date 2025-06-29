@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       title: "Weather App",
-      link: "https://arul28032003.github.io/Simple_web/",
+      link: "https://arul-devx.github.io/Web_Weather_App/",
       isExternal: true
     }
   ]
