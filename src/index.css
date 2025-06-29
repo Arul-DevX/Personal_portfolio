@@ -12,7 +12,7 @@ html{
   overflow-x: hidden;
 }
 
-/* ===== CUSTOM CURSOR DESIGN ===== */
+/* ===== OPTIMIZED CUSTOM CURSOR DESIGN ===== */
 * {
   cursor: none !important;
 }
@@ -21,7 +21,7 @@ body {
   cursor: none !important;
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Optimized for Performance */
 .custom-cursor {
   position: fixed;
   width: 20px;
@@ -31,78 +31,53 @@ body {
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
-  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.1s ease-out, opacity 0.15s ease-out;
   box-shadow: 
     0 0 10px rgba(80, 159, 244, 0.6),
-    0 0 20px rgba(80, 159, 244, 0.4),
-    0 0 30px rgba(80, 159, 244, 0.2);
-  opacity: 0.8;
+    0 0 20px rgba(80, 159, 244, 0.4);
+  opacity: 0.9;
+  will-change: transform, opacity;
 }
 
-/* Cursor Trail */
+/* Cursor Trail - Optimized */
 .cursor-trail {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: rgba(80, 159, 244, 0.3);
+  background: rgba(80, 159, 244, 0.4);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 0 8px rgba(80, 159, 244, 0.4);
-  opacity: 0.6;
+  box-shadow: 0 0 8px rgba(80, 159, 244, 0.5);
+  opacity: 0.7;
+  will-change: transform, opacity;
 }
 
-/* Hover Effects for Interactive Elements */
-a:hover ~ .custom-cursor,
-button:hover ~ .custom-cursor,
-.btn:hover ~ .custom-cursor,
-.click:hover ~ .custom-cursor,
-.project-link:hover ~ .custom-cursor,
-.menuicon:hover ~ .custom-cursor {
+/* Hover Effects - Faster Transitions */
+.custom-cursor.hover {
   transform: scale(1.5);
   background: radial-gradient(circle, #86bcf2 0%, #509ff4 50%, rgba(80, 159, 244, 0.3) 70%);
   box-shadow: 
     0 0 15px rgba(134, 188, 242, 0.8),
-    0 0 25px rgba(134, 188, 242, 0.6),
-    0 0 35px rgba(134, 188, 242, 0.4);
+    0 0 25px rgba(134, 188, 242, 0.6);
   opacity: 1;
-}
-
-/* Text Selection Cursor */
-p:hover ~ .custom-cursor,
-h1:hover ~ .custom-cursor,
-h2:hover ~ .custom-cursor,
-h3:hover ~ .custom-cursor {
-  transform: scale(0.8);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(80, 159, 244, 0.4) 100%);
-  mix-blend-mode: normal;
-  opacity: 0.6;
+  transition: transform 0.08s ease-out, background 0.1s ease-out;
 }
 
 /* Loading/Waiting Cursor */
 .loading-cursor {
-  animation: pulse-cursor 1.5s ease-in-out infinite;
+  animation: pulse-cursor 1.2s ease-in-out infinite;
 }
 
 @keyframes pulse-cursor {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 0.9;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
   }
-}
-
-/* Cursor for form inputs */
-input:hover ~ .custom-cursor,
-textarea:hover ~ .custom-cursor {
-  transform: scale(0.6);
-  background: linear-gradient(45deg, #509ff4, #86bcf2);
-  border-radius: 2px;
-  opacity: 0.9;
 }
 
 /* Hide cursor on touch devices */

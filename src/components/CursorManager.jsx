@@ -17,12 +17,14 @@ const CursorManager = () => {
     let mouseY = 0
     let trailX = 0
     let trailY = 0
+    let animationId = null
 
-    // Mouse move handler
+    // Mouse move handler - direct positioning for main cursor
     const handleMouseMove = (e) => {
       mouseX = e.clientX
       mouseY = e.clientY
       
+      // Direct positioning for main cursor (no delay)
       if (cursor) {
         cursor.style.left = `${mouseX - 10}px`
         cursor.style.top = `${mouseY - 10}px`
@@ -31,24 +33,25 @@ const CursorManager = () => {
       setIsVisible(true)
     }
 
-    // Smooth trail animation
+    // Optimized trail animation with reduced delay
     const animateTrail = () => {
-      trailX += (mouseX - trailX) * 0.1
-      trailY += (mouseY - trailY) * 0.1
+      // Increased smoothing factor from 0.1 to 0.25 for faster response
+      trailX += (mouseX - trailX) * 0.25
+      trailY += (mouseY - trailY) * 0.25
       
       if (trail) {
         trail.style.left = `${trailX - 4}px`
         trail.style.top = `${trailY - 4}px`
       }
       
-      requestAnimationFrame(animateTrail)
+      animationId = requestAnimationFrame(animateTrail)
     }
 
     // Mouse enter/leave handlers
     const handleMouseEnter = () => setIsVisible(true)
     const handleMouseLeave = () => setIsVisible(false)
 
-    // Hover detection for interactive elements
+    // Optimized hover detection
     const handleElementHover = (isHover) => {
       setIsHovering(isHover)
     }
@@ -57,18 +60,18 @@ const CursorManager = () => {
     const interactiveElements = document.querySelectorAll('a, button, .btn, .click, .project-link, .menuicon, input, textarea')
     
     interactiveElements.forEach(element => {
-      element.addEventListener('mouseenter', () => handleElementHover(true))
-      element.addEventListener('mouseleave', () => handleElementHover(false))
+      element.addEventListener('mouseenter', () => handleElementHover(true), { passive: true })
+      element.addEventListener('mouseleave', () => handleElementHover(false), { passive: true })
     })
 
     // Loading state detection
     const handleLoadingStart = () => setIsLoading(true)
     const handleLoadingEnd = () => setIsLoading(false)
 
-    // Add event listeners
-    document.addEventListener('mousemove', handleMouseMove)
-    document.addEventListener('mouseenter', handleMouseEnter)
-    document.addEventListener('mouseleave', handleMouseLeave)
+    // Add event listeners with passive option for better performance
+    document.addEventListener('mousemove', handleMouseMove, { passive: true })
+    document.addEventListener('mouseenter', handleMouseEnter, { passive: true })
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true })
     window.addEventListener('beforeunload', handleLoadingStart)
     window.addEventListener('load', handleLoadingEnd)
 
@@ -82,6 +85,10 @@ const CursorManager = () => {
       document.removeEventListener('mouseleave', handleMouseLeave)
       window.removeEventListener('beforeunload', handleLoadingStart)
       window.removeEventListener('load', handleLoadingEnd)
+      
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
       
       interactiveElements.forEach(element => {
         element.removeEventListener('mouseenter', () => handleElementHover(true))
@@ -101,7 +108,7 @@ const CursorManager = () => {
         ref={cursorRef}
         className={`custom-cursor ${isHovering ? 'hover' : ''} ${isLoading ? 'loading-cursor' : ''}`}
         style={{
-          opacity: isVisible ? 0.8 : 0,
+          opacity: isVisible ? 0.9 : 0,
           transform: isHovering ? 'scale(1.5)' : 'scale(1)',
         }}
       />
@@ -109,7 +116,7 @@ const CursorManager = () => {
         ref={trailRef}
         className="cursor-trail"
         style={{
-          opacity: isVisible ? 0.6 : 0,
+          opacity: isVisible ? 0.7 : 0,
         }}
       />
     </>
