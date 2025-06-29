@@ -138,7 +138,7 @@ const Navigation = () => {
   return (
     <div className={`navibar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <img src="/Images/logo.png" width="150px" alt="Logo" /> 
+        <img src="/images/logo.png" width="150px" alt="Logo" /> 
       </div>
       <nav>
         <ul 
