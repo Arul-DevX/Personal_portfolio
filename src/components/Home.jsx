@@ -51,7 +51,7 @@ const Home = () => {
             View My Analytics Projects &rarr;
           </button>
                     <button className="click" onClick={handleViewWork}>
-            View My Analytics Projects &rarr;
+            View My Analytics Projects &rdrr;
           </button>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
