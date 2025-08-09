@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ThreeDCard from './ThreeDCard'
-import arulrAvatar from '/src/images/Arul.png';
 
 const Home = () => {
   const [typedText, setTypedText] = useState('')
@@ -55,8 +54,8 @@ const Home = () => {
           <ThreeDCard>
             <img 
               className="all_img" 
-              src={arulrAvatar} 
-              alt="profile picture" 
+              src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Data analyst working with charts and graphs" 
               width="400px"
             />
           </ThreeDCard>
