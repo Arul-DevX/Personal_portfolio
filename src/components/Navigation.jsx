@@ -194,7 +194,7 @@ const Navigation = () => {
               id="dbtn"
               onClick={handleDownload}
             >
-              Download CV
+              Download Resume
             </a>
           </li>
         </ul>
