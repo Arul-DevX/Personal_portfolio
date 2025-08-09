@@ -1,5 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
+import projectComplete from '/src/images/project_complete.png';
 
 const Projects = () => {
   const projects = [
@@ -41,9 +42,9 @@ const Projects = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <ThreeDCard>
             <img 
-              src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              src={projectComplete} 
               className="all_img"  
-              alt="Data analytics dashboard with charts, graphs and business intelligence reports" 
+              alt="project image" 
               width="500px"
             />
           </ThreeDCard>
