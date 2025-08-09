@@ -48,7 +48,7 @@ const Home = () => {
           <h2>{typedText} <span className="cursor">|</span></h2>
           <p>Data Analyst | Python & SQL Expert | Business Intelligence Specialist</p>
           <button className="click" onClick={handleViewWork}>
-            View My Analytics Projects &rarr;
+            View My Analytics Projects &darr;
           </button>
                     <button className="click" onClick={handleViewWork}>
             Download Resume &darr;
