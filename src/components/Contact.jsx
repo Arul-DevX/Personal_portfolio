@@ -1,5 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
+import { Mail, Phone, Linkedin, Github } from 'lucide-react'
 import contactImage from '/src/images/contact_us.png';
 
 const Contact = () => {
@@ -21,32 +22,43 @@ const Contact = () => {
           <p style={{ marginBottom: '20px', color: '#ccc' }}>
             Let's discuss how data-driven insights can transform your business decisions.
           </p>
-          <p>
-            Email: <a href="mailto:arulraman77@gmail.com" className="btn">
-              arulraman77@gmail.com
-            </a>
-          </p>
-          <p>Phone: +91 9444732994</p>
-          <p>
-            Linkedin: <a 
-              href="https://www.linkedin.com/in/arul-r-581ba02b5/" 
-              className="btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Arul R
-            </a>
-          </p>
-          <p>
-            Portfolio: <a 
-              href="https://github.com/Arul-DevX" 
-              className="btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub Analytics Projects
-            </a>
-          </p>
+          <div className="contact-info">
+            <div className="contact-item">
+              <Mail className="contact-icon" size={20} />
+              <span>Email: </span>
+              <a href="mailto:arulraman77@gmail.com" className="btn">
+                arulraman77@gmail.com
+              </a>
+            </div>
+            <div className="contact-item">
+              <Phone className="contact-icon" size={20} />
+              <span>Phone: +91 9444732994</span>
+            </div>
+            <div className="contact-item">
+              <Linkedin className="contact-icon" size={20} />
+              <span>LinkedIn: </span>
+              <a 
+                href="https://www.linkedin.com/in/arul-r-581ba02b5/" 
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Arul R
+              </a>
+            </div>
+            <div className="contact-item">
+              <Github className="contact-icon" size={20} />
+              <span>Portfolio: </span>
+              <a 
+                href="https://github.com/Arul-DevX" 
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Analytics Projects
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
