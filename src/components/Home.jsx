@@ -7,7 +7,7 @@ const Home = () => {
   const [isErasing, setIsErasing] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const text = "I'm Arul"
+  const text = "I'm a Data Analyst"
   const typingSpeed = 150
   const erasingSpeed = 100
   const delay = 2000
@@ -46,9 +46,9 @@ const Home = () => {
         <div className="col1 animate-on-scroll fade-in-left">
           <h2><label>Hello, </label></h2>
           <h2>{typedText} <span className="cursor">|</span></h2>
-          <p>Frontend Developer | Python Programmer | Problem Solver</p>
+          <p>Data Analyst | Python & SQL Expert | Business Intelligence Specialist</p>
           <button className="click" onClick={handleViewWork}>
-            View My Work &rarr;
+            View My Analytics Projects &rarr;
           </button>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">

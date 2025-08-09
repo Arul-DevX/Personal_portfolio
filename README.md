@@ -1,11 +1,11 @@
-**Personal Portfolio**
+**Data Analyst Portfolio**
 
 Overview
-Welcome to the Personal Portfolio repository! This project showcases my journey, skills, and work in web development, AI, and other technical projects. It serves as an online representation of my work, projects, and achievements, making it accessible to potential employers, collaborators, and visitors.
+Welcome to my Data Analyst Portfolio repository! This project showcases my journey, skills, and work in data analysis, statistical modeling, and business intelligence. It serves as an online representation of my analytical projects, technical expertise, and data-driven insights, making it accessible to potential employers, collaborators, and clients.
 
 Key Features:
-Portfolio Website: A fully responsive portfolio website that presents my projects, technical skills, and achievements.
-Project Showcase: Detailed sections for showcasing major projects including code samples, problem-solving approaches, and deployment links.
+Portfolio Website: A fully responsive portfolio website that presents my data analysis projects, technical skills, and analytical achievements.
+Project Showcase: Detailed sections for showcasing major data projects including statistical analysis, machine learning models, and business intelligence solutions.
 Contact Form: A contact form integrated into the website for easy communication.
 Responsive Design: Designed to look great on all devices—desktop, tablet, and mobile.
 Table of Contents
@@ -17,18 +17,18 @@ Contributing
 License
 Acknowledgements
 Installation
-To get started with the Personal Portfolio website, follow these steps:
+To get started with the Data Analyst Portfolio website, follow these steps:
 
 Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/Arul28032003/Personal_portfolio.git
+git clone https://github.com/Arul28032003/Data_Analyst_Portfolio.git
 Navigate to the Project Directory:
 
 bash
 Copy code
-cd Personal_portfolio
+cd Data_Analyst_Portfolio
 Install Dependencies (if any):
 
 bash
@@ -46,19 +46,22 @@ HTML: Structure and content
 CSS: Styling and responsiveness
 JavaScript: Interactivity and animations
 React: Frontend framework
-Node.js: Backend services and API
+Python: Data analysis and machine learning (showcased in projects)
+SQL: Database querying and data manipulation
+Tableau/Power BI: Data visualization tools
 Git: Version control
 GitHub: Hosting and version management
 Features
-Portfolio Display: Showcase my projects, skills, and achievements.
-Interactive Sections: Smooth scroll, project navigation, and dynamic content loading.
+Portfolio Display: Showcase my data analysis projects, statistical skills, and analytical achievements.
+Interactive Sections: Smooth scroll, project navigation, and dynamic content loading with data visualization previews.
 Responsive Design: Mobile-friendly layout and flexible design for all devices.
 Contact Form: Direct communication with built-in form handling.
 Animated Transitions: Subtle animations to enhance user experience.
+Skills Showcase: Detailed breakdown of technical skills in data analysis, programming, and visualization tools.
 Project Structure
 lua
 Copy code
-|-- Personal_portfolio/
+|-- Data_Analyst_Portfolio/
     |-- public/
     |-- src/
         |-- components/
@@ -69,7 +72,7 @@ Copy code
     |-- .gitignore
     |-- config/
 Contributing
-Contributions to this portfolio project are welcome! If you'd like to contribute:
+Contributions to this data analyst portfolio project are welcome! If you'd like to contribute:
 
 Fork the repository.
 Create a new branch (git checkout -b feature/your-feature).
@@ -80,5 +83,5 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Acknowledgements
-Thanks to everyone who has contributed to this portfolio project.
-Inspiration and guidance from open-source communities and web development resources.
+Thanks to everyone who has contributed to this data analyst portfolio project.
+Inspiration and guidance from the data science community, statistical analysis resources, and data visualization best practices.

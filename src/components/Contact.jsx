@@ -18,6 +18,9 @@ const Contact = () => {
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>Contact <label>Me</label></h2>
+          <p style={{ marginBottom: '20px', color: '#ccc' }}>
+            Let's discuss how data-driven insights can transform your business decisions.
+          </p>
           <p>
             Email: <a href="mailto:arulraman77@gmail.com" className="btn">
               arulraman77@gmail.com
@@ -32,6 +35,16 @@ const Contact = () => {
               rel="noopener noreferrer"
             >
               Arul R
+            </a>
+          </p>
+          <p>
+            Portfolio: <a 
+              href="https://github.com/Arul-DevX" 
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Analytics Projects
             </a>
           </p>
         </div>

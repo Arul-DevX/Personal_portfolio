@@ -18,7 +18,24 @@ const Skills = () => {
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>Skills</h2>
-          <p>HTML,CSS,JavaScript,Python Basics,SQL Basics</p>
+          <div style={{ textAlign: 'left', maxWidth: '500px' }}>
+            <div style={{ marginBottom: '20px' }}>
+              <h3 style={{ color: '#509ff4', fontSize: '18px', marginBottom: '10px' }}>Programming & Analytics</h3>
+              <p>Python (Pandas, NumPy, Scikit-learn) • R • SQL • Excel/Google Sheets</p>
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <h3 style={{ color: '#509ff4', fontSize: '18px', marginBottom: '10px' }}>Data Visualization</h3>
+              <p>Tableau • Power BI • Matplotlib • Seaborn • Plotly • D3.js</p>
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <h3 style={{ color: '#509ff4', fontSize: '18px', marginBottom: '10px' }}>Databases & Tools</h3>
+              <p>MySQL • PostgreSQL • MongoDB • Apache Spark • Jupyter • Git</p>
+            </div>
+            <div>
+              <h3 style={{ color: '#509ff4', fontSize: '18px', marginBottom: '10px' }}>Statistical Methods</h3>
+              <p>Regression Analysis • A/B Testing • Time Series • Machine Learning • Predictive Modeling</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

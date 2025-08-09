@@ -19,8 +19,9 @@ const About = () => {
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>About <label>Me</label></h2>
           <p>
-            I am a passionate Frontend Developer with skills in HTML, CSS, JavaScript, and Python. 
-            I have built several projects ranging from websites to games and more.
+            I am a passionate Data Analyst with expertise in Python, SQL, R, and advanced analytics tools. 
+            I specialize in transforming raw data into actionable insights that drive business decisions. 
+            My experience spans statistical analysis, data visualization, machine learning, and business intelligence.
           </p>
         </div>
       </div>

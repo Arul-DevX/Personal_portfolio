@@ -5,23 +5,33 @@ import projectComplete from '/src/images/project_complete.png';
 const Projects = () => {
   const projects = [
     {
-      title: "Sign Language Recognition System(College Final Year Project)",
-      link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
+      title: "Customer Churn Prediction Model",
+      link: "https://github.com/Arul-DevX/customer-churn-analysis",
       isExternal: true
     },
     {
-      title: "Real-Time News Portal",
-      link: "https://newsweb-prkuhrwxypz25uxetdk8f.streamlit.app/",
+      title: "Sales Performance Dashboard",
+      link: "https://public.tableau.com/app/profile/arul.analyst/viz/SalesDashboard",
       isExternal: true
     },
     {
-      title: "AI Assistant HUB",
-      link: "https://arul-devx.github.io/Ai_service_web/",
+      title: "Market Basket Analysis",
+      link: "https://github.com/Arul-DevX/market-basket-analysis",
       isExternal: true
     },
     {
-      title: "Weather App",
-      link: "https://arul-devx.github.io/Web_Weather_App/",
+      title: "Financial Time Series Forecasting",
+      link: "https://github.com/Arul-DevX/financial-forecasting",
+      isExternal: true
+    },
+    {
+      title: "A/B Testing Framework",
+      link: "https://github.com/Arul-DevX/ab-testing-framework",
+      isExternal: true
+    },
+    {
+      title: "COVID-19 Data Analysis Dashboard",
+      link: "https://covid-analytics-dashboard.streamlit.app/",
       isExternal: true
     }
   ]
@@ -41,6 +51,10 @@ const Projects = () => {
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <h2>Projects</h2>
+          <p style={{ marginBottom: '30px', color: '#ccc' }}>
+            Explore my data analysis projects showcasing statistical modeling, 
+            machine learning, and business intelligence solutions.
+          </p>
           <div className="projects-list">
             {projects.map((project, index) => (
               <div 
