@@ -11,7 +11,7 @@ const Projects = () => {
     },
     {
       title: "Sales Performance Dashboard",
-      link: "https://public.tableau.com/app/profile/arul.analyst/viz/SalesDashboard",
+      link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
       isExternal: true
     },
     {
