@@ -41,8 +41,8 @@ const Home = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = "/Arul's Resume.pdf"
-    link.download = 'Arul_Resume.pdf'
+    link.href = "/Arul-Resume.pdf"
+    link.download = 'Arul-Resume.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
