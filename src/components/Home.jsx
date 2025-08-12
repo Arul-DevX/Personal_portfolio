@@ -59,38 +59,44 @@ const Home = () => {
     window.open('/Arul\'s Resume.pdf', '_blank')
   }
   return (
-    <div className="container" id="home">
-      <div className="row">
-        <div className="col1 animate-on-scroll fade-in-left">
-          <h2><label>Hello, </label></h2>
-          <h2>{typedText} <span className="cursor">|</span></h2>
-          <p>Data Analyst | Python & SQL Expert | Business Intelligence Specialist</p>
+    <section className="hero-section" id="home">
+      <div className="container">
+        <div className="row">
+          <div className="col1 animate-on-scroll fade-in-left">
+            <h1><span className="greeting">Hello, </span></h1>
+            <h1 className="main-title">{typedText} <span className="cursor">|</span></h1>
+            <p className="subtitle">Data Analyst | Python & SQL Expert | Business Intelligence Specialist</p>
           
-          <div className="home-buttons">
-            <button className="click" onClick={handleViewWork}>
-              View My Analytics Projects &darr;
-            </button>
-            
-            <div className="resume-buttons">
-              <button className="resume-btn download-btn" onClick={handleDownloadResume}>
-                <Download size={18} />
-                Download Resume
+            <div className="home-buttons">
+              <button className="click primary-cta" onClick={handleViewWork}>
+                View My Analytics Projects &darr;
               </button>
+            
+              <div className="resume-buttons">
+                <button className="resume-btn download-btn" onClick={handleDownloadResume}>
+                  <Download size={18} />
+                  Download Resume
+                </button>
+                <button className="resume-btn view-btn" onClick={handleViewResume}>
+                  <FileText size={18} />
+                  View Resume
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col1 animate-on-scroll fade-in-right">
-          <ThreeDCard>
-            <img 
-              className="all_img" 
-              src={arulrAvatar} 
-              alt="profile picture" 
-              width="300px"
-            />
-          </ThreeDCard>
+          <div className="col1 animate-on-scroll fade-in-right">
+            <ThreeDCard>
+              <img 
+                className="all_img hero-image" 
+                src={arulrAvatar} 
+                alt="Arul - Data Analyst" 
+                width="300px"
+              />
+            </ThreeDCard>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

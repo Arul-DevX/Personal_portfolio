@@ -464,29 +464,138 @@ a {
 }
 
 /* Container - Responsive Layout */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-section {
   min-height: 100vh;
-  padding: 80px 20px 20px;
-  margin: 0;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 0;
 }
 
 .about-section {
   min-height: 80vh;
-  padding: 80px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(80, 159, 244, 0.02) 0%, transparent 100%);
 }
 
-/* Projects section with responsive spacing */
+.skills-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
 .projects-section {
   min-height: 100vh;
-  padding: 80px 20px;
-  margin: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(80, 159, 244, 0.02) 0%, transparent 100%);
+}
+
+.contact-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section Specific Styles */
+.hero-section .greeting {
+  color: #509ff4;
+  text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+}
+
+.hero-section .main-title {
+  font-size: clamp(32px, 5vw, 50px);
+  line-height: 1.2;
+  margin: 0 0 25px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(80, 159, 244, 0.1);
+}
+
+.hero-section .subtitle {
+  font-size: clamp(16px, 3vw, 18px);
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-section .primary-cta {
+  margin-top: 30px;
+}
+
+/* Section-specific image classes */
+.hero-image,
+.about-image,
+.skills-image,
+.projects-image,
+.contact-image {
+  filter: drop-shadow(0px 4px 8px rgba(134, 188, 242, 0.2));
+  max-width: 100%;
+  height: auto;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Highlight spans for section titles */
+.highlight {
+  color: #509ff4;
+  text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+}
+
+/* Skills content styling */
+.skills-content {
+  text-align: left;
+  max-width: 500px;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category h3 {
+  color: #509ff4;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+/* Projects description */
+.projects-description {
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+/* Contact description */
+.contact-description {
+  margin-bottom: 20px;
+  color: #ccc;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 /* Row - Flexible Layout */
