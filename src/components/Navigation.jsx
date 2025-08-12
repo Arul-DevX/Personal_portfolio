@@ -188,14 +188,7 @@ const Navigation = () => {
             </a>
           </li>
           <li>
-            <a 
-              href="/Arul's Resume.pdf" 
-              download 
-              id="dbtn"
-              onClick={handleDownload}
-            >
-              Download Resume
-            </a>
+            
           </li>
         </ul>
       </nav>
