@@ -10,7 +10,7 @@ const Projects = () => {
       isExternal: true
     },
     {
-      title: "Sales Performance Dashboard",
+      title: "Implementation Of Ai-Enabled Real Time Speech-To-Sign Language Converter With Animated Avatar",
       link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
       isExternal: true
     },
