@@ -111,7 +111,7 @@ const Home = () => {
               <X />
             </button>
             <iframe
-              src="/Arul's Resume.pdf"
+              src="/Arul-Resume.pdf"
               style={{ width: '100%', height: '100%', border: 'none' }}
               title="Resume PDF"
             />
