@@ -50,9 +50,6 @@ const Home = () => {
           <button className="click" onClick={handleViewWork}>
             View My Analytics Projects &darr;
           </button>
-                    <button className="click" onClick={handleViewWork}>
-            Download Resume &darr;
-          </button>
         </div>
         <div className="col1 animate-on-scroll fade-in-right">
           <ThreeDCard>
