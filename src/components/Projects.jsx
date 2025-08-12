@@ -5,8 +5,8 @@ import projectComplete from '/src/images/project_complete.png';
 const Projects = () => {
   const projects = [
     {
-      title: "Customer Churn Prediction Model",
-      link: "https://github.com/Arul-DevX/customer-churn-analysis",
+      title: "Exploratory Data Analysis of Internships in India",
+      link: "https://github.com/Arul-DevX/EDA_of_internships_India",
       isExternal: true
     },
     {
