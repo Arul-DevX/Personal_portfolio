@@ -15,8 +15,8 @@ const Projects = () => {
       isExternal: true
     },
     {
-      title: "Market Basket Analysis",
-      link: "https://github.com/Arul-DevX/market-basket-analysis",
+      title: "Implementation Of Ai-Enabled Real Time Speech-To-Sign Language Converter With Animated Avatar",
+      link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
       isExternal: true
     },
     {
