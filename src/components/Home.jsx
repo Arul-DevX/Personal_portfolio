@@ -7,7 +7,7 @@ const Home = () => {
   const [isErasing, setIsErasing] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const text = "I'm Arul a Data Analyst"
+  const text = "I'm a Data Analyst"
   const typingSpeed = 150
   const erasingSpeed = 100
   const delay = 2000
