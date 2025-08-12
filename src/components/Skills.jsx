@@ -12,7 +12,7 @@ const Skills = () => {
               src={code} 
               className="all_img" 
               alt="skill image" 
-              width="500px"
+              width="350px"
             />
           </ThreeDCard>
         </div>

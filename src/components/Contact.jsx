@@ -13,7 +13,7 @@ const Contact = () => {
               src= {contactImage}
               className="all_img" 
               alt="contact image" 
-              width="500px"
+              width="350px"
             />
           </ThreeDCard>
         </div>

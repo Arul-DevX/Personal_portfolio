@@ -12,7 +12,7 @@ const About = () => {
               src={profileImage} // ✅ Use here 
               className="all_img"  
               alt="profile image" 
-              width="500px"
+              width="350px"
             />
           </ThreeDCard>
         </div>

@@ -45,7 +45,7 @@ const Projects = () => {
               src={projectComplete} 
               className="all_img"  
               alt="project image" 
-              width="500px"
+              width="350px"
             />
           </ThreeDCard>
         </div>
