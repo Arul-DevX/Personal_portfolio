@@ -5,6 +5,11 @@ import projectComplete from '/src/images/project_complete.png';
 const Projects = () => {
   const projects = [
     {
+      title: "Real-Time Weather Data Management",
+      link: "https://github.com/Arul-DevX/weather_datasets",
+      isExternal: true
+    },
+    {
       title: "Exploratory Data Analysis of Internships in India",
       link: "https://github.com/Arul-DevX/EDA_of_internships_India",
       isExternal: true
@@ -12,11 +17,6 @@ const Projects = () => {
     {
       title: "Implementation Of Ai-Enabled Real Time Speech-To-Sign Language Converter With Animated Avatar",
       link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
-      isExternal: true
-    },
-    {
-      title: "Real-Time Weather Data Management",
-      link: "https://github.com/Arul-DevX/weather_datasets",
       isExternal: true
     },
     {
