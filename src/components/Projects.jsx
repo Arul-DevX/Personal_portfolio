@@ -15,8 +15,8 @@ const Projects = () => {
       isExternal: true
     },
     {
-      title: "Implementation Of Ai-Enabled Real Time Speech-To-Sign Language Converter With Animated Avatar",
-      link: "https://github.com/Arul-DevX/text_and_voice_to_isl",
+      title: "Real-Time Weather Data Management",
+      link: "https://github.com/Arul-DevX/weather_datasets",
       isExternal: true
     },
     {
