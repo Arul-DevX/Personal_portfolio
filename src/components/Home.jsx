@@ -67,12 +67,7 @@ const Home = () => {
               </button>
             
               <div className="resume-buttons">
-                <button 
-                  src="/Arul-Resume.pdf"
-                  className="resume-btn download-btn" onClick={handleDownloadResume}>
-                  <Download size={18} />
-                  Download Resume
-                </button>
+                
                 <button className="resume-btn view-btn" onClick={handleViewResume}>
                   <FileText size={18} />
                   View Resume
