@@ -41,8 +41,8 @@ const Home = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = "public/Arul_Resume.pdf"
-    link.download = 'public/Arul_Resume.pdf'
+    link.href = "/Arul_Resume.pdf"
+    link.download = 'Arul_Resume.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -108,7 +108,7 @@ const Home = () => {
               <X />
             </button>
             <iframe
-              src="public/Arul_Resume.pdf"
+              src="/Arul_Resume.pdf"
               style={{ width: '100%', height: '100%', border: 'none' }}
               title="Resume PDF"
             />
