@@ -150,10 +150,11 @@ const FloatingBalls = () => {
             width: `${ball.size}px`,
             height: `${ball.size}px`,
             background: `radial-gradient(circle at 30% 30%, #86bcf2, #509ff4)`,
+            background: `radial-gradient(circle at 30% 30%, #cccccc, #ffffff)`,
             borderRadius: '50%',
             pointerEvents: 'none',
             zIndex: 1,
-            boxShadow: `0 0 ${ball.size * 0.8}px rgba(80, 159, 244, 0.2)`, // Reduced glow
+            boxShadow: `0 0 ${ball.size * 0.8}px rgba(255, 255, 255, 0.2)`, // Reduced glow
             opacity: ball.opacity,
             transition: 'opacity 0.3s ease',
             filter: 'blur(0.1px)'

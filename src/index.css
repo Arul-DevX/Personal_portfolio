@@ -26,15 +26,15 @@ body {
   position: fixed;
   width: 20px;
   height: 20px;
-  background: radial-gradient(circle, #509ff4 0%, #86bcf2 50%, transparent 70%);
+  background: radial-gradient(circle, #ffffff 0%, #cccccc 50%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
   transition: transform 0.1s ease-out, opacity 0.15s ease-out;
   box-shadow: 
-    0 0 10px rgba(80, 159, 244, 0.6),
-    0 0 20px rgba(80, 159, 244, 0.4);
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
   opacity: 0.9;
   will-change: transform, opacity;
 }
@@ -44,11 +44,11 @@ body {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: rgba(80, 159, 244, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
-  box-shadow: 0 0 8px rgba(80, 159, 244, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   opacity: 0.7;
   will-change: transform, opacity;
 }
@@ -56,10 +56,10 @@ body {
 /* Hover Effects - Faster Transitions */
 .custom-cursor.hover {
   transform: scale(1.5);
-  background: radial-gradient(circle, #86bcf2 0%, #509ff4 50%, rgba(80, 159, 244, 0.3) 70%);
+  background: radial-gradient(circle, #cccccc 0%, #ffffff 50%, rgba(255, 255, 255, 0.3) 70%);
   box-shadow: 
-    0 0 15px rgba(134, 188, 242, 0.8),
-    0 0 25px rgba(134, 188, 242, 0.6);
+    0 0 15px rgba(204, 204, 204, 0.8),
+    0 0 25px rgba(204, 204, 204, 0.6);
   opacity: 1;
   transition: transform 0.08s ease-out, background 0.1s ease-out;
 }
@@ -121,20 +121,20 @@ body {
 
 .contact-item:hover {
   transform: translateX(5px);
-  border-bottom-color: rgba(80, 159, 244, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
 .contact-icon {
-  color: #509ff4;
+  color: #ffffff;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 3px rgba(80, 159, 244, 0.3));
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
 }
 
 .contact-item:hover .contact-icon {
-  color: #86bcf2;
+  color: #cccccc;
   transform: scale(1.1);
-  filter: drop-shadow(0 0 6px rgba(134, 188, 242, 0.5));
+  filter: drop-shadow(0 0 6px rgba(204, 204, 204, 0.5));
 }
 
 .contact-item span {
@@ -198,7 +198,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0e1a2e 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2d2d2d 50%, #404040 75%, #1a1a1a 100%);
     background-attachment: fixed;
     overflow-x: hidden;
     width: 100%;
@@ -369,19 +369,19 @@ body {
     top: 0; 
     z-index: 1000; 
     backdrop-filter: blur(10px) saturate(150%);
-    background: linear-gradient(135deg, rgba(80, 159, 244, 0.05) 0%, rgba(134, 188, 242, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(204, 204, 204, 0.03) 100%);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-bottom: 1px solid rgba(80, 159, 244, 0.1);
-    box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
     box-sizing: border-box;
 }
 
 /* No change when scrolled - same background color */
 .navibar.scrolled {
-    background: linear-gradient(135deg, rgba(80, 159, 244, 0.05) 0%, rgba(134, 188, 242, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(204, 204, 204, 0.03) 100%);
     backdrop-filter: blur(10px) saturate(150%);
-    border-bottom: 1px solid rgba(80, 159, 244, 0.1);
-    box-shadow: 0 4px 20px rgba(80, 159, 244, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 
 .logo {
@@ -397,8 +397,8 @@ body {
 }
 
 label{
-  color: #509ff4;
-  text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .logo label {
@@ -429,9 +429,9 @@ nav ul li:hover {
 
 a {
     text-decoration: none;
-    color: #509ff4;
+    color: #ffffff;
     transition: all 0.3s ease;
-    text-shadow: 0 0 3px rgba(80, 159, 244, 0.2);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 /* CONTACT ME SECTION - CLEAN LINKS WITHOUT BOX BORDERS */
@@ -442,10 +442,10 @@ a {
   box-shadow: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  color: #509ff4 !important;
+  color: #ffffff !important;
   text-decoration: underline !important;
   text-underline-offset: 3px !important;
-  text-decoration-color: rgba(80, 159, 244, 0.5) !important;
+  text-decoration-color: rgba(255, 255, 255, 0.5) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -458,9 +458,9 @@ a {
   border: none !important;
   box-shadow: none !important;
   transform: none !important;
-  color: #86bcf2 !important;
-  text-decoration-color: #86bcf2 !important;
-  text-shadow: 0 0 8px rgba(134, 188, 242, 0.4) !important;
+  color: #cccccc !important;
+  text-decoration-color: #cccccc !important;
+  text-shadow: 0 0 8px rgba(204, 204, 204, 0.4) !important;
 }
 
 /* Container - Responsive Layout */
@@ -478,7 +478,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 80px 0;
-  background: linear-gradient(135deg, rgba(80, 159, 244, 0.02) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
 }
 
 .skills-section {
@@ -495,7 +495,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 80px 0;
-  background: linear-gradient(135deg, rgba(80, 159, 244, 0.02) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
 }
 
 .contact-section {
@@ -519,8 +519,8 @@ a {
 
 /* Hero Section Specific Styles */
 .hero-section .greeting {
-  color: #509ff4;
-  text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .hero-section .main-title {
@@ -528,7 +528,7 @@ a {
   line-height: 1.2;
   margin: 0 0 25px;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(80, 159, 244, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .hero-section .subtitle {
@@ -548,7 +548,7 @@ a {
 .skills-image,
 .projects-image,
 .contact-image {
-  filter: drop-shadow(0px 4px 8px rgba(134, 188, 242, 0.2));
+  filter: drop-shadow(0px 4px 8px rgba(204, 204, 204, 0.2));
   max-width: 100%;
   height: auto;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -559,8 +559,8 @@ a {
 
 /* Highlight spans for section titles */
 .highlight {
-  color: #509ff4;
-  text-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 /* Skills content styling */
@@ -574,7 +574,7 @@ a {
 }
 
 .skill-category h3 {
-  color: #509ff4;
+  color: #ffffff;
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 600;
@@ -628,7 +628,7 @@ a {
   line-height: 1.2;
   margin: 0 0 25px;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(80, 159, 244, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.1);
   word-wrap: break-word;
 }
 
@@ -641,7 +641,7 @@ a {
 }
 
 .all_img {
-  filter: drop-shadow(0px 4px 8px rgba(134, 188, 242, 0.2));
+  filter: drop-shadow(0px 4px 8px rgba(204, 204, 204, 0.2));
   max-width: 100%;
   height: auto;
   padding-left: 0px;
@@ -666,9 +666,9 @@ a {
 
 .cursor {
   font-size: clamp(40px, 8vw, 55px);
-  color: #509ff4;
+  color: #ffffff;
   animation: blink 1s steps(1) infinite;
-  text-shadow: 0 0 8px rgba(80, 159, 244, 0.4);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 @keyframes blink {
@@ -682,7 +682,7 @@ a {
 
 /* Footer with responsive design */
 footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
   color: #fff;
   text-align: center;
   padding: 30px 20px;
@@ -723,8 +723,8 @@ footer p {
   display: inline-block;
   transition: all 0.3s ease;
   border-radius: 8px;
-  background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.08) 100%);
-  border: 1px solid rgba(80, 159, 244, 0.15);
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   font-size: clamp(12px, 2vw, 14px);
   white-space: nowrap;
@@ -738,11 +738,11 @@ footer p {
   width: 100%;
   border-radius: 10px;
   height: 3px; 
-  background: linear-gradient(90deg, #509ff4, #86bcf2);
+  background: linear-gradient(90deg, #ffffff, #cccccc);
   transform: scaleX(0);
   transform-origin: center; 
   transition: transform 0.3s ease;
-  box-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .btn:hover::after {
@@ -752,38 +752,38 @@ footer p {
 
 .btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(80, 159, 244, 0.08) 0%, rgba(80, 159, 244, 0.15) 100%);
-  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
-  border-color: rgba(80, 159, 244, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.15) 100%);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 #dbtn{
-  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  color: #000;
   border-radius: 8px;
   padding: 12px 24px;
   border: none;
-  box-shadow: 0 3px 10px rgba(80, 159, 244, 0.2);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
   font-size: clamp(10px, 2vw, 14px);
 }
 
 #dbtn:hover{
-  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-  color: #333;
+  background: linear-gradient(135deg, #cccccc 0%, #999999 100%);
+  color: #000;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(80, 159, 244, 0.25);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.25);
 }
 
 .active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(80, 159, 244, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.15) 100%);
   backdrop-filter: blur(10px);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 10px rgba(80, 159, 244, 0.1);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
 
 .click{
-  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
   border-radius: 8px;
   margin-top: 50px;
   border: none;
@@ -793,10 +793,10 @@ footer p {
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: white;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
   overflow: hidden;
   font-size: clamp(12px, 2.5vw, 16px);
   white-space: nowrap;
@@ -837,29 +837,29 @@ footer p {
 }
 
 .download-btn {
-  background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
-  color: white;
-  box-shadow: 0 3px 10px rgba(80, 159, 244, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  color: #000000;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
 }
 
 .download-btn:hover {
-  background: linear-gradient(135deg, #4a8fd9 0%, #7ba8e0 100%);
+  background: linear-gradient(135deg, #cccccc 0%, #999999 100%);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(80, 159, 244, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .view-btn {
-  background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.08) 100%);
-  color: #509ff4;
-  border: 1px solid rgba(80, 159, 244, 0.3);
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.08) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
 }
 
 .view-btn:hover {
-  background: linear-gradient(135deg, rgba(80, 159, 244, 0.1) 0%, rgba(80, 159, 244, 0.15) 100%);
-  border-color: rgba(80, 159, 244, 0.5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.15) 100%);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive adjustments for home buttons */
@@ -911,9 +911,9 @@ footer p {
 
 .click:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-  color: #333;
-  box-shadow: 0 6px 20px rgba(80, 159, 244, 0.3);
+  background: linear-gradient(135deg, #cccccc 0%, #999999 100%);
+  color: #000;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Clean Menu Icon - NO underlines or lines */
@@ -923,7 +923,7 @@ footer p {
     display: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: drop-shadow(0 1px 2px rgba(80, 159, 244, 0.2));
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.2));
     position: relative;
     z-index: 1001;
     flex-shrink: 0;
@@ -937,7 +937,7 @@ footer p {
 /* Clean hover effect - NO underlines */
 .menuicon:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.4)) brightness(1.1);
+    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.4)) brightness(1.1);
     /* Explicitly prevent any underlines */
     text-decoration: none !important;
     border-bottom: none !important;
@@ -946,7 +946,7 @@ footer p {
 /* Active state when menu is open - NO underlines */
 .menuicon.active {
     transform: scale(1.02) rotate(90deg);
-    filter: drop-shadow(0 2px 6px rgba(80, 159, 244, 0.5)) brightness(1.2);
+    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.5)) brightness(1.2);
     /* Explicitly prevent any underlines */
     text-decoration: none !important;
     border-bottom: none !important;
@@ -1016,7 +1016,7 @@ footer p {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #509ff4, #86bcf2);
+  background: linear-gradient(90deg, #ffffff, #cccccc);
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -1026,13 +1026,13 @@ footer p {
 
 .project-link:hover {
   transform: translateX(10px);
-  border-bottom-color: rgba(80, 159, 244, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
 .project-number {
   font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
-  color: #509ff4;
+  color: #ffffff;
   min-width: 30px;
   opacity: 0.7;
   transition: all 0.3s ease;
@@ -1057,13 +1057,13 @@ footer p {
 }
 
 .project-link:hover .project-title {
-  color: #509ff4;
+  color: #ffffff;
   transform: translateX(5px);
 }
 
 .project-arrow {
   font-size: clamp(16px, 3vw, 18px);
-  color: #509ff4;
+  color: #ffffff;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0;
   transform: translateX(-10px);
@@ -1299,7 +1299,7 @@ section {
       position: absolute;
       top: 70px;
       right: 0px;
-      background: linear-gradient(135deg, rgba(80, 159, 244, 0.95) 0%, rgba(134, 188, 242, 0.9) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(204, 204, 204, 0.9) 100%);
       width: min(250px, 90vw);
       overflow: hidden;
       max-height: 0px;
@@ -1307,7 +1307,7 @@ section {
       border-radius: 16px;
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px rgba(80, 159, 244, 0.15);
+      box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
       box-sizing: border-box;
       /* CRITICAL: Remove all borders and lines */
       border-top: none !important;
@@ -1360,7 +1360,7 @@ section {
     
     /* Apply EXACT same hover effect as full-screen menu buttons */
     nav ul li a {
-      color: #fff;
+      color: #000000;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -1370,16 +1370,16 @@ section {
       position: relative;
       z-index: 2;
       border-radius: 8px;
-      background: linear-gradient(135deg, transparent 0%, rgba(80, 159, 244, 0.08) 100%);
-      border: 1px solid rgba(80, 159, 244, 0.15);
+      background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.08) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
       font-size: clamp(12px, 2.5vw, 14px);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       /* CRITICAL: Remove all top/bottom borders and lines */
-      border-top: 1px solid rgba(80, 159, 244, 0.15) !important;
-      border-bottom: 1px solid rgba(80, 159, 244, 0.15) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
       outline: none !important;
     }
     
@@ -1398,11 +1398,11 @@ section {
       width: 100%;
       border-radius: 8px;
       height: 3px; 
-      background: linear-gradient(90deg, #509ff4, #86bcf2);
+      background: linear-gradient(90deg, #ffffff, #cccccc);
       transform: scaleX(0);
       transform-origin: center; 
       transition: transform 0.3s ease;
-      box-shadow: 0 0 5px rgba(80, 159, 244, 0.3);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     }
     
     nav ul li a:hover::after {
@@ -1413,14 +1413,14 @@ section {
     /* EXACT same hover state as full-screen menu */
     nav ul li a:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, rgba(80, 159, 244, 0.08) 0%, rgba(80, 159, 244, 0.15) 100%);
-      box-shadow: 0 4px 15px rgba(80, 159, 244, 0.2);
-      border-color: rgba(80, 159, 244, 0.3);
-      color: #fff;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.15) 100%);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #000000;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.3);
       /* CRITICAL: Maintain border styling on hover */
-      border-top: 1px solid rgba(80, 159, 244, 0.3) !important;
-      border-bottom: 1px solid rgba(80, 159, 244, 0.3) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
     
     /* Active menu item in mobile with same styling as desktop */
@@ -1428,7 +1428,7 @@ section {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(80, 159, 244, 0.15) 100%);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 2px 10px rgba(80, 159, 244, 0.1);
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
       /* CRITICAL: Maintain border styling for active state */
@@ -1438,22 +1438,22 @@ section {
     
     /* Special styling for Download CV button - same as desktop */
     nav ul li #dbtn {
-      background: linear-gradient(135deg, #509ff4 0%, #86bcf2 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+      color: #000000;
       border-radius: 8px;
       padding: 12px 16px;
       border: none !important;
-      box-shadow: 0 3px 10px rgba(80, 159, 244, 0.2);
+      box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
       /* CRITICAL: No borders for download button */
       border-top: none !important;
       border-bottom: none !important;
     }
     
     nav ul li #dbtn:hover {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-      color: #333;
+      background: linear-gradient(135deg, #cccccc 0%, #999999 100%);
+      color: #000000;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(80, 159, 244, 0.25);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.25);
       /* CRITICAL: No borders on hover for download button */
       border-top: none !important;
       border-bottom: none !important;

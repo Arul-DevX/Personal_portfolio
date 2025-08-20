@@ -26,7 +26,7 @@
 .geometric-shape {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(45deg, rgba(80, 159, 244, 0.08), rgba(134, 188, 242, 0.04));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.08), rgba(204, 204, 204, 0.04));
   animation: rotate 25s linear infinite;
 }
 
@@ -36,7 +36,7 @@
   top: 5%;
   left: 5%;
   animation-delay: 0s;
-  background: linear-gradient(45deg, rgba(80, 159, 244, 0.07), rgba(134, 188, 242, 0.03));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.07), rgba(204, 204, 204, 0.03));
 }
 
 .shape-2 {
@@ -45,7 +45,7 @@
   top: 55%;
   right: 10%;
   animation-delay: -8s;
-  background: linear-gradient(135deg, rgba(134, 188, 242, 0.06), rgba(80, 159, 244, 0.02));
+  background: linear-gradient(135deg, rgba(204, 204, 204, 0.06), rgba(255, 255, 255, 0.02));
 }
 
 .shape-3 {
@@ -54,7 +54,7 @@
   top: 25%;
   right: 25%;
   animation-delay: -16s;
-  background: linear-gradient(225deg, rgba(80, 159, 244, 0.05), rgba(134, 188, 242, 0.02));
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.05), rgba(204, 204, 204, 0.02));
 }
 
 /* Additional larger shapes for more visual impact */
@@ -64,7 +64,7 @@
   top: 70%;
   left: 25%;
   animation-delay: -12s;
-  background: linear-gradient(315deg, rgba(80, 159, 244, 0.04), rgba(134, 188, 242, 0.01));
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0.04), rgba(204, 204, 204, 0.01));
 }
 
 .shape-5 {
@@ -73,7 +73,7 @@
   top: 15%;
   left: 70%;
   animation-delay: -20s;
-  background: linear-gradient(180deg, rgba(134, 188, 242, 0.05), rgba(80, 159, 244, 0.02));
+  background: linear-gradient(180deg, rgba(204, 204, 204, 0.05), rgba(255, 255, 255, 0.02));
 }
 
 @keyframes rotate {
@@ -94,10 +94,10 @@
   position: absolute;
   width: 8px; /* Increased from 3px */
   height: 8px; /* Increased from 3px */
-  background: rgba(80, 159, 244, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   animation: floatElement 18s ease-in-out infinite;
-  box-shadow: 0 0 12px rgba(80, 159, 244, 0.6); /* Increased glow */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6); /* Increased glow */
 }
 
 .element-1 {
@@ -178,13 +178,13 @@
   width: 3px; /* Increased from 1px */
   height: 150px; /* Increased from 80px */
   background: linear-gradient(to bottom, 
-    rgba(80, 159, 244, 0.6) 0%, 
-    rgba(80, 159, 244, 0.3) 50%, 
+    rgba(255, 255, 255, 0.6) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
     transparent 100%);
   animation: lightRay 15s ease-in-out infinite;
   transform-origin: top center;
   border-radius: 2px;
-  box-shadow: 0 0 15px rgba(80, 159, 244, 0.4); /* Increased glow */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Increased glow */
 }
 
 .ray-1 {
