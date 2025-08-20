@@ -5,7 +5,7 @@ import projectComplete from '/src/images/project_complete.png';
 const Projects = () => {
   const projects = [
     {
-      title: "Real-Time Weather Data Management",
+      title: "Real-Time Weather Data Management (SQL Project)",
       link: "https://github.com/Arul-DevX/weather_datasets",
       isExternal: true
     },
