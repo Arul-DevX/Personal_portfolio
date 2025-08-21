@@ -21,19 +21,17 @@ const Skills = () => {
             <div className="skills-content">
               <div className="skill-category">
                 <h3>Programming & Analytics</h3>
-                <p>Python (Pandas, NumPy) • R • SQL • Excel</p>
+                <p>Python (Pandas, NumPy) • SQL • Excel</p>
               </div>
               <div className="skill-category">
                 <h3>Data Visualization</h3>
-                <p>Tableau • Power BI • Matplotlib • Seaborn • Plotly</p>
+                <p> Power BI • Matplotlib • Seaborn • Plotly</p>
               </div>
               <div className="skill-category">
                 <h3>Databases & Tools</h3>
-                <p>MySQL • PostgreSQL • MongoDB • Apache Spark</p>
+                <p>MySQL</p>
               </div>
               <div className="skill-category">
-                <h3>Statistical Methods</h3>
-                <p>Regression Analysis • A/B Testing • Time Series • Machine Learning • Predictive Modeling</p>
               </div>
             </div>
           </div>
