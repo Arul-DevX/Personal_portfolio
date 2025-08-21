@@ -1,6 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
-import code from '/src/images/code.png';
+import { Code2, Database, BarChart } from 'lucide-react'
 
 const Skills = () => {
   return (
@@ -9,12 +9,11 @@ const Skills = () => {
         <div className="row">
           <div className="col1 animate-on-scroll fade-in-left">
             <ThreeDCard>
-              <img 
-                src={code} 
-                className="all_img skills-image" 
-                alt="Technical Skills - Data Analysis" 
-                width="350px"
-              />
+              <div className="icon-container skills-icon">
+                <Code2 size={100} className="main-icon" />
+                <Database size={50} className="accent-icon accent-1" />
+                <BarChart size={50} className="accent-icon accent-2" />
+              </div>
             </ThreeDCard>
           </div>
           <div className="col1 animate-on-scroll fade-in-right">

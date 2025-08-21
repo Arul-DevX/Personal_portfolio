@@ -1,6 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
-import projectComplete from '/src/images/project_complete.png';
+import { FolderOpen, GitBranch, Star } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
@@ -42,12 +42,11 @@ const Projects = () => {
         <div className="row">
           <div className="col1 animate-on-scroll fade-in-left">
             <ThreeDCard>
-              <img 
-                src={projectComplete} 
-                className="all_img projects-image"  
-                alt="Data Analysis Projects Portfolio" 
-                width="350px"
-              />
+              <div className="icon-container projects-icon">
+                <FolderOpen size={100} className="main-icon" />
+                <GitBranch size={50} className="accent-icon accent-1" />
+                <Star size={40} className="accent-icon accent-2" />
+              </div>
             </ThreeDCard>
           </div>
           <div className="col1 animate-on-scroll fade-in-right">

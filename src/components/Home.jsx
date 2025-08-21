@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ThreeDCard from './ThreeDCard'
-import { Download, FileText, X } from 'lucide-react'
-import arulrAvatar from '/src/images/Arul.png';
+import { Download, FileText, X, User, BarChart3 } from 'lucide-react'
 
 const Home = () => {
   const [typedText, setTypedText] = useState('')
@@ -78,12 +77,10 @@ const Home = () => {
 
           <div className="col1 animate-on-scroll fade-in-right">
             <ThreeDCard>
-              <img 
-                className="all_img hero-image" 
-                src={arulrAvatar} 
-                alt="Arul - Data Analyst" 
-                width="300px"
-              />
+              <div className="icon-container hero-icon">
+                <User size={120} className="main-icon" />
+                <BarChart3 size={60} className="accent-icon" />
+              </div>
             </ThreeDCard>
           </div>
         </div>

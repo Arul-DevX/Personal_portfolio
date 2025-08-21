@@ -1,7 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
-import { Mail, Phone, Linkedin, Github } from 'lucide-react'
-import contactImage from '/src/images/contact_us.png';
+import { Mail, Phone, Linkedin, Github, MessageCircle, Send } from 'lucide-react'
 
 const Contact = () => {
   return (
@@ -10,12 +9,10 @@ const Contact = () => {
         <div className="row">
           <div className="col1 animate-on-scroll fade-in-left">
             <ThreeDCard>
-              <img 
-                src={contactImage}
-                className="all_img contact-image" 
-                alt="Contact Arul - Data Analyst" 
-                width="350px"
-              />
+              <div className="icon-container contact-icon">
+                <MessageCircle size={100} className="main-icon" />
+                <Send size={50} className="accent-icon" />
+              </div>
             </ThreeDCard>
           </div>
           <div className="col1 animate-on-scroll fade-in-right">

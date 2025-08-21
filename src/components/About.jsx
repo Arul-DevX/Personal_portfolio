@@ -1,6 +1,6 @@
 import React from 'react'
 import ThreeDCard from './ThreeDCard'
-import profileImage from '/src/images/profile.png'; // ✅ Import here
+import { UserCheck, TrendingUp } from 'lucide-react'
 
 const About = () => {
   return (
@@ -9,12 +9,10 @@ const About = () => {
         <div className="row">
           <div className="col1 animate-on-scroll fade-in-left">
             <ThreeDCard>
-              <img 
-                src={profileImage}
-                className="all_img about-image"  
-                alt="About Arul - Data Analyst" 
-                width="350px"
-              />
+              <div className="icon-container about-icon">
+                <UserCheck size={120} className="main-icon" />
+                <TrendingUp size={60} className="accent-icon" />
+              </div>
             </ThreeDCard>
           </div>
           <div className="col1 animate-on-scroll fade-in-right">
